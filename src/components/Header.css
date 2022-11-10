@@ -1,0 +1,14 @@
+.header {
+    --background: #CBD2C3;
+    --min-height: 70px;
+}
+
+.image {
+    width: 4rem;
+    height: 4rem;
+}
+
+.header_text {
+    color: #47525E;
+    font: Lato;
+}

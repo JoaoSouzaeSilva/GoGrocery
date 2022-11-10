@@ -1,0 +1,32 @@
+ion-content {
+    --background: none;
+    background-image: url("../images/home_page.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+.homePage_title {
+    color: #47525e;
+    font-family: Lato;
+    font-size: 62px;    
+    margin-left: 900px;
+    margin-top: 100px;
+}
+
+.separator {
+    width: 350px;
+    border-bottom: 1px solid #47525E;
+    margin-left: 880px;
+    margin-top: 0px;
+}
+
+.homePage_subText {
+    color: #47525E;
+    font-family: Lato;
+    font-size: 25px;
+    margin-left: 810px;
+    margin-top: 10px;
+    width: 500px;
+    text-align: center;
+}
