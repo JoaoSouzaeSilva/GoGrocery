@@ -1,17 +1,37 @@
-import { IonContent, IonItem, IonItemDivider, IonLabel, IonPage} from '@ionic/react';
-import MyHeader from '../components/Header';
-import Button from '../components/Button';
-import './Home.css';
+import {
+  IonButton,
+  IonButtons,
+  IonContent,
+  IonHeader,
+  IonImg,
+  IonItem,
+  IonItemDivider,
+  IonLabel,
+  IonPage,
+  IonText,
+  IonToolbar,
+} from "@ionic/react";
+import "./Home.css";
+import headerImg from "../images/header.png";
 
 const Home: React.FC = () => {
   return (
     <IonPage>
-      <MyHeader />
-      <IonContent fullscreen>
-        <h1 className='homePage_title'>GoGrocery</h1>
-        <div className='separator'/>
-        <h5 className='homePage_subText'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</h5>
-        <Button>Click</Button>
+      <IonToolbar>
+        <img className="img" slot="start" src={headerImg} />
+        <div className="img_text" slot="start">have it your way</div>
+        <IonButtons slot="end">
+          <IonButton shape="round">About</IonButton>
+          <IonButton shape="round">Sign up</IonButton>
+          <IonButton shape="round">Sign in</IonButton>
+        </IonButtons>
+      </IonToolbar>
+      <IonContent>
+        <div className="title">
+          <div className="homePage_title">GoGrocery</div>
+          <div className='separator'/>
+          <div className='homePage_subText'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+        </div>
       </IonContent>
     </IonPage>
   );
