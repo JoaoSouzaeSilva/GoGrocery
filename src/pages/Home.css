@@ -12,10 +12,11 @@ ion-toolbar {
 ion-content {
   --background: none;
   background-image: url("../images/home_page.jpg");
-  background-position: center;
+  background-position: left;
+  background-size: contain;
   background-repeat: no-repeat;
-  background-size: cover;
   background-attachment: scroll;
+  background-color: #e8eceb;
   height: 100%;
   width: 100%;
 }
