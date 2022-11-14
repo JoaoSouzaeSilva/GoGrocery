@@ -14,7 +14,7 @@ import {
 import "./Home.css";
 import headerImg from "../images/header.png";
 
-const Home: React.FC = () => {
+const Home = () => {
   return (
     <IonPage>
       <IonToolbar>
