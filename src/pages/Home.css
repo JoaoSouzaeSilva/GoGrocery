@@ -1,12 +1,19 @@
 ion-button {
+  border-radius: 8px;
+  color: #47525e;
+}
+
+.button-primary{
   background: #8E9A84;
   border-radius: 8px;
   color: #47525e;
-  
 }
 
 ion-toolbar {
   --background: #CBD2C3;
+  height:75px;
+  width: 100%;
+  display: flex;
 }
 
 ion-content {
@@ -22,17 +29,15 @@ ion-content {
 }
 
 .img {
-  height: 45px;
-  width: 45px;
-  margin-left: 8px;
-  margin-top: 6px;
+  height: 100%;
 }
 
 .img_text {
     font-size: small;
     margin-left: 6px;
-    margin-top: 40px;
-    color: #47525e
+    align-self: flex-end;
+    margin-bottom: 3px;
+    color: #47525e;
 }
 
 .title {
