@@ -18,12 +18,12 @@ const Home: React.FC = () => {
   return (
     <IonPage>
       <IonToolbar>
-        <img className="img" slot="start" src={headerImg} />
+        <img className="img" slot="start" src={headerImg}/>
         <div className="img_text" slot="start">have it your way</div>
         <IonButtons slot="end">
-          <IonButton shape="round">About</IonButton>
-          <IonButton shape="round">Sign up</IonButton>
-          <IonButton shape="round">Sign in</IonButton>
+          <IonButton shape="round" routerLink="/About">About</IonButton>
+          <IonButton shape="round" routerLink="/Sign-Up">Sign up</IonButton>
+          <IonButton shape="round" routerLink="/Sign-In">Sign in</IonButton>
         </IonButtons>
       </IonToolbar>
       <IonContent>
