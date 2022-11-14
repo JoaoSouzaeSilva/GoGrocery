@@ -21,9 +21,9 @@ const Home: React.FC = () => {
         <img className="img" slot="start" src={headerImg} />
         <div className="img_text" slot="start">have it your way</div>
         <IonButtons slot="end">
-          <IonButton shape="round">About</IonButton>
-          <IonButton shape="round">Sign up</IonButton>
-          <IonButton shape="round">Sign in</IonButton>
+          <IonButton shape="round" className="button-secondary">About</IonButton>
+          <IonButton shape="round" className="button-secondary">Sign up</IonButton>
+          <IonButton shape="round" className="button-primary">Sign in</IonButton>
         </IonButtons>
       </IonToolbar>
       <IonContent>

@@ -1,60 +1,70 @@
 ion-button {
+  border-radius: 8px;
+  color: #47525e;
+}
+
+.button-primary{
   background: #8E9A84;
   border-radius: 8px;
   color: #47525e;
-  
 }
 
 ion-toolbar {
   --background: #CBD2C3;
+  height:75px;
+  width: 100%;
+  display: flex;
 }
 
 ion-content {
   --background: none;
   background-image: url("../images/home_page.jpg");
-  background-position: center;
+  background-position: left;
+  background-size: contain;
   background-repeat: no-repeat;
-  background-size: cover;
   background-attachment: scroll;
+  background-color: #e8eceb;
   height: 100%;
   width: 100%;
 }
 
 .img {
-  height: 45px;
-  width: 45px;
-  margin-left: 8px;
-  margin-top: 6px;
+  height: 100%;
 }
 
 .img_text {
     font-size: small;
     margin-left: 6px;
-    margin-top: 40px;
-    color: #47525e
+    align-self: flex-end;
+    margin-bottom: 3px;
+    color: #47525e;
+}
+
+.title {
+  background-color: #e8eceb;
+  /* align content right*/
+  margin-left: 50%;
+  margin-top: 200px;
+  font-family: Lato;
+  width: 500px;
 }
 
 .homePage_title {
   color: #47525e;
-  font-family: Lato;
   font-size: 50px;
-  margin-left: 650px;
-  margin-top: 110px;
+  text-align: center;
 }
 
 .separator {
-  width: 350px;
+  width: 100%;
   border-bottom: 1px solid #47525e;
-  margin-left: 600px;
-  margin-top: 0px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .homePage_subText {
   color: #47525e;
-  font-family: Lato;
   font-size: 25px;
-  margin-left: 525px;
-  margin-top: 10px;
-  width: 500px;
+  width: 100%;
   text-align: center;
 }

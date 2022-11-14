@@ -69,7 +69,8 @@
   },
   "devDependencies": {
     "@capacitor/cli": "4.4.0",
-    "gh-pages": "^4.0.0"
+    "gh-pages": "^4.0.0",
+    "@ionic/cli": "6.20.3"
   },
   "description": "An Ionic project",
   "homepage": "http://dg-Pereira.github.io/GoGrocery"
