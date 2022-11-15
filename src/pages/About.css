@@ -1,0 +1,140 @@
+.ion-toolbar-about {
+  --background: #cbd2c3;
+  height: 75px;
+  width: 100%;
+  display: flex;
+}
+
+.img {
+  height: 100%;
+}
+
+.img_text {
+  font-size: small;
+  margin-left: 6px;
+  align-self: flex-end;
+  margin-bottom: 3px;
+  color: #47525e;
+}
+
+.back-button {
+  background-color: #8e9a84;
+  color: #47525e;
+  margin-left: 1160px;
+
+  width: 80px;
+  border-radius: 8px;
+}
+
+.back {
+  font-weight: 800;
+}
+
+.ion-content-about {
+  --background: none;
+  background-image: url("../images/about.jpeg");
+  background-position: center;
+  filter: opacity(70%);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-size: cover;
+}
+
+.ion-card-content-about {
+  color: #47525e;
+  margin-top: 20px;
+  font-weight: bold;
+  text-align: left;
+}
+
+.card1 {
+  display: flex;
+  flex-direction: column;
+  width: 700px;
+  height: 565px;
+  margin-left: 35px;
+  margin-top: 30px;
+
+  background-color: #8E9A84;
+
+  text-align: center;
+
+  border-radius: 20px;
+}
+
+.card_title1 {
+  color: #47525e;
+  margin-top: -45px;
+  margin-left: -55px;
+  background-color: #CBD2C3;
+
+  height: 50px;
+  width: 800px;
+  border-radius: 20px;
+}
+
+.title1 {
+  margin-top: 30px;
+  padding: 8px 0px;
+}
+
+.card2 {
+  display: flex;
+  flex-direction: column;
+  width: 620px;
+  height: 300px;
+  margin-top: 35px;
+
+  background-color: #EAEEED;
+
+  text-align: center;
+
+  border-radius: 20px;
+}
+
+.card_title2 {
+  color: #47525e;
+  margin-top: -45px;
+  margin-left: -50px;
+  background-color: #CBD2C3;
+
+  height: 50px;
+  width: 700px;
+  border-radius: 20px;
+}
+
+.title2 {
+  margin-top: 30px;
+  padding: 8px 0px;
+}
+
+.card3 {
+  display: flex;
+  flex-direction: column;
+
+  width: 620px;
+  height: 255px;
+  border-radius: 20px;
+
+  background-color: #B6C4A2;
+
+  text-align: center;
+}
+
+.card_title3 {
+  color: #47525e;
+  margin-top: -45px;
+  margin-left: -50px;
+  background-color: #CBD2C3;
+
+  height: 50px;
+  width: 700px;
+  border-radius: 20px;
+}
+
+.title3 {
+  margin-top: 30px;
+  padding: 8px 0px;
+}
+

@@ -9,14 +9,14 @@ ion-button {
   color: #47525e;
 }
 
-ion-toolbar {
+.ion-toolbar-home {
   --background: #CBD2C3;
   height:75px;
   width: 100%;
   display: flex;
 }
 
-ion-content {
+.ion-content-home {
   --background: none;
   background-image: url("../images/home_page.jpg");
   background-position: left;
