@@ -1,0 +1,87 @@
+ion-col {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  color: #47525e;
+}
+
+ion-grid {
+  --ion-grid-width: 100%;
+}
+
+.ion-buttons-categories {
+  color: #47525e;
+}
+
+.ion-toolbar-categories {
+  --background: #cbd2c3;
+  display: flex;
+  height: 75px;
+  width: 100%;
+}
+
+.button-primary {
+  font-weight: bolder;
+}
+
+.button-secondary {
+  font-weight: bolder;
+}
+
+.ion-content-categories {
+  --ion-background-color: #ffffff;
+}
+
+.app-name {
+  font-family: Lato;
+  font-size: 30px;
+  color: #47525e;
+}
+
+.col2 {
+  border: solid 1.5px #343F4B;
+  border-radius: 20px;
+  height: 10%;
+
+  align-self: center;
+  margin-top: 1%;
+
+  text-align: left;
+
+  background-image: url("../images/search.png");
+  background-size: 8%;
+  background-repeat: no-repeat;
+  background-position-x: 98%;
+  background-position-y: center;
+}
+
+.col3 {
+  margin-top: 1%;
+}
+
+.list-buttons {
+  color: #47525e;
+}
+
+.see-list-button {
+  background: #cbd2c3;
+  border-radius: 8px;
+  padding: 10px;
+  font-weight: bold;
+}
+
+.finish-button {
+  background: #cbd2c3;
+  border-radius: 8px;
+  padding: 10px;
+  font-weight: bold;
+}
+
+.divider {
+  width: 85%;
+  border-bottom: 2px solid #cbd2c3;
+  margin: auto;
+  margin-top: 20px;
+}

@@ -13,18 +13,27 @@ const Home = () => {
     <IonPage>
       <IonToolbar className="ion-toolbar-home">
         <img className="img" slot="start" src={headerImg} />
-        <div className="img_text" slot="start">have it your way</div>
-        <IonButtons slot="end">
-          <IonButton shape="round" className="button-secondary" href="/About">About</IonButton>
-          <IonButton shape="round" className="button-secondary">Sign up</IonButton>
-          <IonButton shape="round" className="button-primary">Sign in</IonButton>
+        <div className="img_text">have it your way</div>
+        <IonButtons slot="end" className="ion-buttons-home">
+          <IonButton shape="round" href="/About">
+            <p className="button-secondary">About</p>
+          </IonButton>
+          <IonButton shape="round">
+            <p className="button-secondary">Sign up</p>
+          </IonButton>
+          <IonButton shape="round">
+            <p className="button-primary">Sign in</p>
+          </IonButton>
         </IonButtons>
       </IonToolbar>
       <IonContent className="ion-content-home">
         <div className="title">
           <div className="homePage_title">GoGrocery</div>
-          <div className='separator'/>
-          <div className='homePage_subText'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+          <div className="separator" />
+          <div className="homePage_subText">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </div>
         </div>
       </IonContent>
     </IonPage>
