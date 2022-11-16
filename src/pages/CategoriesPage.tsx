@@ -9,13 +9,61 @@ import {
   IonPage,
   IonRow,
   IonToolbar,
-  IonIcon,
 } from "@ionic/react";
+import CategoriesList from "../components/CategoriesList";
 import headerImg from "../images/header.png";
 
 import "./CategoriesPage.css";
 
 const CategoriesPage = () => {
+  const CATEGORIES = [
+    {
+      id: "c1",
+      name: "Meat",
+      img: "Meat.jpeg"
+    },
+    {
+      id: "c2",
+      name: "Seafood",
+      img: "Seafood.png"
+    },
+    {
+      id: "c3",
+      name: "Produce",
+      img: "Produce.jpeg"
+    },
+    {
+      id: "c4",
+      name: "Dairy, eggs & cheese",
+      img: "Dairy_eggs_cheese.png"
+    },
+    {
+      id: "c5",
+      name: "Bakery",
+      img: "Bakery.png"
+    },
+    {
+      id: "c6",
+      name: "Flowers",
+      img: "Flowers.png"
+    },
+    {
+      id: "c7",
+      name: "Frozen",
+      img: "Frozen.png"
+    },
+    {
+      id: "c8",
+      name: "Bulk",
+      img: "Bulk.png"
+    },
+    {
+      id: "c9",
+      name: "Wine & spirits",
+      img: "Wine_spirits.png"
+    },
+  ];
+
   return (
     <>
       <IonPage>
@@ -32,7 +80,7 @@ const CategoriesPage = () => {
           </IonButtons>
         </IonToolbar>
         <IonContent className="ion-content-categories">
-          <IonGrid fixed={true} className="categories-grid">
+          <IonGrid className="categories-grid">
             <IonRow className="row1">
               <IonCol size="3" className="col1">
                 <h1 className="app-name">Go Grocery</h1>
@@ -56,6 +104,9 @@ const CategoriesPage = () => {
               </IonCol>
             </IonRow>
             <div className="divider" />
+            <IonRow className="categories-list">
+              <CategoriesList categories={CATEGORIES} />
+            </IonRow>
           </IonGrid>
         </IonContent>
       </IonPage>

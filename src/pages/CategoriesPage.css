@@ -41,7 +41,7 @@ ion-grid {
 }
 
 .col2 {
-  border: solid 1.5px #343F4B;
+  border: solid 1.5px #343f4b;
   border-radius: 20px;
   height: 10%;
 
@@ -84,4 +84,35 @@ ion-grid {
   border-bottom: 2px solid #cbd2c3;
   margin: auto;
   margin-top: 20px;
+}
+
+@media (max-width: 950px) {
+
+  .app-name {
+    font-family: Lato;
+    font-size: 20px;
+    color: #47525e;
+  }
+
+  .input {
+    font-size: 90%;
+  }
+
+  .col2 {
+    border: solid 1.5px #343f4b;
+    border-radius: 20px;
+
+    background-image: url("../images/search.png");
+    background-size: 8%;
+    background-repeat: no-repeat;
+    background-position-x: 98%;
+    background-position-y: center;
+  }
+
+  .divider {
+    width: 30%;
+    border-bottom: 2px solid #cbd2c3;
+    margin: auto;
+    margin-top: 20px;
+  }
 }
