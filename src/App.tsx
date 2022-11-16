@@ -40,7 +40,7 @@ const Routing = () => {
           <Route exact path="/home">
             <Home />
           </Route>
-          {/* <Redirect exact path="/" to="/home" /> */}
+            <Redirect exact path="/" to="/home" /> 
           <Route exact path="/about">
             <About />
           </Route>
