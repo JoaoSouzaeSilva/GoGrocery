@@ -1,58 +1,59 @@
-ion-button {
-  border-radius: 8px;
+.ion-buttons-home {
   color: #47525e;
 }
 
-.button-primary{
-  background: #8E9A84;
+.button-primary {
+  background: #8e9a84;
   border-radius: 8px;
-  color: #47525e;
+  padding: 10px;
+  font-weight: bold;
+}
+
+.button-secondary {
+  font-weight: bold;
 }
 
 .ion-toolbar-home {
-  --background: #CBD2C3;
-  height:75px;
-  width: 100%;
+  --background: #cbd2c3;
   display: flex;
+  height: 75px;
+  width: 100%;
 }
 
-.ion-content-home {
-  --background: none;
-  background-image: url("../images/home_page.jpg");
-  background-position: left;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-attachment: scroll;
-  background-color: #e8eceb;
-  height: 100%;
-  width: 100%;
+.img_text {
+  font-size: small;
+  margin-left: 6px;
+  margin-top: 60px;
+  color: #47525e;
 }
 
 .img {
   height: 100%;
 }
 
-.img_text {
-    font-size: small;
-    margin-left: 6px;
-    align-self: flex-end;
-    margin-bottom: 3px;
-    color: #47525e;
+.ion-content-home {
+  --background: none;
+  background-image: url("../images/home_page.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: center;
+  height: 100%;
+  width: 100%;
 }
 
 .title {
-/*   background-color: #e8eceb;
- */  /* align content right*/
-  margin-left: 50%;
-  margin-top: 200px;
   font-family: Lato;
-  width: 500px;
+  margin-left: 50%;
+  margin-top: 10%;
+  width: 40%;
 }
 
 .homePage_title {
   color: #47525e;
   font-size: 50px;
   text-align: center;
+  overflow: auto;
 }
 
 .separator {
@@ -67,4 +68,40 @@ ion-button {
   font-size: 25px;
   width: 100%;
   text-align: center;
+}
+
+@media (max-width: 1000px) {
+
+  .title {
+    background-color: #8e9a84;
+    border-radius: 8px;
+    width: 365px;
+    height: 150px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-top: -95px;
+    margin-left: -183px;
+  }
+
+  .homePage_title {
+    color: #47525e;
+    font-size: 40px;
+    text-align: center;
+    overflow: auto;
+  }
+
+  .separator {
+    width: 340px;
+    border-bottom: 1px solid #47525e;
+    margin-top: 5px;
+    margin-left: 10px;
+  }
+
+  .homePage_subText {
+    color: #47525e;
+    font-size: 15px;
+    width: 100%;
+    text-align: center;
+  }
 }

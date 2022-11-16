@@ -7,6 +7,7 @@ import {
   IonCol,
   IonContent,
   IonGrid,
+  IonItem,
   IonPage,
   IonRow,
   IonToolbar,
@@ -21,20 +22,24 @@ const About = () => {
   return (
     <IonPage>
       <IonToolbar className="ion-toolbar-about">
-        <img className="img" slot="start" src={headerImg} />
+        <img slot="start" className="img" src={headerImg} />
         <div className="img_text" slot="start">
           have it your way
         </div>
-        <IonButtons className="back-button">
-          <IonButton shape="round" className="back-button" onClick={() => history.goBack()}>
+        <IonButtons slot="end">
+          <IonButton
+            shape="round"
+            className="back-button"
+            onClick={() => history.goBack()}
+          >
             <p className="back">Back</p>
           </IonButton>
         </IonButtons>
       </IonToolbar>
       <IonContent className="ion-content-about">
-        <IonGrid>
-          <IonRow>
-            <IonCol>
+        <IonGrid className="card-container">
+          <IonRow className="row1">
+            <IonCol className="col1">
               <IonCard className="card1">
                 <IonCardHeader>
                   <div className="card_title1">
@@ -78,7 +83,7 @@ const About = () => {
                 </IonCardContent>
               </IonCard>
             </IonCol>
-            <IonCol>
+            <IonCol className="col2">
               <IonCard className="card2">
                 <IonCardHeader>
                   <div className="card_title2">
