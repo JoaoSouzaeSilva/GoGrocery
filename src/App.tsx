@@ -23,6 +23,8 @@ import "@ionic/react/css/display.css";
 
 /* Theme variables */
 import "./theme/variables.css";
+import CategoryIcon from "./components/CategoryIcon";
+import CategoriesList from "./components/CategoriesList";
 
 setupIonicReact();
 
@@ -40,14 +42,19 @@ const Routing = () => {
           <Route exact path="/home">
             <Home />
           </Route>
-          {/* <Redirect exact path="/" to="/home" /> */}
+          <Redirect exact path="/" to="/home" />
           <Route exact path="/about">
             <About />
           </Route>
           <Route exact path="/categories">
             <CategoriesPage />
           </Route>
-          <Redirect exact path="/" to="/categories" />
+          <Route exact path="/categoryIcon">
+            <CategoryIcon />
+          </Route>
+          <Route exact path="/categoriesList">
+            <CategoriesList />
+          </Route>
         </Switch>
       </IonReactRouter>
     </>
