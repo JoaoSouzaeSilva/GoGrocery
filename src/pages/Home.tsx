@@ -11,7 +11,7 @@ import headerImg from "../images/header.png";
 const Home = () => {
   return (
     <IonPage>
-      {<IonToolbar className="ion-toolbar-home">
+      <IonToolbar className="ion-toolbar-home">
         <img className="img" slot="start" src={headerImg} />
         <div className="img_text">have it your way</div>
         <IonButtons slot="end" className="ion-buttons-home">
@@ -25,7 +25,7 @@ const Home = () => {
             <p className="button-primary">Sign in</p>
           </IonButton>
         </IonButtons>
-      </IonToolbar>}
+      </IonToolbar>
       <IonContent className="ion-content-home">
         <div className="title">
           <div className="homePage_title">GoGrocery</div>
