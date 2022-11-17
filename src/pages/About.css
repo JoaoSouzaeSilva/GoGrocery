@@ -37,158 +37,122 @@
   filter: opacity(70%);
 }
 
-.ion-card-content-about {
+.about-container {
+  display: grid;
+  grid-template-areas:
+    "why-u-need why-u-need product product"
+    "why-u-need why-u-need product product"
+    "why-u-need why-u-need team team"
+    "why-u-need why-u-need team team";
+  gap: 3%;
+
+  padding: 4%;
+  height: 100%;
+
   color: #47525e;
-  margin-top: 20px;
-  font-weight: bold;
-  text-align: justify;
 }
 
-.card1 {
-  display: flex;
-  flex-direction: column;
-
-  width: 700px;
-  height: 565px;
-  margin-left: 35px;
-  margin-top: 30px;
+.why-u-need {
+  grid-area: why-u-need;
 
   background-color: #8e9a84;
+  border-radius: 20px;
 
   text-align: center;
-
-  border-radius: 20px;
 }
 
-.card_title1 {
-  color: #47525e;
-  margin-top: -45px;
-  margin-left: -55px;
-  background-color: #cbd2c3;
+.why-u-need-header {
+  background-color: #CBD2C3;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
 
-  height: 50px;
-  width: 800px;
-  border-radius: 20px;
+  height: 10%;
+  width: 100%;
+
+  padding: 2%;
 }
 
-.title1 {
-  margin-top: 30px;
-  padding: 8px 0px;
+.why-u-need-title {
+  margin-top: 0;
+  font-weight: bolder;
+
+  position: relative;
 }
 
-.card2 {
-  display: flex;
-  flex-direction: column;
-
-  width: 620px;
-  height: 300px;
-  margin-top: 35px;
+.product {
+  grid-area: product;
 
   background-color: #eaeeed;
+  border-radius: 20px;
 
   text-align: center;
-
-  border-radius: 20px;
 }
 
-.card_title2 {
-  color: #47525e;
-  margin-top: -45px;
-  margin-left: -50px;
+.product-header {
   background-color: #cbd2c3;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 
-  height: 50px;
-  width: 700px;
-  border-radius: 20px;
+  height: 15%;
+  width: 100%;
+
+  padding: 2%;
 }
 
-.title2 {
-  margin-top: 30px;
-  padding: 8px 0px;
+.product-title {
+  margin-top: 0;
+  font-weight: bolder;
+
+  position: relative;
 }
 
-.card3 {
-  display: flex;
-  flex-direction: column;
-
-  width: 620px;
-  height: 255px;
-  border-radius: 20px;
+.team {
+  grid-area: team;
 
   background-color: #b6c4a2;
+  border-radius: 10px;
 
   text-align: center;
 }
 
-.card_title3 {
-  color: #47525e;
-  margin-top: -45px;
-  margin-left: -50px;
+.team-header {
   background-color: #cbd2c3;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 
-  height: 50px;
-  width: 700px;
-  border-radius: 20px;
+  height: 15%;
+  width: 100%;
+  padding: 2%;
 }
 
-.title3 {
-  margin-top: 30px;
-  padding: 8px 0px;
+.team-title {
+  margin-top: 0;
+  font-weight: bolder;
+  position: relative;
 }
 
-@media (max-width: 1414px) {
+.text {
+  color: #47525e;
+  font-family: Lato;
+  font-weight: 600;
+  text-align: left;
 
-  .col1 {
-    display: flex;
-    justify-content: center;
-  }
+  padding: 1%;
+}
 
-  .col2 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+@media (max-width: 480px) {
 
-  .row1 {
-    display: flex;
-    justify-content: center;
-  }
+  .about-container {
+    display: grid;
+    grid-template-areas:
+      "why-u-need why-u-need why-u-need why-u-need"
+      "why-u-need why-u-need why-u-need why-u-need"
+      "product product product product"
+      "team team team team";
 
-  .card2 {
-    display: flex;
-    flex-direction: column;
-  
-    width: 620px;
     height: 100%;
-    margin-bottom: 0.1%;
   
-    background-color: #eaeeed;
-  
-    text-align: center;
-  
-    border-radius: 20px;
-  }
-
-  .card_title2 {
-    width: 125%;
-  }
-
-  .card3 {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: -1.9%;
-  
-    width: 620px;
-    height: 100%;
-    border-radius: 20px;
-  
-    background-color: #b6c4a2;
-  
-    text-align: center;
-  }
-  
-  .card_title3 {
-    width: 125%;
+    color: #47525e;
   }
 
 }
