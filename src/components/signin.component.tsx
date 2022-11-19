@@ -79,7 +79,7 @@ const SignInComponent = () => {
           <IonButton expand="block" fill="solid" className="ion-buttons-signin ion-item-email-pwd">
             Sign In
           </IonButton>
-          <IonButton expand="block" fill="clear" className="btn-signup ion-item-email-pwd" routerLink="/signup">
+          <IonButton expand="block" fill="clear" class="ion-text-wrap" className="btn-signup ion-item-email-pwd" routerLink="/signup">
             Don't have an account? Create one here.
           </IonButton>
         </div>
