@@ -4,8 +4,6 @@ import { IonReactRouter } from "@ionic/react-router";
 import Home from "./pages/Home";
 import About from "./pages/About";
 
-import CategoriesPage from "./pages/CategoriesPage";
-
 import CategoriesPage from "./pages/CategoriesPage"
 import SignIn from "./pages/SignIn"
 import SignUp from "./pages/SignUp"
