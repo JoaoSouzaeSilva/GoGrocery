@@ -9,10 +9,19 @@ import CategoriesList from "../components/categories/categories-list.component";
 import ProductList from "../components/products/product-list.component";
 import headerImg from "../images/header.png";
 import { Categories } from "../data/items.js";
+import { SelectedItems } from "../data/selectedItems.js";
 
-import "./CategoriesPage.css";
+import "./CategoriesPage.scss";
+import { useState } from "react";
+import SlideMenu from "../components/slide-menu/slide-menu.component";
 
 const CategoriesPage = () => {
+  const [open, setOpen] = useState(false);
+
+  const toggleSlidingMenu = () => {
+    setOpen(!open);
+  };
+
   return (
     <>
       <IonPage>
@@ -25,35 +34,38 @@ const CategoriesPage = () => {
             </IonButton>
           </IonButtons>
         </IonToolbar>
-        <IonContent className="ion-content-categories">
-          <div className="first-grid">
-            <h1 className="app-name">GoGrocery</h1>
-            <input
-              type="text"
-              className="search"
-              placeholder="What are you looking for?"
-              color="#cbd2c3"
-              maxLength={38}
-            ></input>
-            <button className="see-list">See List</button>
-            <button className="finish">Finish</button>
-          </div>
-          <div className="divider" />
-          <p className="categories-header">Categories</p>
-          <div className="categories">
+        <SlideMenu enabled={open} selectedItems={SelectedItems} />
+        <div className={open ? "dimmed" : "aux"}>
+          <IonContent className="ion-content-categories">
+            <div className="first-grid">
+              <h1 className="app-name">GoGrocery</h1>
+              <input
+                type="text"
+                className="search"
+                placeholder="What are you looking for?"
+                color="#cbd2c3"
+                maxLength={38}
+              ></input>
+              <button className="see-list" onClick={toggleSlidingMenu}>
+                See List
+              </button>
+              <button className="finish">Finish</button>
+            </div>
+            <div className="divider" />
+            <p className="categories-header">Categories</p>
             <CategoriesList categories={Categories} />
-          </div>
-          <div className="all-categories">
-            {Categories.map((category: any) => (
-              <div id={category.name} className="items">
-                <ProductList
-                  products={category.products}
-                  category={category.name}
-                />
-              </div>
-            ))}
-          </div>
-        </IonContent>
+            <div className="all-categories">
+              {Categories.map((category: any) => (
+                <div id={category.name} className="items">
+                  <ProductList
+                    products={category.products}
+                    category={category.name}
+                  />
+                </div>
+              ))}
+            </div>
+          </IonContent>
+        </div>
       </IonPage>
     </>
   );

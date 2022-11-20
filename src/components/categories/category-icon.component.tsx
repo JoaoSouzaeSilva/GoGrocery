@@ -1,4 +1,4 @@
-import "./category-icon.scss";
+import "./category-icon.styles.scss";
 import React from "react";
 
 const CategoryIcon = ({ categoryName, categoryImage }: any) => {

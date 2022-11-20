@@ -1,6 +1,6 @@
 import ProductCard from "./product-card.component";
 
-import "./product-list.scss";
+import "./product-list.styles.scss";
 
 const ProductList = ({ products, category }: any) => {
   return (

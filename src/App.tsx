@@ -27,6 +27,8 @@ import CategoryIcon from "./components/categories/category-icon.component";
 import CategoriesList from "./components/categories/categories-list.component";
 import ProductCard from "./components/products/product-card.component";
 import ProductList from "./components/products/product-list.component";
+import SlideMenu from "./components/slide-menu/slide-menu.component";
+import SlideMenuItem from "./components/slide-menu/slide-menu-item.component";
 
 setupIonicReact();
 
@@ -62,6 +64,12 @@ const Routing = () => {
           </Route>
           <Route exact path="/product-list">
             <ProductList />
+          </Route>
+          <Route exact path="/slide-menu">
+            <SlideMenu />
+          </Route>
+          <Route exact path="/slide-menu-item">
+            <SlideMenuItem />
           </Route>
         </Switch>
       </IonReactRouter>

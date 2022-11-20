@@ -1,6 +1,6 @@
 import CategoryIcon from "./category-icon.component";
 
-import "./categories-list.scss";
+import "./categories-list.styles.scss";
 
 const CategoriesList = ({ categories }: any) => {
   return (
