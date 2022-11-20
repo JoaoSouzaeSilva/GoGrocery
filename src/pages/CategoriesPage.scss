@@ -119,13 +119,13 @@
 
 .dimmed {
   height: 100vh;
-  width: auto;
+  width: 100vw;
 
   background-color: gray;
   filter: opacity(50%);
 }
 
-.aux {
+.undimmed {
   height: 100vh;
   width: auto;
 
@@ -135,6 +135,10 @@
 
 .items {
   margin-left: 4%;
+}
+
+.anchor-disable {
+  cursor: default;
 }
 
 @media (max-width: 480px) {

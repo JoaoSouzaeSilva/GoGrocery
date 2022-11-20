@@ -35,7 +35,7 @@ const CategoriesPage = () => {
           </IonButtons>
         </IonToolbar>
         <SlideMenu enabled={open} selectedItems={SelectedItems} />
-        <div className={open ? "dimmed" : "aux"}>
+        <div className={open ? "dimmed" : "undimmed"}>
           <IonContent className="ion-content-categories">
             <div className="first-grid">
               <h1 className="app-name">GoGrocery</h1>

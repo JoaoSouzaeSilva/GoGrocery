@@ -1,10 +1,10 @@
-import { useState } from "react";
 import { SelectedItems } from "../../data/selectedItems.js";
 import SlideMenuItem from "./slide-menu-item.component";
 
 import "./slide-menu.styles.scss";
 
 const SlideMenu = ({ selectedItems, enabled }: any) => {
+
   return (
     <>
       <div className={`menu-${enabled ? "enabled" : "disabled"}`}>
@@ -24,7 +24,8 @@ const SlideMenu = ({ selectedItems, enabled }: any) => {
                 </div>
               ))}
             </div>
-            <button className="finish-in-menu">Finish</button>
+            <button className="close-menu">Close list</button>
+            <button className="finish-in-menu" >Finish</button>
           </div>
         </div>
       </div>
