@@ -1,0 +1,44 @@
+.menu-item {
+  margin-top: 10%;
+  margin-left: 6%;
+}
+
+.item-image {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 100%;
+  align-self: center;
+
+  border-width: 1px;
+  border-color: #8e9a84;
+  border-style: solid;
+}
+
+.item-name {
+  font-family: Lato;
+  font-size: small;
+  font-weight: bold;
+  color: #47525e;
+
+  margin-left: 22%;
+  margin-top: -16%;
+}
+
+.item-quantity {
+  font-family: Lato;
+  font-size: small;
+  font-weight: bold;
+  color: #47525e;
+  margin-left: 22%;
+  margin-top: -5%;
+
+}
+
+.item-divider {
+  width: 50%;
+  border-bottom: 2px solid #8e9a84;
+  margin: auto;
+  margin-top: 15%;
+  margin-left: 10%;
+}

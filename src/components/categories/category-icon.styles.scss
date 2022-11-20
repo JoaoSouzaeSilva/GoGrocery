@@ -1,0 +1,27 @@
+.image {
+  width: 85px;
+  height: 85px;
+  object-fit: cover;
+  border-radius: 100%;
+  align-self: center;
+}
+
+.image-name {
+  font-family: Lato;
+  font-size: small;
+  font-weight: bold;
+  color: #47525e;
+
+  margin-top: 4%;
+}
+
+.icon-element {
+  text-align: center;
+}
+
+@media (max-width: 480px) {
+  .image {
+    width: 70px;
+    height: 70px;
+  }
+}

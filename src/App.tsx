@@ -1,11 +1,15 @@
-import { Redirect, Route, Router, Switch } from "react-router-dom";
-import { IonApp, IonRouterOutlet, setupIonicReact } from "@ionic/react";
+import { Redirect, Route, Switch } from "react-router-dom";
+import { IonApp, setupIonicReact } from "@ionic/react";
 import { IonReactRouter } from "@ionic/react-router";
 import Home from "./pages/Home";
 import About from "./pages/About";
+
+import CategoriesPage from "./pages/CategoriesPage";
+
 import CategoriesPage from "./pages/CategoriesPage"
 import SignIn from "./pages/SignIn"
 import SignUp from "./pages/SignUp"
+
 
 /* Core CSS required for Ionic components to work properly */
 import "@ionic/react/css/core.css";
@@ -25,8 +29,12 @@ import "@ionic/react/css/display.css";
 
 /* Theme variables */
 import "./theme/variables.css";
-import CategoryIcon from "./components/CategoryIcon";
-import CategoriesList from "./components/CategoriesList";
+import CategoryIcon from "./components/categories/category-icon.component";
+import CategoriesList from "./components/categories/categories-list.component";
+import ProductCard from "./components/products/product-card.component";
+import ProductList from "./components/products/product-list.component";
+import SlideMenu from "./components/slide-menu/slide-menu.component";
+import SlideMenuItem from "./components/slide-menu/slide-menu-item.component";
 
 setupIonicReact();
 
@@ -62,6 +70,18 @@ const Routing = () => {
           </Route>
           <Route exact path="/categoriesList">
             <CategoriesList />
+          </Route>
+          <Route exact path="/product">
+            <ProductCard />
+          </Route>
+          <Route exact path="/product-list">
+            <ProductList />
+          </Route>
+          <Route exact path="/slide-menu">
+            <SlideMenu />
+          </Route>
+          <Route exact path="/slide-menu-item">
+            <SlideMenuItem />
           </Route>
         </Switch>
       </IonReactRouter>

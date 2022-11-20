@@ -1,68 +1,26 @@
 import {
   IonButton,
   IonButtons,
-  IonCardContent,
-  IonCol,
   IonContent,
-  IonGrid,
-  IonInput,
   IonPage,
-  IonRow,
   IonToolbar,
 } from "@ionic/react";
-import CategoriesList from "../components/CategoriesList";
+import CategoriesList from "../components/categories/categories-list.component";
+import ProductList from "../components/products/product-list.component";
 import headerImg from "../images/header.png";
+import { Categories } from "../data/items.js";
+import { SelectedItems } from "../data/selectedItems.js";
 
-import "./CategoriesPage.css";
+import "./CategoriesPage.scss";
+import { useState } from "react";
+import SlideMenu from "../components/slide-menu/slide-menu.component";
 
 const CategoriesPage = () => {
-  const CATEGORIES = [
-    {
-      id: "c1",
-      name: "Meat",
-      img: "Meat.jpeg"
-    },
-    {
-      id: "c2",
-      name: "Seafood",
-      img: "Seafood.png"
-    },
-    {
-      id: "c3",
-      name: "Produce",
-      img: "Produce.jpeg"
-    },
-    {
-      id: "c4",
-      name: "Dairy, eggs & cheese",
-      img: "Dairy_eggs_cheese.png"
-    },
-    {
-      id: "c5",
-      name: "Bakery",
-      img: "Bakery.png"
-    },
-    {
-      id: "c6",
-      name: "Flowers",
-      img: "Flowers.png"
-    },
-    {
-      id: "c7",
-      name: "Frozen",
-      img: "Frozen.png"
-    },
-    {
-      id: "c8",
-      name: "Bulk",
-      img: "Bulk.png"
-    },
-    {
-      id: "c9",
-      name: "Wine & spirits",
-      img: "Wine_spirits.png"
-    },
-  ];
+  const [open, setOpen] = useState(false);
+
+  const toggleSlidingMenu = () => {
+    setOpen(!open);
+  };
 
   return (
     <>
@@ -71,44 +29,43 @@ const CategoriesPage = () => {
           <img className="img" slot="start" src={headerImg} />
           <div className="img_text">have it your way</div>
           <IonButtons slot="end" className="ion-buttons-categories">
-            <IonButton shape="round" href="/About">
-              <p className="button-secondary">About</p>
-            </IonButton>
             <IonButton shape="round">
               <p className="button-primary">Back</p>
             </IonButton>
           </IonButtons>
         </IonToolbar>
-        <IonContent className="ion-content-categories">
-          <IonGrid className="categories-grid">
-            <IonRow className="row1">
-              <IonCol size="3" className="col1">
-                <h1 className="app-name">Go Grocery</h1>
-              </IonCol>
-              <IonCol size="3" offset="1.5" className="col2">
-                <IonInput
-                  className="input"
-                  placeholder="What are you looking for?"
-                  maxlength={34}
-                />
-              </IonCol>
-              <IonCol size="3" offset="1.5" className="col3">
-                <IonButtons className="list-buttons">
-                  <IonButton shape="round" className="see-list-button">
-                    <p>See List</p>
-                  </IonButton>
-                  <IonButton shape="round" className="finish-button">
-                    <p>Finish</p>
-                  </IonButton>
-                </IonButtons>
-              </IonCol>
-            </IonRow>
+        <SlideMenu enabled={open} selectedItems={SelectedItems} />
+        <div className={open ? "dimmed" : "aux"}>
+          <IonContent className="ion-content-categories">
+            <div className="first-grid">
+              <h1 className="app-name">GoGrocery</h1>
+              <input
+                type="text"
+                className="search"
+                placeholder="What are you looking for?"
+                color="#cbd2c3"
+                maxLength={38}
+              ></input>
+              <button className="see-list" onClick={toggleSlidingMenu}>
+                See List
+              </button>
+              <button className="finish">Finish</button>
+            </div>
             <div className="divider" />
-            <IonRow className="categories-list">
-              <CategoriesList categories={CATEGORIES} />
-            </IonRow>
-          </IonGrid>
-        </IonContent>
+            <p className="categories-header">Categories</p>
+            <CategoriesList categories={Categories} />
+            <div className="all-categories">
+              {Categories.map((category: any) => (
+                <div id={category.name} className="items">
+                  <ProductList
+                    products={category.products}
+                    category={category.name}
+                  />
+                </div>
+              ))}
+            </div>
+          </IonContent>
+        </div>
       </IonPage>
     </>
   );
