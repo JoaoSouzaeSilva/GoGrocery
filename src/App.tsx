@@ -8,7 +8,6 @@ import CategoriesPage from "./pages/CategoriesPage"
 import SignIn from "./pages/SignIn"
 import SignUp from "./pages/SignUp"
 
-
 /* Core CSS required for Ionic components to work properly */
 import "@ionic/react/css/core.css";
 
@@ -27,6 +26,7 @@ import "@ionic/react/css/display.css";
 
 /* Theme variables */
 import "./theme/variables.css";
+
 import CategoryIcon from "./components/categories/category-icon.component";
 import CategoriesList from "./components/categories/categories-list.component";
 import ProductCard from "./components/products/product-card.component";
@@ -62,24 +62,6 @@ const Routing = () => {
           </Route>
           <Route exact path="/signup">
             <SignUp/>
-          </Route>
-          <Route exact path="/categoryIcon">
-            <CategoryIcon />
-          </Route>
-          <Route exact path="/categoriesList">
-            <CategoriesList />
-          </Route>
-          <Route exact path="/product">
-            <ProductCard />
-          </Route>
-          <Route exact path="/product-list">
-            <ProductList />
-          </Route>
-          <Route exact path="/slide-menu">
-            <SlideMenu />
-          </Route>
-          <Route exact path="/slide-menu-item">
-            <SlideMenuItem />
           </Route>
         </Switch>
       </IonReactRouter>
