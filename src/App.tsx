@@ -3,7 +3,13 @@ import { IonApp, setupIonicReact } from "@ionic/react";
 import { IonReactRouter } from "@ionic/react-router";
 import Home from "./pages/Home";
 import About from "./pages/About";
+
 import CategoriesPage from "./pages/CategoriesPage";
+
+import CategoriesPage from "./pages/CategoriesPage"
+import SignIn from "./pages/SignIn"
+import SignUp from "./pages/SignUp"
+
 
 /* Core CSS required for Ionic components to work properly */
 import "@ionic/react/css/core.css";
@@ -46,12 +52,18 @@ const Routing = () => {
           <Route exact path="/home">
             <Home />
           </Route>
-          <Redirect exact path="/" to="/home" />
+          <Redirect exact path="/" to="/home"/> 
           <Route exact path="/about">
             <About />
           </Route>
           <Route exact path="/categories">
-            <CategoriesPage />
+            <CategoriesPage/>
+          </Route>
+          <Route exact path="/signin">
+            <SignIn />
+          </Route>
+          <Route exact path="/signup">
+            <SignUp/>
           </Route>
           <Route exact path="/categoryIcon">
             <CategoryIcon />

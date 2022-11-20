@@ -19,10 +19,10 @@ const Home = () => {
           <IonButton shape="round" href="/About">
             <p className="button-secondary">About</p>
           </IonButton>
-          <IonButton shape="round">
-            <p className="button-secondary">Sign up</p>
+          <IonButton shape="round" href="/SignUp">
+            <p className="button-secondary" >Sign up</p>
           </IonButton>
-          <IonButton shape="round">
+          <IonButton shape="round" href="/SignIn">
             <p className="button-primary">Sign in</p>
           </IonButton>
         </IonButtons>
