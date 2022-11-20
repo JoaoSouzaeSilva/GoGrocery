@@ -1,0 +1,15 @@
+.categories-list {
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+
+  width: 100%;
+  padding: 3%;
+
+  margin-top: -2.5%;
+}
+
+@media (max-width: 480px) {
+    .categories-list {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
