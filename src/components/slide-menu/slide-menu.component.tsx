@@ -3,7 +3,7 @@ import SlideMenuItem from "./slide-menu-item.component";
 
 import "./slide-menu.styles.scss";
 
-const SlideMenu = ({ selectedItems, enabled }: any) => {
+const SlideMenu = ({ enabled }: any) => {
 
   return (
     <>

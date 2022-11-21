@@ -141,6 +141,13 @@
   cursor: default;
 }
 
+.dismiss-menu {
+  left: 0;
+  bottom: 0;
+  height: 90%;
+  width: 80%;
+}
+
 @media (max-width: 480px) {
   .first-grid {
     display: grid;
