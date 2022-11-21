@@ -24,7 +24,6 @@ const SlideMenu = ({ enabled }: any) => {
                 </div>
               ))}
             </div>
-            <button className="close-menu">Close list</button>
             <button className="finish-in-menu" >Finish</button>
           </div>
         </div>
