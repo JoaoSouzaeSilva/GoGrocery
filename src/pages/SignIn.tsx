@@ -17,10 +17,13 @@ import {
         <IonToolbar className="ion-toolbar-home">
           <img className="img" slot="start" src={headerImg} />
           <div className="img_text">have it your way</div>
-          <IonButtons slot="end" className="ion-buttons-home">
+          <IonButtons slot="end">
             <IonButton shape="round" href="/About">
-              <p className="button-secondary">About</p>
+              <p className="ion-buttons-about" >About</p>
             </IonButton>
+            <IonButton shape="round" href="/SignUp">
+            <p className="ion-buttons-signup" >Sign up</p>
+          </IonButton>
           </IonButtons>
         </IonToolbar>
         <IonContent className="ion-content-signin ion-padding">

@@ -9,10 +9,6 @@
   font-weight: bold;
 }
 
-.button-secondary {
-  font-weight: bold;
-}
-
 .ion-toolbar-home {
   --background: #cbd2c3;
   display: flex;
