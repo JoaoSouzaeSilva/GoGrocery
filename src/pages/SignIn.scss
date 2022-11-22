@@ -46,13 +46,16 @@
     }
 
   }
-
+  
   .labelfix{
     --background: #CBD2C3;
   }
 
+  .ion-buttons-about {
+    color: #47525e;
+  }
 
-.ion-buttons-signin {
+  .ion-buttons-signin {
     color: #47525E;
     background-color: #8E9A84;
     border-radius: 8px;
@@ -60,7 +63,10 @@
 
   .ion-buttons-signup {
     color: #47525E;
-    width: 100%;
+    background: #8e9a84;
+    border-radius: 8px;
+    padding: 10px;
+    font-weight: bold;
   }
 
   .ion-item-email-pwd {
