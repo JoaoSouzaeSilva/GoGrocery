@@ -2,7 +2,19 @@ import ProductCard from "./product-card.component";
 
 import "./product-list.styles.scss";
 
-const ProductList = ({ products, category }: any) => {
+const ProductList = ({
+  products,
+  category,
+  onSelectItem,
+  onSetProductInfo,
+}: any) => {
+  /*   let info: any[] = [];
+  const handleGetData = ({ name, image }: any) => {
+    info.push(name);
+    info.push(image);
+    console.log(info)
+  }; */
+
   return (
     <>
       <div className="text-area-grid">
@@ -15,6 +27,8 @@ const ProductList = ({ products, category }: any) => {
               productName={product.name}
               productPrice={product.price}
               productImg={product.img}
+              onSelectItem={onSelectItem}
+              onSetProductInfo={onSetProductInfo}
             ></ProductCard>
           </div>
         ))}

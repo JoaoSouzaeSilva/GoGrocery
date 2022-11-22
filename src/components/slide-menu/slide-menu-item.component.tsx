@@ -1,8 +1,6 @@
 import "./slide-menu-item.scss";
 
 const SlideMenuItem = ({ itemName, quantity, img }: any) => {
-  console.log(process.env.PUBLIC_URL + "/img/" + img)
-  console.log(itemName)
   return (
     <>
       <div className="menu-item">

@@ -14,13 +14,28 @@ import { SelectedItems } from "../data/selectedItems.js";
 import "./CategoriesPage.scss";
 import { useState } from "react";
 import SlideMenu from "../components/slide-menu/slide-menu.component";
+import AddToList from "../components/products/add-to-list.component";
 
 const CategoriesPage = () => {
   const [open, setOpen] = useState(false);
+  const [itemSelected, setItemSelected] = useState(false);
+  let array : any[] = [];
+  const [productInfo, setProductInfo] = useState(array);
 
   const toggleSlidingMenu = () => {
     setOpen(!open);
   };
+
+  const handleSelectItem = () => {
+    setItemSelected(!itemSelected);
+  };
+
+  const handleSetProductInfo = (productName: any, productImage: any) => {
+    setProductInfo([productName, productImage])
+    return productInfo;
+  };
+
+  let itemCard = itemSelected ? <AddToList name={productInfo[0]} img={productInfo[1]} /> : undefined;
 
   return (
     <>
@@ -35,8 +50,18 @@ const CategoriesPage = () => {
           </IonButtons>
         </IonToolbar>
         <SlideMenu enabled={open} selectedItems={SelectedItems} />
-        <div className={open ?  "dimmed" : "undimmed"}>
-          <IonContent className="ion-content-categories" onClick={open? toggleSlidingMenu: undefined}>
+        {itemCard}
+        <div className={open ? "dimmed" : itemSelected ? "dimmed" : "undimmed"}>
+          <IonContent
+            className="ion-content-categories"
+            onClick={
+              open
+                ? toggleSlidingMenu
+                : itemSelected
+                ? handleSelectItem
+                : undefined
+            }
+          >
             <div className="first-grid">
               <h1 className="app-name">GoGrocery</h1>
               <input
@@ -60,6 +85,8 @@ const CategoriesPage = () => {
                   <ProductList
                     products={category.products}
                     category={category.name}
+                    onSelectItem={handleSelectItem}
+                    onSetProductInfo={handleSetProductInfo}
                   />
                 </div>
               ))}

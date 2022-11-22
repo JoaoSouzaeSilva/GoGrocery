@@ -3,10 +3,14 @@
   height: 75%;
   align-self: center;
   text-align: center;
-  margin-top: 6%;
+
   background-color: #cbd3c2;
 
   border-radius: 20px;
+  z-index: 9998;
+  position: fixed;
+
+  margin-top: 9%;
 }
 
 .item-name {
@@ -65,15 +69,4 @@
 
   margin-top: 10%;
   margin-left: 55%;
-}
-
-.quantity-up {
-  height: 100%;
-}
-
-.up-text {
-}
-
-.quantity-down {
-  height: 100%;
 }
