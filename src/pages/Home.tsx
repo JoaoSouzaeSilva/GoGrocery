@@ -16,10 +16,10 @@ const Home = () => {
         <div className="img_text">have it your way</div>
         <IonButtons slot="end" className="ion-buttons-home">
           <IonButton shape="round" href="/About">
-            <p className="button-secondary">About</p>
+            <p>About</p>
           </IonButton>
           <IonButton shape="round" href="/SignUp">
-            <p className="button-secondary" >Sign up</p>
+            <p>Sign up</p>
           </IonButton>
           <IonButton shape="round" href="/SignIn">
             <p className="button-primary">Sign in</p>
