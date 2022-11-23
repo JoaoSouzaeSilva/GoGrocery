@@ -4,6 +4,7 @@ import {
   IonButton,
   IonButtons,
   IonContent,
+  IonIcon,
   IonItem,
   IonLabel,
   IonList,
@@ -14,9 +15,21 @@ import {
 } from "@ionic/react";
 import "./Home.scss";
 import headerImg from "../images/header.png";
-import smartphone from "../images/smartphone.png";
+import smartphone from "../images/smartphone1.png";
+import { chevronDownOutline } from "ionicons/icons";
 
 const Home = () => {
+
+  const handlePanel2Redirect = () => {
+    return (event: React.MouseEvent) => {
+      const element = document.getElementById("panel2");
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+      event.preventDefault();
+    };
+  }
+
   return (
     <IonPage>
       <IonToolbar className="ion-toolbar-home">
@@ -43,8 +56,11 @@ const Home = () => {
             eiusmod tempor incididunt ut labore et dolore magna aliqua.
           </div>
         </div>
+        <IonButton className="arrow-down" fill="clear" size="large" onClick={handlePanel2Redirect()}>
+          <IonIcon className="icon" slot="icon-only" icon={chevronDownOutline}></IonIcon>
+        </IonButton>
 
-        <div className="panel2">
+        <div className="panel2" id="panel2">
           <div className="phone-grid">
             <img
               className="phone"
@@ -149,7 +165,7 @@ const Home = () => {
 
           <div className="footer">
             <p>
-             <IonText className="green"> Get in contact with us through <strong>gogrocery@gogrocery.com</strong> ou em <strong>210 000 000</strong></IonText>
+             <IonText className="green"> Get in contact with us through <strong>gogrocery@gogrocery.com</strong> or <strong>210 000 000</strong></IonText>
             </p>
           </div>
         </div>
