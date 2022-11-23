@@ -1,24 +1,14 @@
 import { useState } from "react";
 import "./add-to-list.styles.scss";
 
-const AddToList = ({ name, img, price_kg, onAddItem }: any) => {
-  const [quantity, setQuantity] = useState(1);
-
-  const handleChangeQuantity = (action: any, quantity: any) => {
-    switch (action) {
-      case "up":
-        quantity = quantity + 1;
-        setQuantity(quantity);
-        break;
-      case "down":
-        if (quantity > 0) {
-          quantity = quantity - 1;
-          setQuantity(quantity);
-        }
-        break;
-    }
-    return quantity;
-  };
+const AddToList = ({
+  name,
+  img,
+  price_kg,
+  onAddItem,
+  quantity,
+  onChangeQuantity,
+}: any) => {
 
   return (
     <>
@@ -35,14 +25,14 @@ const AddToList = ({ name, img, price_kg, onAddItem }: any) => {
         <div className="quantity-selector">
           <button
             className="quantity-down-button"
-            onClick={() => handleChangeQuantity("down", quantity)}
+            onClick={() => onChangeQuantity("down", quantity)}
           >
             <p className="minus">-</p>
           </button>
           <div className="quantity-selected">{quantity}</div>
           <button
             className="quantity-up-button"
-            onClick={() => handleChangeQuantity("up", quantity)}
+            onClick={() => onChangeQuantity("up", quantity)}
           >
             <p className="plus">+</p>
           </button>

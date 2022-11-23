@@ -9,7 +9,6 @@ import CategoriesList from "../components/categories/categories-list.component";
 import ProductList from "../components/products/product-list.component";
 import headerImg from "../images/header.png";
 import { Categories } from "../data/items.js";
-import { SelectedItems } from "../data/selectedItems.js";
 
 import "./CategoriesPage.scss";
 import { useState } from "react";
@@ -23,6 +22,7 @@ const CategoriesPage = () => {
   const [itemSelected, setItemSelected] = useState(false);
   const [productInfo, setProductInfo] = useState(array);
   const [addedItems, setAddedItems] = useState(noItemsArray);
+  const [itemQuantity, setItemQuantity] = useState(1);
 
   //Define wether the sliding menu is toggled or not
   const toggleSlidingMenu = () => {
@@ -41,7 +41,12 @@ const CategoriesPage = () => {
     productPriceKG: any,
     productQuantity: any
   ) => {
-    setProductInfo([productName, productImage, productPriceKG, productQuantity]);
+    setProductInfo([
+      productName,
+      productImage,
+      productPriceKG,
+      productQuantity,
+    ]);
     return productInfo;
   };
 
@@ -51,24 +56,38 @@ const CategoriesPage = () => {
     itemArray.forEach((item: any) => {
       aux.push(item[0]);
     });
-
     return aux.includes(itemName);
   };
 
   //Add the selected item to a list of items that will be listed in the sliding menu
   const handleAddItem = (name: any, img: any, quantity: any) => {
     if (!alreadyInList(name, addedItems)) {
-      quantity = 1;
-      setAddedItems((prevItems) => [...prevItems, [name, img, quantity]]);
+      setAddedItems((prevItems) => [...prevItems, [name, img, itemQuantity]]);
       return addedItems;
     } else {
-      quantity = addedItems.find((item) => item[0] == name)[2] + 1;
-      setAddedItems(prevItems => {
-        const updatedItems = prevItems.filter(item => item[0] != name);
-        const newItems = [...updatedItems, [name, img, quantity]]
-        return newItems
-      })
+      /* quantity = addedItems.find((item) => item[0] == name)[2] + itemQuantity; */
+      setAddedItems((prevItems) => {
+        const updatedItems = prevItems.filter((item) => item[0] !== name);
+        const newItems = [...updatedItems, [name, img, itemQuantity]];
+        return newItems;
+      });
     }
+  };
+
+  const handleChangeQuantity = (action: any, quantity: any) => {
+    switch (action) {
+      case "up":
+        quantity = quantity + 1;
+        setItemQuantity(quantity);
+        break;
+      case "down":
+        if (quantity > 0) {
+          quantity = quantity - 1;
+          setItemQuantity(quantity);
+        }
+        break;
+    }
+    return itemQuantity;
   };
 
   let itemCard = itemSelected ? (
@@ -76,7 +95,9 @@ const CategoriesPage = () => {
       name={productInfo[0]}
       img={productInfo[1]}
       price_kg={productInfo[2]}
+      quantity={itemQuantity}
       onAddItem={handleAddItem}
+      onChangeQuantity={handleChangeQuantity}
     />
   ) : undefined;
 
