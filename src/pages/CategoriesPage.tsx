@@ -44,10 +44,30 @@ const CategoriesPage = () => {
     return productInfo;
   };
 
+  //Return true if the item is already in the list, false otherwise
+  const alreadyInList = (itemName: any, itemArray: any) => {
+    let aux: any[] = [];
+    itemArray.forEach((item: any) => {
+      aux.push(item[0]);
+    });
+
+    return aux.includes(itemName);
+  };
+
   //Add the selected item to a list of items that will be listed in the sliding menu
-  const handleAddItem = (name: any, img: any) => {
-    setAddedItems((prevItems) => [...prevItems, [name, img]]);
-    return addedItems;
+  const handleAddItem = (name: any, img: any, quantity: any) => {
+    if (!alreadyInList(name, addedItems)) {
+      quantity = 1;
+      setAddedItems((prevItems) => [...prevItems, [name, img, quantity]]);
+      return addedItems;
+    } else {
+      quantity = addedItems.find((item) => item[0] == name)[2] + 1;
+      setAddedItems(prevItems => {
+        const updatedItems = prevItems.filter(item => item[0] != name);
+        const newItems = [...updatedItems, [name, img, quantity]]
+        return newItems
+      })
+    }
   };
 
   let itemCard = itemSelected ? (
