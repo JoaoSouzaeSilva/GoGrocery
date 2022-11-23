@@ -5,11 +5,11 @@ const SlideMenuItem = ({ itemName, quantity, img }: any) => {
     <>
       <div className="menu-item">
         <img
-          className="item-image"
+          className="item-image-menu"
           src={process.env.PUBLIC_URL + "/img/" + img}
         />
-        <p className="item-name">{itemName}</p>
-        <p className="item-quantity">{quantity}</p>
+        <p className="item-name-menu">{itemName}</p>
+        <p className="item-quantity-menu">{quantity + "x"}</p>
         <div className="item-divider" />
       </div>
     </>

@@ -18,7 +18,7 @@ const SlideMenu = ({ enabled, selectedItems }: any) => {
                 <div className="content-item">
                   <SlideMenuItem
                     itemName={item[0]}
-                    quantity="1x"
+                    quantity={item[2]}
                     img={item[1]}
                   ></SlideMenuItem>
                 </div>

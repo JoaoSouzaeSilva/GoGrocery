@@ -1,6 +1,15 @@
+import { useState } from "react";
 import "./add-to-list.styles.scss";
 
-const AddToList = ({name, img, price_kg, onAddItem}: any) => {
+const AddToList = ({
+  name,
+  img,
+  price_kg,
+  onAddItem,
+  quantity,
+  onChangeQuantity,
+}: any) => {
+
   return (
     <>
       <div className="select-quantity">
@@ -13,7 +22,21 @@ const AddToList = ({name, img, price_kg, onAddItem}: any) => {
           <p className="price-kg-text">{price_kg}</p>
           <p className="price-unit-text">Unit Price</p>
         </div>
-        <div className="quantity-selector"></div>
+        <div className="quantity-selector">
+          <button
+            className="quantity-down-button"
+            onClick={() => onChangeQuantity("down", quantity)}
+          >
+            <p className="minus">-</p>
+          </button>
+          <div className="quantity-selected">{quantity}</div>
+          <button
+            className="quantity-up-button"
+            onClick={() => onChangeQuantity("up", quantity)}
+          >
+            <p className="plus">+</p>
+          </button>
+        </div>
         <button
           className="add-to-list-button"
           onClick={() => {
