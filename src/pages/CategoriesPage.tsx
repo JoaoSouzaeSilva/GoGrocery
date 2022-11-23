@@ -38,9 +38,10 @@ const CategoriesPage = () => {
   const handleSetProductInfo = (
     productName: any,
     productImage: any,
-    productPriceKG: any
+    productPriceKG: any,
+    productQuantity: any
   ) => {
-    setProductInfo([productName, productImage, productPriceKG]);
+    setProductInfo([productName, productImage, productPriceKG, productQuantity]);
     return productInfo;
   };
 

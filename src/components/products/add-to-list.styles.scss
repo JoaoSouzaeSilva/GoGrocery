@@ -83,6 +83,7 @@
   margin-left: -70%;
   margin-top: 18%;
 }
+
 .price-unit-text {
   color: red;
 
@@ -91,4 +92,53 @@
 
   margin-left: -70%;
   margin-top: -4%;
+}
+
+.quantity-down-button {
+  background-color: #ffffff;
+  color: red;
+
+  margin-left: -15%;
+  position: absolute;
+
+  width: 10%;
+  height: 7%;
+
+  border-radius: 10px;
+}
+
+.minus {
+  font-weight: bolder;
+  margin-top: 10px;
+
+  position: relative;
+}
+
+.quantity-up-button {
+  background-color: #ffffff;
+  color: red;
+
+  margin-left: 4.99%;
+  position: absolute;
+
+  width: 10%;
+  height: 7%;
+
+  border-radius: 10px;
+}
+
+.plus {
+  font-weight: bolder;
+  margin-top: 10px;
+
+  position: relative;
+}
+
+.quantity-selected {
+  color: #47525E;
+
+  position: absolute;
+
+  margin-left: 14%;
+  margin-top: 2%;
 }
