@@ -1,0 +1,314 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat+Subrayada:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Catamaran:wght@300;500&family=Magra&display=swap");
+
+
+.ion-buttons-home {
+  color: #47525e;
+}
+
+.button-primary {
+  background: #8e9a84;
+  border-radius: 8px;
+  padding: 10px;
+  font-weight: bold;
+}
+
+.ion-toolbar-home {
+  --background: #cbd2c3;
+  display: flex;
+  height: 75px;
+  width: 100%;
+}
+
+.img_text {
+  font-size: small;
+  margin-left: 6px;
+  margin-top: 60px;
+  color: #47525e;
+}
+
+.img {
+  height: 100%;
+}
+
+.ion-content-home {
+  --background: none;
+  background-image: url("../images/home_page.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: center;
+  height: 100%;
+  width: 100%;
+}
+
+.panel1 {
+  height: 100%;
+}
+
+.title {
+  font-family: Lato;
+  margin-left: 50%;
+  margin-top: 10%;
+  width: 40%;
+}
+
+.homePage_title {
+  color: #47525e;
+  font-size: 50px;
+  font-weight: bold;
+  text-align: center;
+  overflow: auto;
+}
+
+.separator {
+  width: 100%;
+  border-bottom: 1px solid #47525e;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.homePage_subText {
+  color: #47525e;
+  font-size: 25px;
+  width: 100%;
+  text-align: center;
+}
+
+@media (min-width: 300px) {
+
+  .title {
+    width: 365px;
+    height: 150px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-top: -95px;
+    margin-left: -183px;
+  }
+
+  .homePage_title {
+    color: #47525e;
+    font-size: 40px;
+    text-align: center;
+    overflow: auto;
+   
+   
+  }
+
+  .separator {
+    width: 340px;
+    border-bottom: 1px solid #47525e;
+    margin-top: 5px;
+    margin-left: 10px;
+  }
+
+  .homePage_subText {
+    color: #47525e;
+    font-size: 15px;
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* css for new page below home page*/
+
+
+.phone-grid {
+  display: flex;
+  .phone{
+    margin-left:0.2rem;
+    margin-right:0.2rem; 
+  }
+}
+
+.panel2 {
+/*   z-index: 0; */
+  color: #47525e;
+  height: auto;
+  width: 100%;
+  position: absolute;
+  background: #e9e5e1;
+
+  p:first-child {
+    color: #47525e;
+    font-family: "Magra", sans-serif;
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+  }
+
+  p {
+    text-align: center;
+    color:  #47525e;
+  }
+
+  h2 {
+    font-family: "Montserrat Subrayada", sans-serif;
+    font-weight: bold;
+    font-size: 3rem;
+    text-align: center;
+    //color:rgb(54, 53, 53);
+    color:  #47525e;
+  }
+
+  
+}
+
+.accordion {
+  margin: 0 auto;
+  
+
+  ion-label {
+    font-family: "Roboto", sans-serif;
+    text-align: center;
+    
+  }
+  .question {
+    color: #47525e;
+    font-weight: bold;
+  }
+}
+
+.footer {
+  position: absolute;
+  width: 100%;
+  background-color: #e9e5e1;
+  text-align: center;
+  padding-bottom: 1rem;
+  border-top-style: solid;
+  border-top-width: 0.05rem;
+  border-top-color: rgb(54, 53, 53);
+  p {
+    padding: 0rem !important;
+  }
+  a {
+    font-size: 1.2rem;
+    text-decoration: none;
+  }
+  a:hover {
+    color: #bb8a59;
+  }
+}
+
+//small screens
+@media (min-width: 300px) {
+ 
+  .p1 {
+    font-size: 3rem;
+  }
+
+  .p2 {
+    font-size: 1.1em;
+    padding-left: 0.2rem;
+  } 
+
+  .phone {
+    display: none;
+  }
+
+  p {
+    margin: 1rem 0;
+  }
+
+  .description {
+    padding-bottom: 1rem;
+    padding-left: 3rem;
+    width: 90%;
+    text-align: match-parent;
+  }
+
+  h2 {
+    padding: 2rem;
+  }
+
+  .panel2{
+
+    margin-top: 100vh;
+
+    p:first-child{
+      margin-top: 2rem;
+    }
+  }
+
+  .accordion {
+    width: 100%;
+    padding-bottom: 5rem;
+  }
+
+  .footer {
+    p {
+      margin: 0.5rem 0;
+      padding: 0.5rem 1rem;
+    }
+  }
+}
+
+//big screens
+@media (min-width: 800px) {
+
+  .title {
+    width: 365px;
+    height: 150px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-top: -95px;
+    margin-left: -183px;
+  }
+
+  .p1 {
+    font-size: 10vmin;
+  }
+
+  .p2 {
+    font-size: 2.5vmin;
+    padding-left: 0.4rem;
+  }
+
+  .phone {
+    display: inline;
+    position: relative;
+    z-index: 2;
+    margin-top: 1rem;
+    margin-right: 1rem;
+    height: 50vh;
+  }
+
+  .description {
+    padding-left: 1rem;
+    padding-right: 5rem;
+  } 
+
+  p{
+    margin: 5rem 0;
+    padding: 0.5rem 1rem;
+  }
+
+  h2{
+    padding: 5rem;
+  }
+
+  .panel2{
+    p:first-child {
+      margin: 1rem 0;
+    }
+  }
+
+  .accordion {
+    width: 60%;
+    padding-bottom: 5rem;
+  }
+
+  .footer {
+    p {
+      padding: 0rem !important;
+    }
+  }
+
+}
+
+.green{
+  color: #47525e;
+  font-size: 18px;
+}
