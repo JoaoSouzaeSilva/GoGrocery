@@ -1,5 +1,7 @@
+import { IonContent, IonPopover } from "@ionic/react";
 import { useState } from "react";
 import "./add-to-list.styles.scss";
+import SuccessPopOver from "./success-add-item.component";
 
 const AddToList = ({
   name,
@@ -9,9 +11,18 @@ const AddToList = ({
   quantity,
   onChangeQuantity,
 }: any) => {
+  const [itemAdded, setItemAdded] = useState(false);
+
+  const handleSuccessPopOver = () => {
+    setItemAdded(!itemAdded);
+    setTimeout(() => {
+      setItemAdded(false);
+    }, 1000);
+  };
 
   return (
     <>
+      {itemAdded && <SuccessPopOver />}
       <div className="select-quantity">
         <p className="item-name">{name}</p>
         <div className="image-container">
@@ -41,6 +52,7 @@ const AddToList = ({
           className="add-to-list-button"
           onClick={() => {
             onAddItem(name, img);
+            handleSuccessPopOver();
           }}
         >
           <p className="add-to-list-text">Add to list</p>

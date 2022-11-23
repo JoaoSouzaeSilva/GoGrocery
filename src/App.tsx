@@ -64,9 +64,6 @@ const Routing = () => {
           <Route exact path="/signup">
             <SignUp/>
           </Route>
-          <Route exact path="/success">
-            <SuccessPopOver/>
-          </Route>
         </Switch>
       </IonReactRouter>
     </>

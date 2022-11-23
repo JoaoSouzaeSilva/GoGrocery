@@ -11,7 +11,7 @@ import headerImg from "../images/header.png";
 import { Categories } from "../data/items.js";
 
 import "./CategoriesPage.scss";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import SlideMenu from "../components/slide-menu/slide-menu.component";
 import AddToList from "../components/products/add-to-list.component";
 
@@ -34,6 +34,31 @@ const CategoriesPage = () => {
     setItemSelected(!itemSelected);
   };
 
+  //send data to the db.json file
+  /* const user = {
+    id: "3",
+    name: "user1",
+  };
+
+  fetch("http://localhost:3000/people", {
+    method: "POST",
+    body: JSON.stringify(user),
+    headers: {
+      "Content-type": "application/json",
+    },
+  })
+    .then((res) => {
+      return res.json();
+    })
+    .then((data) => console.log(data)); */
+
+  //fetch data from the db.json file
+  /* fetch("http://localhost:3000/people")
+    .then((res) => {
+      return res.json();
+    })
+    .then((data) => console.log(data));
+ */
   //Used to show the info of a certain item when we click it (name,image,price)
   const handleSetProductInfo = (
     productName: any,
@@ -60,12 +85,11 @@ const CategoriesPage = () => {
   };
 
   //Add the selected item to a list of items that will be listed in the sliding menu
-  const handleAddItem = (name: any, img: any, quantity: any) => {
+  const handleAddItem = (name: any, img: any) => {
     if (!alreadyInList(name, addedItems)) {
       setAddedItems((prevItems) => [...prevItems, [name, img, itemQuantity]]);
       return addedItems;
     } else {
-      /* quantity = addedItems.find((item) => item[0] == name)[2] + itemQuantity; */
       setAddedItems((prevItems) => {
         const updatedItems = prevItems.filter((item) => item[0] !== name);
         const newItems = [...updatedItems, [name, img, itemQuantity]];
@@ -89,6 +113,10 @@ const CategoriesPage = () => {
     }
     return itemQuantity;
   };
+
+  useEffect(() => {
+    setItemQuantity(0);
+  }, [itemSelected]);
 
   let itemCard = itemSelected ? (
     <AddToList
