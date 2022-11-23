@@ -3,7 +3,7 @@ import SlideMenuItem from "./slide-menu-item.component";
 
 import "./slide-menu.styles.scss";
 
-const SlideMenu = ({ enabled }: any) => {
+const SlideMenu = ({ enabled, selectedItems }: any) => {
 
   return (
     <>
@@ -14,12 +14,12 @@ const SlideMenu = ({ enabled }: any) => {
             <p className="content-header">Current selection</p>
             <div className="content-divider" />
             <div className="content-items">
-              {SelectedItems.map((item: any) => (
+              {selectedItems.map((item: any) => (
                 <div className="content-item">
                   <SlideMenuItem
-                    itemName={item.name}
-                    quantity={item.quantity}
-                    img={item.img}
+                    itemName={item[0]}
+                    quantity="1x"
+                    img={item[1]}
                   ></SlideMenuItem>
                 </div>
               ))}

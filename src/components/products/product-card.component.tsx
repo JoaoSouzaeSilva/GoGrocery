@@ -1,5 +1,3 @@
-import { useState } from "react";
-import AddProduct from "./add-to-list.component";
 import "./product-card.styles.scss";
 
 const ProductCard = ({
@@ -9,12 +7,6 @@ const ProductCard = ({
   onSelectItem,
   onSetProductInfo,
 }: any) => {
-  /*  let info: any[] = [];
-  const handleGetData = (name: any, image: any) => {
-    info.push(name);
-    info.push(image);
-    console.log(info)
-  }; */
 
   return (
     <>
@@ -22,7 +14,7 @@ const ProductCard = ({
         className="product-element"
         onClick={() => {
           onSelectItem();
-          onSetProductInfo(productName, productImg);
+          onSetProductInfo(productName, productImg, productPrice);
         }}
       >
         <img

@@ -1,6 +1,6 @@
 .select-quantity {
-  width: 30%;
-  height: 75%;
+  width: 450px;
+  height: 600px;
   align-self: center;
   text-align: center;
 
@@ -10,7 +10,7 @@
   z-index: 9998;
   position: fixed;
 
-  margin-top: 9%;
+  margin-top: 20vh;
 }
 
 .item-name {
@@ -30,10 +30,10 @@
   width: 30%;
   height: 10%;
 
-  margin-top: 7.5%;
-
   background-color: #cedac1;
   color: #47525e;
+
+  margin-top: 14%;
 }
 
 .add-to-list-text {
@@ -57,16 +57,38 @@
 
 .item-to-add {
   margin-top: 5%;
+  max-width: 90%;
+  max-height: 60%;
+  height: auto;
 }
 
 .quantity-selector {
   background-color: #ffffff;
 
-  width: 32%;
-  height: 10%;
+  width: 30%;
+  height: 7%;
 
   border-radius: 10px;
 
-  margin-top: 10%;
-  margin-left: 55%;
+  margin-left: 50%;
+  margin-top: -15%;
+}
+
+.price-kg-text {
+  color: red;
+
+  font-family: Lato;
+  font-weight: bold;
+
+  margin-left: -70%;
+  margin-top: 18%;
+}
+.price-unit-text {
+  color: red;
+
+  font-family: Lato;
+  font-weight: bold;
+
+  margin-left: -70%;
+  margin-top: -4%;
 }

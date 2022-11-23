@@ -8,12 +8,6 @@ const ProductList = ({
   onSelectItem,
   onSetProductInfo,
 }: any) => {
-  /*   let info: any[] = [];
-  const handleGetData = ({ name, image }: any) => {
-    info.push(name);
-    info.push(image);
-    console.log(info)
-  }; */
 
   return (
     <>

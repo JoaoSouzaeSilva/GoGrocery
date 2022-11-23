@@ -17,25 +17,47 @@ import SlideMenu from "../components/slide-menu/slide-menu.component";
 import AddToList from "../components/products/add-to-list.component";
 
 const CategoriesPage = () => {
+  let noItemsArray: any[] = [];
+  let array: any[] = [];
   const [open, setOpen] = useState(false);
   const [itemSelected, setItemSelected] = useState(false);
-  let array : any[] = [];
   const [productInfo, setProductInfo] = useState(array);
+  const [addedItems, setAddedItems] = useState(noItemsArray);
 
+  //Define wether the sliding menu is toggled or not
   const toggleSlidingMenu = () => {
     setOpen(!open);
   };
 
+  //Define wether the product card is toggled or not
   const handleSelectItem = () => {
     setItemSelected(!itemSelected);
   };
 
-  const handleSetProductInfo = (productName: any, productImage: any) => {
-    setProductInfo([productName, productImage])
+  //Used to show the info of a certain item when we click it (name,image,price)
+  const handleSetProductInfo = (
+    productName: any,
+    productImage: any,
+    productPriceKG: any
+  ) => {
+    setProductInfo([productName, productImage, productPriceKG]);
     return productInfo;
   };
 
-  let itemCard = itemSelected ? <AddToList name={productInfo[0]} img={productInfo[1]} /> : undefined;
+  //Add the selected item to a list of items that will be listed in the sliding menu
+  const handleAddItem = (name: any, img: any) => {
+    setAddedItems((prevItems) => [...prevItems, [name, img]]);
+    return addedItems;
+  };
+
+  let itemCard = itemSelected ? (
+    <AddToList
+      name={productInfo[0]}
+      img={productInfo[1]}
+      price_kg={productInfo[2]}
+      onAddItem={handleAddItem}
+    />
+  ) : undefined;
 
   return (
     <>
@@ -49,7 +71,7 @@ const CategoriesPage = () => {
             </IonButton>
           </IonButtons>
         </IonToolbar>
-        <SlideMenu enabled={open} selectedItems={SelectedItems} />
+        <SlideMenu enabled={open} selectedItems={addedItems} />
         {itemCard}
         <div className={open ? "dimmed" : itemSelected ? "dimmed" : "undimmed"}>
           <IonContent
