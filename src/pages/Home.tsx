@@ -100,9 +100,9 @@ const Home = () => {
           <div className="faq">
             <h2>FAQ</h2>
             <div className="accordion">
-              <IonAccordionGroup>
+              <IonAccordionGroup className="accordion-fix">
 
-              <IonAccordion>
+              <IonAccordion className="accordion-fix">
                   <IonItem slot="header">
                     <IonLabel className="question ion-text-wrap">
                     What is GoGrocery's purpose?
