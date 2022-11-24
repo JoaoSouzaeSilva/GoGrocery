@@ -14,6 +14,7 @@ import "./CategoriesPage.scss";
 import { useEffect, useState } from "react";
 import SlideMenu from "../components/slide-menu/slide-menu.component";
 import AddToList from "../components/products/add-to-list.component";
+import { SelectedItems } from "../data/selectedItems";
 
 const CategoriesPage = () => {
   let noItemsArray: any[] = [];
@@ -127,6 +128,13 @@ const CategoriesPage = () => {
     setItemQuantity(0);
   }, [itemSelected]);
 
+  const handleDeleteItem = (itemName: any) => {
+    setAddedItems((prevItems) => {
+      const updatedItems = prevItems.filter((item) => item[0] !== itemName);
+      return updatedItems;
+    });
+  };
+
   let itemCard = itemSelected ? (
     <AddToList
       name={productInfo[0]}
@@ -151,7 +159,11 @@ const CategoriesPage = () => {
             </IonButton>
           </IonButtons>
         </IonToolbar>
-        <SlideMenu enabled={open} selectedItems={addedItems} />
+        <SlideMenu
+          enabled={open}
+          selectedItems={addedItems}
+          onDeleteItem={handleDeleteItem}
+        />
         {itemCard}
         <div className={open ? "dimmed" : itemSelected ? "dimmed" : "undimmed"}>
           <IonContent
