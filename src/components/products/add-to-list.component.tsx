@@ -30,9 +30,9 @@ const AddToList = ({
             className="item-to-add"
             src={process.env.PUBLIC_URL + "/img/" + img}
           ></img>
-          <p className="price-kg-text">{price_kg}</p>
-          <p className="price-unit-text">Unit Price</p>
         </div>
+        <p className="price-kg-text">{price_kg}</p>
+        <p className="price-unit-text">Unit Price</p>
         <div className="quantity-selector">
           <button
             className="quantity-down-button"

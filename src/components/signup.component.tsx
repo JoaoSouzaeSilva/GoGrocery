@@ -10,7 +10,7 @@ import {
   IonText,
   IonToast,
 } from "@ionic/react";
-import { eye, eyeOff } from "ionicons/icons";
+import { eye, eyeOff, flashOffOutline } from "ionicons/icons";
 import { useState } from "react";
 
 const SignUpComponent = () => {
@@ -19,13 +19,15 @@ const SignUpComponent = () => {
   const [password, setPassword] = useState("");
   const [cPassword, setcPassword] = useState("");
 
-  const [message, setMessage] = useState("Something went wrong. Please try again later.");
+  const [message, setMessage] = useState(
+    "Something went wrong. Please try again later."
+  );
   const [showToast, setShowToast] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
   const [showcPassword, setShowcPassword] = useState(false);
   const [passwordIcon, setPasswordIcon] = useState(eye);
   const [passwordIconConf, setPasswordIconConf] = useState(eye);
-  const [status, setStatus] = useState({ loading: false, error: false });
+  const [error, setError] = useState(false);
 
   const togglePassword = () => {
     if (!showPassword) {
@@ -46,31 +48,44 @@ const SignUpComponent = () => {
     showPassword ? setPasswordIcon(eye) : setPasswordIcon(eyeOff);
   };
 
-  const handleSignUp = () => {
-    const user = {
-      id: email,
-      name: name,
-      email: email,
-      password: password
-    };
-    fetch("http://localhost:3000/users", {
-      method: "POST",
-      body: JSON.stringify(user),
-      headers: {
-        "Content-type": "application/json",
-      },
-    })
-      .then((res) => {
-        return res.json();
-      })
-      .then((data) => console.log(data));
+  async function isUser() {
+    const response = await fetch("http://localhost:3000/users/" + email);
+    if (!response.ok) return false;
+    else return true;
   }
+
+  const handleSignUp = () => {
+    let user = isUser();
+    if (!user) {
+      const user = {
+        id: email,
+        name: name,
+        email: email,
+        password: password,
+      };
+      fetch("http://localhost:3000/users", {
+        method: "POST",
+        body: JSON.stringify(user),
+        headers: {
+          "Content-type": "application/json",
+        },
+      })
+        .then((res) => {
+          return res.json();
+        })
+        .then((data) => console.log(data));
+    } else {
+      setError(true);
+    }
+  };
 
   return (
     <>
       <IonList className="sign-up-list">
         <IonItem fill="outline" className="sign-up-label">
-          <IonLabel color="primary" className="labelfix" position="floating">Name</IonLabel>
+          <IonLabel color="primary" className="labelfix" position="floating">
+            Name
+          </IonLabel>
           <IonInput
             color="primary"
             type="text"
@@ -80,7 +95,9 @@ const SignUpComponent = () => {
           />
         </IonItem>
         <IonItem fill="outline" className="sign-up-label">
-          <IonLabel color="primary" className="labelfix" position="floating">Email</IonLabel>
+          <IonLabel color="primary" className="labelfix" position="floating">
+            Email
+          </IonLabel>
           <IonInput
             color="primary"
             type="email"
@@ -90,7 +107,9 @@ const SignUpComponent = () => {
           />
         </IonItem>
         <IonItem fill="outline" className="sign-up-label">
-          <IonLabel color="primary" position="floating">Password</IonLabel>
+          <IonLabel color="primary" position="floating">
+            Password
+          </IonLabel>
           <IonInput
             color="primary"
             type={showPassword ? "text" : "password"}
@@ -112,7 +131,9 @@ const SignUpComponent = () => {
           </IonButton>
         </IonItem>
         <IonItem fill="outline" className="sign-up-label">
-          <IonLabel color="primary" position="floating">Confirm Password</IonLabel>
+          <IonLabel color="primary" position="floating">
+            Confirm Password
+          </IonLabel>
           <IonInput
             color="primary"
             onIonChange={(event: any) => setcPassword(event.detail.value)}
@@ -135,18 +156,22 @@ const SignUpComponent = () => {
       </IonList>
 
       <div className="btn-container">
-        <IonButton onClick={() => handleSignUp()} expand="block" fill="solid" className="ion-buttons-signup-page ion-item-email-pwd">
+        <IonButton
+          onClick={() => handleSignUp()}
+          expand="block"
+          fill="solid"
+          className="ion-buttons-signup-page ion-item-email-pwd"
+        >
           Sign Up
         </IonButton>
       </div>
       <IonAlert
-        isOpen={status.error}
-        onDidDismiss={() => setStatus({ ...status, error: false })}
-        header={"Algo correu mal"}
+        isOpen={error}
+        onDidDismiss={() => setError(false)}
+        header={"The given email is already associated to an account!"}
         message={message}
         buttons={["OK"]}
       />
-      <IonLoading isOpen={status.loading} />
     </>
   );
 };

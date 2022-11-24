@@ -24,7 +24,6 @@
   margin-left: 22%;
   margin-top: -16%;
   cursor: default;
-
 }
 
 .item-quantity-menu {
@@ -43,7 +42,7 @@
   border-bottom: 2px solid #8e9a84;
   margin: auto;
   margin-top: 15%;
-  margin-left: 10%;
+  margin-left: 20%;
 }
 
 .remove-from-list-button {
@@ -58,3 +57,41 @@
   margin-top: -25%;
   cursor: pointer;
 }
+
+/* Small Screens */
+/* @media (min-width: 300px) {
+  .item-image-menu {
+    width: 45px;
+    height: 45px;
+    object-fit: cover;
+    border-radius: 100%;
+    align-self: center;
+
+    border-width: 1px;
+    border-color: #8e9a84;
+    border-style: solid;
+  }
+
+  .item-name-menu {
+    font-family: Lato;
+    font-size: small;
+    font-weight: bold;
+    color: #47525e;
+
+    margin-left: 25%;
+    margin-top: -20%;
+    cursor: default;
+  }
+
+  .item-quantity-menu {
+    font-family: Lato;
+    font-size: small;
+    font-weight: bold;
+    color: #47525e;
+    margin-left: 25%;
+    margin-top: -7%;
+  
+    cursor: default;
+  }
+
+} */
