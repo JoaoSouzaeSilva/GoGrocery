@@ -96,6 +96,7 @@ const SignInComponent = () => {
           onDidDismiss={() => setShowToast(false)}
           message="Email enviado."
           duration={3000}
+          
         />
         <IonLoading isOpen={status.loading} />
       </>

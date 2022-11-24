@@ -7,6 +7,7 @@ import {
   IonLabel,
   IonList,
   IonLoading,
+  IonNote,
   IonText,
   IonToast,
 } from "@ionic/react";
@@ -19,15 +20,33 @@ const SignUpComponent = () => {
   const [password, setPassword] = useState("");
   const [cPassword, setcPassword] = useState("");
 
-  const [message, setMessage] = useState(
-    "Something went wrong. Please try again later."
+  const [emailMessage, setEmailMessage] = useState(
+    "Looks like the given email is already associated to an account."
   );
+  const [invalidEmailMessage, setInvalidEmailMessage] = useState(
+    "Oops! That email does not look valid to us. Insert a valid email."
+  );
+  const [passwordMessage, setPasswordMessage] = useState(
+    "Make sure your password and confirmation password are equal."
+  );
+  const [fieldsFilledMessage, setfieldsFilledMessage] = useState(
+    "Please fill all the fields."
+  );
+  const [passwordSecMessage, setpasswordSecMessage] = useState(
+    "Do not forget! Your password must be at least 6 characters."
+  );
+
   const [showToast, setShowToast] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
   const [showcPassword, setShowcPassword] = useState(false);
   const [passwordIcon, setPasswordIcon] = useState(eye);
   const [passwordIconConf, setPasswordIconConf] = useState(eye);
-  const [error, setError] = useState(false);
+  const [emailError, setEmailError] = useState(false);
+  const [passwordError, setPasswordError] = useState(false);
+  const [fieldsFilledError, setFieldsFilledError] = useState(false);
+  const [passwordSecError, setPasswordSecError] = useState(false);
+  const [invalidEmailError, setInvalidEmailError] = useState(false);
+
 
   const togglePassword = () => {
     if (!showPassword) {
@@ -50,32 +69,84 @@ const SignUpComponent = () => {
 
   async function isUser() {
     const response = await fetch("http://localhost:3000/users/" + email);
-    if (!response.ok) return false;
+    console.log(response)
+    console.log(response.ok)
+    if (response.ok) {
+      console.log("entrei response ok")
+      return true;
+    }
+    else {
+      console.log("entrei no else")
+      return false;
+    }
+  }
+
+  function checkPasswordsEquality() {
+    if (password != cPassword) return false;
     else return true;
   }
 
+  function checkIfFilled() {
+    if (name != "" && email != "" && password != "" && cPassword != "") return true;
+    else return false;
+  }
+
+  const checkPasswordSecurity = () => {
+    if (password.length >= 6) return true;
+    else return false;
+  }
+
+  const checkEmailValidity = () => {
+    const emailMatch = email.match( /^(?=.{1,254}$)(?=.{1,64}@)[a-zA-Z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-zA-Z0-9!#$%&'*+/=?^_`{|}~-]+)*@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/);
+    if (emailMatch != null) return true;
+    else return false;
+  }
+
   const handleSignUp = () => {
-    let user = isUser();
-    if (!user) {
-      const user = {
-        id: email,
-        name: name,
-        email: email,
-        password: password,
-      };
-      fetch("http://localhost:3000/users", {
-        method: "POST",
-        body: JSON.stringify(user),
-        headers: {
-          "Content-type": "application/json",
-        },
-      })
-        .then((res) => {
-          return res.json();
-        })
-        .then((data) => console.log(data));
-    } else {
-      setError(true);
+    if (checkIfFilled()) {
+      if (checkEmailValidity()) {
+
+      if (!isUser()) {
+        console.log("entrei")
+          if (checkPasswordsEquality()) {
+            if (checkPasswordSecurity()) {
+              const user = {
+                id: email,
+                name: name,
+                email: email,
+                password: password,
+              };
+              fetch("http://localhost:3000/users", {
+                method: "POST",
+                body: JSON.stringify(user),
+                headers: {
+                  "Content-type": "application/json",
+                },
+              })
+                .then((res) => {
+                  return res.json();
+                })
+                .then((data) => console.log(data));
+            }
+            else {
+              setPasswordSecError(true)
+            }
+          }
+          else {
+            setPasswordError(true)
+          }
+        }
+        else {
+          console.log("entrei no else do handlesignup")
+          setEmailError(true);
+        }
+      }
+      else {
+        setInvalidEmailError(true);
+      }
+    }
+    else {
+      setFieldsFilledError(true);
     }
   };
 
@@ -115,8 +186,11 @@ const SignUpComponent = () => {
             type={showPassword ? "text" : "password"}
             value={password}
             placeholder="***********"
-            onIonChange={(event: any) => setPassword(event.detail.value)}
+            onIonChange={(event: any) => { setPassword(event.detail.value) }}
+          /* onIonInput={(event) => checkPasswordSecurity(event)}
+          onIonBlur={() => markTouched()} */
           />
+          {!checkPasswordSecurity() && <IonNote slot="helper">Make sure your password has at least 6 characters.</IonNote>}
           <IonButton
             className="eye-btn eye-color"
             color="primary"
@@ -140,6 +214,8 @@ const SignUpComponent = () => {
             type={showcPassword ? "text" : "password"}
             value={cPassword}
           />
+          {!checkPasswordSecurity() && <IonNote slot="helper">Make sure your confirmation password has at least 6 characters.</IonNote>}
+          {!checkPasswordsEquality() && <IonNote slot="helper">Your passwrod and confirmation password must be the same.</IonNote>}
           <IonButton
             className="eye-btn"
             color="primary"
@@ -166,10 +242,38 @@ const SignUpComponent = () => {
         </IonButton>
       </div>
       <IonAlert
-        isOpen={error}
-        onDidDismiss={() => setError(false)}
-        header={"The given email is already associated to an account!"}
-        message={message}
+        isOpen={emailError}
+        onDidDismiss={() => setEmailError(false)}
+        header={"Oh no!"}
+        message={emailMessage}
+        buttons={["OK"]}
+      />
+      <IonAlert
+        isOpen={passwordError}
+        onDidDismiss={() => setPasswordError(false)}
+        header={"Oh no!"}
+        message={passwordMessage}
+        buttons={["OK"]}
+      />
+      <IonAlert
+        isOpen={fieldsFilledError}
+        onDidDismiss={() => setFieldsFilledError(false)}
+        header={"Oh no!"}
+        message={fieldsFilledMessage}
+        buttons={["OK"]}
+      />
+        <IonAlert
+        isOpen={passwordSecError}
+        onDidDismiss={() => setPasswordSecError(false)}
+        header={"Oh no!"}
+        message={passwordSecMessage}
+        buttons={["OK"]}
+      />
+        <IonAlert
+        isOpen={invalidEmailError}
+        onDidDismiss={() => setInvalidEmailError(false)}
+        header={"Oh no!"}
+        message={invalidEmailMessage}
         buttons={["OK"]}
       />
     </>
