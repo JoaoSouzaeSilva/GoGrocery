@@ -14,6 +14,7 @@ import "./CategoriesPage.scss";
 import { useEffect, useState } from "react";
 import SlideMenu from "../components/slide-menu/slide-menu.component";
 import AddToList from "../components/products/add-to-list.component";
+import { SelectedItems } from "../data/selectedItems";
 
 const CategoriesPage = () => {
   let noItemsArray: any[] = [];
@@ -87,14 +88,23 @@ const CategoriesPage = () => {
   //Add the selected item to a list of items that will be listed in the sliding menu
   const handleAddItem = (name: any, img: any) => {
     if (!alreadyInList(name, addedItems)) {
-      setAddedItems((prevItems) => [...prevItems, [name, img, itemQuantity]]);
+      if (itemQuantity == 0) setAddedItems((prevItems) => [...prevItems]);
+      else
+        setAddedItems((prevItems) => [...prevItems, [name, img, itemQuantity]]);
       return addedItems;
     } else {
-      setAddedItems((prevItems) => {
-        const updatedItems = prevItems.filter((item) => item[0] !== name);
-        const newItems = [...updatedItems, [name, img, itemQuantity]];
-        return newItems;
-      });
+      if (itemQuantity == 0) {
+        setAddedItems((prevItems) => {
+          const updatedItems = prevItems.filter((item) => item[0] !== name);
+          return updatedItems;
+        });
+      } else {
+        setAddedItems((prevItems) => {
+          const updatedItems = prevItems.filter((item) => item[0] !== name);
+          const newItems = [...updatedItems, [name, img, itemQuantity]];
+          return newItems;
+        });
+      }
     }
   };
 
@@ -105,7 +115,7 @@ const CategoriesPage = () => {
         setItemQuantity(quantity);
         break;
       case "down":
-        if (quantity > 0) {
+        if (quantity > 1) {
           quantity = quantity - 1;
           setItemQuantity(quantity);
         }
@@ -115,8 +125,15 @@ const CategoriesPage = () => {
   };
 
   useEffect(() => {
-    setItemQuantity(0);
+    setItemQuantity(1);
   }, [itemSelected]);
+
+  const handleDeleteItem = (itemName: any) => {
+    setAddedItems((prevItems) => {
+      const updatedItems = prevItems.filter((item) => item[0] !== itemName);
+      return updatedItems;
+    });
+  };
 
   let itemCard = itemSelected ? (
     <AddToList
@@ -126,6 +143,7 @@ const CategoriesPage = () => {
       quantity={itemQuantity}
       onAddItem={handleAddItem}
       onChangeQuantity={handleChangeQuantity}
+      onClickAddItem={handleSelectItem}
     />
   ) : undefined;
 
@@ -141,7 +159,11 @@ const CategoriesPage = () => {
             </IonButton>
           </IonButtons>
         </IonToolbar>
-        <SlideMenu enabled={open} selectedItems={addedItems} />
+        <SlideMenu
+          enabled={open}
+          selectedItems={addedItems}
+          onDeleteItem={handleDeleteItem}
+        />
         {itemCard}
         <div className={open ? "dimmed" : itemSelected ? "dimmed" : "undimmed"}>
           <IonContent

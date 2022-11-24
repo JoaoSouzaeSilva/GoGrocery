@@ -2,7 +2,7 @@
   &-enabled {
     width: 20%;
     transition: width 0.3s ease-in-out;
-    height: 91vh;
+    height: 94.1vh;
     background-color: #cbd2c3;
 
     position: fixed;
@@ -22,6 +22,8 @@
     text-align: center;
 
     color: #47525e;
+    cursor: default;
+
   }
 
   &-divider {

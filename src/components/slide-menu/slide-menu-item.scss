@@ -23,6 +23,8 @@
 
   margin-left: 22%;
   margin-top: -16%;
+  cursor: default;
+
 }
 
 .item-quantity-menu {
@@ -33,6 +35,7 @@
   margin-left: 22%;
   margin-top: -5%;
 
+  cursor: default;
 }
 
 .item-divider {
@@ -41,4 +44,17 @@
   margin: auto;
   margin-top: 15%;
   margin-left: 10%;
+}
+
+.remove-from-list-button {
+  background-image: url("../../images/trash-icon.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 11%;
+  height: 100%;
+  position: absolute;
+
+  margin-left: 80%;
+  margin-top: -25%;
+  cursor: pointer;
 }

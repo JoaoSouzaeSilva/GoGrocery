@@ -1,6 +1,6 @@
 .select-quantity {
-  width: 30vw;
-  height: 75vh;
+  width: 28vw;
+  height: 70vh;
   align-self: center;
   text-align: center;
 
@@ -10,7 +10,7 @@
   z-index: 9998;
   position: fixed;
 
-  margin-top: 18vh;
+  margin-top: 21vh;
 }
 
 .item-name {
@@ -19,7 +19,6 @@
   font-size: 140%;
   color: #47525e;
 
-  margin-right: 19%;
   margin-top: 9%;
 }
 
@@ -135,10 +134,21 @@
 }
 
 .quantity-selected {
-  color: #47525E;
+  color: #47525e;
 
   position: absolute;
 
   margin-left: 14%;
   margin-top: 2%;
+}
+
+ion-toast.custom-toast {
+  --background: rgba(179, 215, 165, 0.47);
+  --box-shadow: 3px 3px 10px 0 rgba(0, 0, 0, 0.2);
+  --color: #47525E;
+  text-align: center;
+}
+
+ion-toast.custom-toast::part(message) {
+  font-family: Lato;
 }

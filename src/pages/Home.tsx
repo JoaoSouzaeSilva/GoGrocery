@@ -37,13 +37,13 @@ const Home = () => {
         <div className="img_text">have it your way</div>
         <IonButtons slot="end" className="ion-buttons-home">
           <IonButton shape="round" href="/About">
-            <p>About</p>
+            <p className="paragraph">About</p>
           </IonButton>
           <IonButton shape="round" href="/SignUp">
-            <p>Sign up</p>
+            <p className="paragraph">Sign up</p>
           </IonButton>
           <IonButton shape="round" href="/SignIn">
-            <p className="button-primary">Sign in</p>
+            <p className="button-primary paragraph">Sign in</p>
           </IonButton>
         </IonButtons>
       </IonToolbar>
@@ -70,20 +70,20 @@ const Home = () => {
               width="auto"
             />
             <div className="description">
-              <p> Nowadays, consumers are manipulated by the overall shopping experience. <br/>
+              <p className="paragraph"> Nowadays, consumers are manipulated by the overall shopping experience. <br/>
                 GoGrocery wants to change that.
               </p>
-              <p> 
+              <p className="paragraph"> 
               By using happy music, bright colors, large letters, and having only one entrance, 
               supermarkets plan to rob you of your time and money. They make you want to stay there 
               longer and spend more money on things you probably do not need.
               </p>
-              <p>
+              <p className="paragraph">
               Not knowing where things are placed or not having a grocery list prepared 
               before going shopping can make the experience unpleasant and overwhelming, 
               making the consumer waste more time and possibly more money. 
               </p>
-              <p>
+              <p className="paragraph">
               Our main vision is to help people “Have it their way”. Either they want minimal 
               time shopping or to look through all the discounted items, the app will calculate 
               an itinerary made to suit the user’s needs. The app will allow for the elaboration 
@@ -91,7 +91,7 @@ const Home = () => {
               and all the shopping preferences are selected (like time wise, order wise, etc) an itinerary 
               will be presented. This itinerary will make grocery shopping a more pleasant experience.
               </p>
-              <p>
+              <p className="paragraph">
               Shop with <strong>GoGrocery</strong>.
               </p>
             </div>
@@ -164,7 +164,7 @@ const Home = () => {
           </div>
 
           <div className="footer">
-            <p>
+            <p className="paragraph">
              <IonText className="green"> Get in contact with us through <strong>gogrocery@gogrocery.com</strong> or <strong>210 000 000</strong></IonText>
             </p>
           </div>

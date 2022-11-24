@@ -1,6 +1,6 @@
 import "./slide-menu-item.scss";
 
-const SlideMenuItem = ({ itemName, quantity, img }: any) => {
+const SlideMenuItem = ({ itemName, quantity, img, onDeleteItem }: any) => {
   return (
     <>
       <div className="menu-item">
@@ -12,6 +12,10 @@ const SlideMenuItem = ({ itemName, quantity, img }: any) => {
         <p className="item-quantity-menu">{quantity + "x"}</p>
         <div className="item-divider" />
       </div>
+      <div
+        className="remove-from-list-button"
+        onClick={() => onDeleteItem(itemName)}
+      />
     </>
   );
 };

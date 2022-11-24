@@ -3,7 +3,7 @@ import SlideMenuItem from "./slide-menu-item.component";
 
 import "./slide-menu.styles.scss";
 
-const SlideMenu = ({ enabled, selectedItems }: any) => {
+const SlideMenu = ({ enabled, selectedItems, onDeleteItem }: any) => {
 
   return (
     <>
@@ -20,6 +20,7 @@ const SlideMenu = ({ enabled, selectedItems }: any) => {
                     itemName={item[0]}
                     quantity={item[2]}
                     img={item[1]}
+                    onDeleteItem={onDeleteItem}
                   ></SlideMenuItem>
                 </div>
               ))}
