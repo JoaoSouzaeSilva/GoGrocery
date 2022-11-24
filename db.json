@@ -1,16 +1,10 @@
 {
-  "people": [
+  "users": [
     {
-      "id": 0,
-      "name": "João"
-    },
-    {
-      "id": 1,
-      "name": "Débora"
-    },
-    {
-      "id": "3",
-      "name": "user1"
+      "id": "user1@gmail.com",
+      "name": "user1",
+      "email": "user1@gmail.com",
+      "password": "1234"
     }
   ]
 }
