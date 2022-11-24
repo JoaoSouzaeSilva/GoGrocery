@@ -115,7 +115,7 @@ const CategoriesPage = () => {
         setItemQuantity(quantity);
         break;
       case "down":
-        if (quantity > 0) {
+        if (quantity > 1) {
           quantity = quantity - 1;
           setItemQuantity(quantity);
         }
@@ -125,7 +125,7 @@ const CategoriesPage = () => {
   };
 
   useEffect(() => {
-    setItemQuantity(0);
+    setItemQuantity(1);
   }, [itemSelected]);
 
   const handleDeleteItem = (itemName: any) => {
