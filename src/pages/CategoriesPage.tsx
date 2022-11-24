@@ -87,14 +87,23 @@ const CategoriesPage = () => {
   //Add the selected item to a list of items that will be listed in the sliding menu
   const handleAddItem = (name: any, img: any) => {
     if (!alreadyInList(name, addedItems)) {
-      setAddedItems((prevItems) => [...prevItems, [name, img, itemQuantity]]);
+      if (itemQuantity == 0) setAddedItems((prevItems) => [...prevItems]);
+      else
+        setAddedItems((prevItems) => [...prevItems, [name, img, itemQuantity]]);
       return addedItems;
     } else {
-      setAddedItems((prevItems) => {
-        const updatedItems = prevItems.filter((item) => item[0] !== name);
-        const newItems = [...updatedItems, [name, img, itemQuantity]];
-        return newItems;
-      });
+      if (itemQuantity == 0) {
+        setAddedItems((prevItems) => {
+          const updatedItems = prevItems.filter((item) => item[0] !== name);
+          return updatedItems;
+        });
+      } else {
+        setAddedItems((prevItems) => {
+          const updatedItems = prevItems.filter((item) => item[0] !== name);
+          const newItems = [...updatedItems, [name, img, itemQuantity]];
+          return newItems;
+        });
+      }
     }
   };
 
@@ -126,6 +135,7 @@ const CategoriesPage = () => {
       quantity={itemQuantity}
       onAddItem={handleAddItem}
       onChangeQuantity={handleChangeQuantity}
+      onClickAddItem={handleSelectItem}
     />
   ) : undefined;
 

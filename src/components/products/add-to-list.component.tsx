@@ -1,5 +1,4 @@
-import { IonContent, IonPopover, useIonToast } from "@ionic/react";
-import { useState } from "react";
+import { useIonToast } from "@ionic/react";
 import "./add-to-list.styles.scss";
 
 const AddToList = ({
@@ -9,6 +8,7 @@ const AddToList = ({
   onAddItem,
   quantity,
   onChangeQuantity,
+  onClickAddItem,
 }: any) => {
   const [present] = useIonToast();
 
@@ -52,7 +52,8 @@ const AddToList = ({
           className="add-to-list-button"
           onClick={() => {
             onAddItem(name, img);
-            presentToast("middle");
+            presentToast("top");
+            onClickAddItem();
           }}
         >
           <p className="add-to-list-text">Add to list</p>
