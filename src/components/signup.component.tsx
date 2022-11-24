@@ -13,21 +13,33 @@ import {
   import { eye, eyeOff } from "ionicons/icons";
   import { useState } from "react";
 
-
 const SignUpComponent = () => {
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [cPassword, setcPassword] = useState("");
+
     const [message, setMessage] = useState("Something went wrong. Please try again later.");
     const [showToast, setShowToast] = useState(false);
     const [showPassword, setShowPassword] = useState(false);
+    const [showcPassword, setShowcPassword] = useState(false);
     const [passwordIcon, setPasswordIcon] = useState(eye);
+    const [passwordIconConf, setPasswordIconConf] = useState(eye);
     const [status, setStatus] = useState({ loading: false, error: false });
-  
+
     const togglePassword = () => {
       if (!showPassword) {
         setShowPassword(true);
       } else setShowPassword(false);
+    };
+
+    const togglePasswordConf = () => {
+      if (!showcPassword) {
+        setShowcPassword(true);
+      } else setShowcPassword(false);
+    };
+    const changeIconConf = () => {
+      showcPassword ? setPasswordIconConf(eye) : setPasswordIconConf(eyeOff);
     };
   
     const changeIcon = () => {
@@ -43,7 +55,7 @@ const SignUpComponent = () => {
               type="text"
               value={name}
               placeholder="my name"
-              /* onIonChange={(event) => setName(event.detail.value)} */
+              onIonChange={(event: any) => setName(event.detail.value)}
             />
           </IonItem>
           <IonItem fill="outline" className="sign-up-label">
@@ -52,7 +64,7 @@ const SignUpComponent = () => {
               type="email"
               value={email}
               placeholder="email@email.com"
-              /* onIonChange={(event) => setEmail(event.detail.value)} */
+              onIonChange={(event: any) => setEmail(event.detail.value)}
             />
           </IonItem>
           <IonItem fill="outline" className="sign-up-label">
@@ -61,7 +73,7 @@ const SignUpComponent = () => {
               type={showPassword ? "text" : "password"}
               value={password}
               placeholder="***********"
-            /*   onIonChange={(event) => setPassword(event.detail.value)} */
+              onIonChange={(event: any) => setPassword(event.detail.value)}
             />
             <IonButton
               className="eye-btn eye-color"
@@ -78,22 +90,21 @@ const SignUpComponent = () => {
           <IonItem fill="outline" className="sign-up-label">
             <IonLabel background-color={"danger"} position="floating">Confirm Password</IonLabel>
             <IonInput
-              type={showPassword ? "text" : "password"}
-              value={password}
-              placeholder="***********"
-            /*   onIonChange={(event) => setPassword(event.detail.value)} */
-            />
-            <IonButton
-              className="eye-btn eye-color"
-              slot="end"
-              fill="clear"
-              onClick={() => {
-                togglePassword();
-                changeIcon();
-              }}
-            >
-              <IonIcon icon={passwordIcon} slot="icon-only"></IonIcon>
-            </IonButton>
+            onIonChange={(event: any) => setcPassword(event.detail.value)}
+            type={showcPassword ? "text" : "password"}
+            value={cPassword}
+          />
+          <IonButton
+            className="eye-btn"
+            slot="end"
+            fill="clear"
+            onClick={() => {
+              togglePasswordConf();
+              changeIconConf();
+            }}
+          >
+            <IonIcon icon={passwordIconConf} slot="icon-only"></IonIcon>
+          </IonButton>
           </IonItem>
         </IonList>
   
@@ -108,13 +119,6 @@ const SignUpComponent = () => {
           header={"Algo correu mal"}
           message={message}
           buttons={["OK"]}
-        />
-        <IonToast
-          isOpen={showToast}
-          color="success"
-          onDidDismiss={() => setShowToast(false)}
-          message="Email enviado."
-          duration={3000}
         />
         <IonLoading isOpen={status.loading} />
       </>

@@ -146,7 +146,7 @@
   height: auto;
   width: 100%;
   position: absolute;
-  background: #e9e5e1;
+  background: #a3af95;
 
   p:first-child {
     color: #47525e;
@@ -357,6 +357,10 @@
     }
   }
 
+}
+
+.accordion-fix{
+  --background-color: #a3af95;
 }
 
 .green{
