@@ -1,4 +1,3 @@
-import { SelectedItems } from "../../data/selectedItems.js";
 import SlideMenuItem from "./slide-menu-item.component";
 
 import "./slide-menu.styles.scss";

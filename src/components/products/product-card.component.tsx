@@ -1,6 +1,7 @@
 import "./product-card.styles.scss";
 
 const ProductCard = ({
+  productId,
   productName,
   productPrice,
   productImg,
@@ -11,6 +12,7 @@ const ProductCard = ({
   return (
     <>
       <div
+        id={productName}
         className="product-element"
         onClick={() => {
           onSelectItem();

@@ -48,35 +48,23 @@ const SignUpComponent = () => {
     showPassword ? setPasswordIcon(eye) : setPasswordIcon(eyeOff);
   };
 
-  async function isUser() {
-    const response = await fetch("http://localhost:3000/users/" + email);
-    if (!response.ok) return false;
-    else return true;
+  async function canRegister() {
+    if (localStorage.getItem(email) == null) return true;
+    else return false;
   }
 
-  const handleSignUp = () => {
-    let user = isUser();
-    if (!user) {
+  const handleSignUp = async () => {
+    let aux = canRegister();
+    if (await aux) {
       const user = {
         id: email,
         name: name,
         email: email,
         password: password,
       };
-      fetch("http://localhost:3000/users", {
-        method: "POST",
-        body: JSON.stringify(user),
-        headers: {
-          "Content-type": "application/json",
-        },
-      })
-        .then((res) => {
-          return res.json();
-        })
-        .then((data) => console.log(data));
-    } else {
-      setError(true);
-    }
+
+      localStorage.setItem(email, JSON.stringify(user));
+    } else setError(true);
   };
 
   return (

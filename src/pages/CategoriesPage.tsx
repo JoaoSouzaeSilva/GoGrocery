@@ -8,22 +8,23 @@ import {
 import CategoriesList from "../components/categories/categories-list.component";
 import ProductList from "../components/products/product-list.component";
 import headerImg from "../images/header.png";
-import { Categories } from "../data/items.js";
+import { Categories, Items } from "../data/items.js";
 
 import "./CategoriesPage.scss";
 import { useEffect, useState } from "react";
 import SlideMenu from "../components/slide-menu/slide-menu.component";
 import AddToList from "../components/products/add-to-list.component";
-import { SelectedItems } from "../data/selectedItems";
+import SearchBar from "../components/search/search-bar.component";
 
 const CategoriesPage = () => {
-  let noItemsArray: any[] = [];
-  let array: any[] = [];
+  let initialAddedItems: any[] = [];
+  let initialProductInfo: any[] = [];
   const [open, setOpen] = useState(false);
   const [itemSelected, setItemSelected] = useState(false);
-  const [productInfo, setProductInfo] = useState(array);
-  const [addedItems, setAddedItems] = useState(noItemsArray);
+  const [productInfo, setProductInfo] = useState(initialProductInfo);
+  const [addedItems, setAddedItems] = useState(initialAddedItems);
   const [itemQuantity, setItemQuantity] = useState(1);
+  const [searchInput, setSearchInput] = useState("");
 
   //Define wether the sliding menu is toggled or not
   const toggleSlidingMenu = () => {
@@ -35,31 +36,6 @@ const CategoriesPage = () => {
     setItemSelected(!itemSelected);
   };
 
-  //send data to the db.json file
-  /* const user = {
-    id: "3",
-    name: "user1",
-  };
-
-  fetch("http://localhost:3000/people", {
-    method: "POST",
-    body: JSON.stringify(user),
-    headers: {
-      "Content-type": "application/json",
-    },
-  })
-    .then((res) => {
-      return res.json();
-    })
-    .then((data) => console.log(data)); */
-
-  //fetch data from the db.json file
-  /* fetch("http://localhost:3000/people")
-    .then((res) => {
-      return res.json();
-    })
-    .then((data) => console.log(data));
- */
   //Used to show the info of a certain item when we click it (name,image,price)
   const handleSetProductInfo = (
     productName: any,
@@ -184,11 +160,14 @@ const CategoriesPage = () => {
                 placeholder="What are you looking for?"
                 color="#cbd2c3"
                 maxLength={38}
+                onChange={(event) => setSearchInput(event.target.value)}
+                value={searchInput}
               ></input>
+              {searchInput.length != 0 && <SearchBar query={searchInput}/>}
               <button className="see-list" onClick={toggleSlidingMenu}>
                 See List
               </button>
-              <button className="finish">Finish</button>
+              <button className="itinerary-setup">Itinerary setup</button>
             </div>
             <div className="divider" />
             <p className="categories-header">Categories</p>

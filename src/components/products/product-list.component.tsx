@@ -8,7 +8,6 @@ const ProductList = ({
   onSelectItem,
   onSetProductInfo,
 }: any) => {
-
   return (
     <>
       <div className="text-area-grid">
@@ -18,6 +17,7 @@ const ProductList = ({
         {products.map((product: any) => (
           <div className="product-item">
             <ProductCard
+              productId={product.id}
               productName={product.name}
               productPrice={product.price}
               productImg={product.img}
