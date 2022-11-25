@@ -1,7 +1,6 @@
 import "./product-card.styles.scss";
 
 const ProductCard = ({
-  productId,
   productName,
   productPrice,
   productImg,

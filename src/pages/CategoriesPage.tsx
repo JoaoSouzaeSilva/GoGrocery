@@ -163,7 +163,13 @@ const CategoriesPage = () => {
                 onChange={(event) => setSearchInput(event.target.value)}
                 value={searchInput}
               ></input>
-              {searchInput.length != 0 && <SearchBar query={searchInput}/>}
+              {searchInput.length != 0 && (
+                <SearchBar
+                  query={searchInput}
+                  onSelectItem={handleSelectItem}
+                  onSetProductInfo={handleSetProductInfo}
+                />
+              )}
               <button className="see-list" onClick={toggleSlidingMenu}>
                 See List
               </button>
