@@ -97,8 +97,10 @@ const Home = () => {
             </div>
           </div>
 
+          <div className="separator2" />
+
           <div className="faq">
-            <h2>FAQ</h2>
+            <h2 className="faq-text">FAQ</h2>
             <div className="accordion">
               <IonAccordionGroup className="accordion-fix">
 
@@ -110,7 +112,7 @@ const Home = () => {
                   </IonItem>
                   <IonList slot="content">
                     <IonItem>
-                      <IonLabel className="ion-text-wrap">
+                      <IonLabel color="tertiary" className="ion-text-wrap">
                       Our main vision is to help people “Have it their way”. 
                       Either they want minimal time shopping or to look through 
                       all the discounted items, the app will calculate an itinerary 
@@ -134,7 +136,7 @@ const Home = () => {
                   </IonItem>
                   <IonList slot="content">
                     <IonItem>
-                      <IonLabel className="ion-text-wrap">
+                      <IonLabel color="tertiary" className="ion-text-wrap">
                         You can create an account at any time without needing to use it, ever!
                         Althouh we do recommend it ;) 
                         <br/>
@@ -144,7 +146,7 @@ const Home = () => {
                   </IonList>
                 </IonAccordion>
 
-                <IonAccordion>
+                <IonAccordion >
                   <IonItem slot="header">
                     <IonLabel className="question ion-text-wrap">
                     Why should I use GoGrocery?
@@ -152,7 +154,7 @@ const Home = () => {
                   </IonItem>
                   <IonList slot="content">
                     <IonItem>
-                      <IonLabel className="ion-text-wrap">
+                      <IonLabel color="tertiary" className="ion-text-wrap">
                       answear
                       </IonLabel>
                     </IonItem>

@@ -6,12 +6,9 @@ import {
   IonItem,
   IonLabel,
   IonList,
-  IonLoading,
-  IonNote,
-  IonText,
-  IonToast,
+  IonNote
 } from "@ionic/react";
-import { eye, eyeOff, flashOffOutline } from "ionicons/icons";
+import { eye, eyeOff } from "ionicons/icons";
 import { useState } from "react";
 
 const SignUpComponent = () => {

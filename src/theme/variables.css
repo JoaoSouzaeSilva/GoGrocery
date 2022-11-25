@@ -24,7 +24,7 @@ ion-button {
   --ion-color-secondary-tint: #a0a29e;
 
   /** tertiary **/
-  --ion-color-tertiary: #8E9A84;
+  --ion-color-tertiary: #47525e;
   --ion-color-tertiary-rgb: 142, 154, 132;
   --ion-color-tertiary-contrast: #ffffff;
   --ion-color-tertiary-contrast-rgb: 255, 255, 255;
@@ -64,7 +64,7 @@ ion-button {
   --ion-color-dark-tint: #383a3e;
 
   /** medium **/
-  --ion-color-medium: #92949c;
+  --ion-color-medium: #47525e;
   --ion-color-medium-rgb: 146, 148, 156;
   --ion-color-medium-contrast: #ffffff;
   --ion-color-medium-contrast-rgb: 255, 255, 255;
@@ -101,7 +101,7 @@ ion-button {
     --ion-color-secondary-shade: #46b0e0;
     --ion-color-secondary-tint: #62ceff;
 
-    --ion-color-tertiary: #6a64ff;
+    --ion-color-tertiary: #47525e;
     --ion-color-tertiary-rgb: 106,100,255;
     --ion-color-tertiary-contrast: #ffffff;
     --ion-color-tertiary-contrast-rgb: 255,255,255;
@@ -157,10 +157,10 @@ ion-button {
    */
 
   .ios body {
-    --ion-background-color: #000000;
+   /*  --ion-background-color: #000000; */
     --ion-background-color-rgb: 0,0,0;
 
-    --ion-text-color: #ffffff;
+    /* --ion-text-color: #ffffff; */
     --ion-text-color-rgb: 255,255,255;
 
     --ion-color-step-50: #0d0d0d;
@@ -204,7 +204,7 @@ ion-button {
     --ion-background-color: #CBD2C3;
     --ion-background-color-rgb: 18,18,18;
 
-    --ion-text-color: #ffffff;
+    /* --ion-text-color: #ffffff; */
     --ion-text-color-rgb: 255,255,255;
 
     --ion-border-color: #222222;
