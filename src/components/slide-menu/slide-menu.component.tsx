@@ -24,7 +24,7 @@ const SlideMenu = ({ enabled, selectedItems, onDeleteItem }: any) => {
                 </div>
               ))}
             </div>
-            <button className="finish-in-menu" >Finish</button>
+            <button className="finish-in-menu">Itinerary setup</button>
           </div>
         </div>
       </div>

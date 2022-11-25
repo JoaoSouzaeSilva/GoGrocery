@@ -6,6 +6,7 @@ const SearchItem = ({
   itemPrice,
   onSelectItem,
   onSetProductInfo,
+  onProductSelect,
 }: any) => {
   return (
     <>
@@ -14,6 +15,7 @@ const SearchItem = ({
         onClick={() => {
           onSelectItem();
           onSetProductInfo(itemName, itemImg, itemPrice);
+          onProductSelect();
         }}
       >
         <div className="search-item-name">{itemName}</div>

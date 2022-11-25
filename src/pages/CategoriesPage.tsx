@@ -8,7 +8,7 @@ import {
 import CategoriesList from "../components/categories/categories-list.component";
 import ProductList from "../components/products/product-list.component";
 import headerImg from "../images/header.png";
-import { Categories, Items } from "../data/items.js";
+import { Categories } from "../data/items.js";
 
 import "./CategoriesPage.scss";
 import { useEffect, useState } from "react";
@@ -21,6 +21,7 @@ const CategoriesPage = () => {
   let initialProductInfo: any[] = [];
   const [open, setOpen] = useState(false);
   const [itemSelected, setItemSelected] = useState(false);
+  const [searching, setSearching] = useState(false);
   const [productInfo, setProductInfo] = useState(initialProductInfo);
   const [addedItems, setAddedItems] = useState(initialAddedItems);
   const [itemQuantity, setItemQuantity] = useState(1);
@@ -64,12 +65,12 @@ const CategoriesPage = () => {
   //Add the selected item to a list of items that will be listed in the sliding menu
   const handleAddItem = (name: any, img: any) => {
     if (!alreadyInList(name, addedItems)) {
-      if (itemQuantity == 0) setAddedItems((prevItems) => [...prevItems]);
+      if (itemQuantity === 0) setAddedItems((prevItems) => [...prevItems]);
       else
         setAddedItems((prevItems) => [...prevItems, [name, img, itemQuantity]]);
       return addedItems;
     } else {
-      if (itemQuantity == 0) {
+      if (itemQuantity === 0) {
         setAddedItems((prevItems) => {
           const updatedItems = prevItems.filter((item) => item[0] !== name);
           return updatedItems;
@@ -111,6 +112,11 @@ const CategoriesPage = () => {
     });
   };
 
+  const stopSearching = () => {
+    setSearching(false);
+    setSearchInput("")
+  };
+
   let itemCard = itemSelected ? (
     <AddToList
       name={productInfo[0]}
@@ -143,6 +149,7 @@ const CategoriesPage = () => {
         {itemCard}
         <div className={open ? "dimmed" : itemSelected ? "dimmed" : "undimmed"}>
           <IonContent
+            id="ion-content"
             className="ion-content-categories"
             onClick={
               open
@@ -162,18 +169,24 @@ const CategoriesPage = () => {
                 maxLength={38}
                 onChange={(event) => setSearchInput(event.target.value)}
                 value={searchInput}
+                onClick={() => setSearching(true)}
               ></input>
-              {searchInput.length != 0 && (
-                <SearchBar
-                  query={searchInput}
-                  onSelectItem={handleSelectItem}
-                  onSetProductInfo={handleSetProductInfo}
-                />
+              {searching && searchInput.length !== 0 && (
+                <div id="search-menu">
+                  <SearchBar
+                    query={searchInput}
+                    onSelectItem={handleSelectItem}
+                    onSetProductInfo={handleSetProductInfo}
+                    onProductSelect={stopSearching}
+                  />
+                </div>
               )}
               <button className="see-list" onClick={toggleSlidingMenu}>
                 See List
               </button>
-              <button className="itinerary-setup">Itinerary setup</button>
+              <button id="it-menu" className="itinerary-setup">
+                Itinerary setup
+              </button>
             </div>
             <div className="divider" />
             <p className="categories-header">Categories</p>
