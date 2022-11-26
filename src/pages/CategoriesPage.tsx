@@ -164,7 +164,7 @@ const CategoriesPage = () => {
               <input
                 type="text"
                 className="search"
-                placeholder="What are you looking for?"
+                placeholder="Enter the name of the product you are looking for"
                 color="#cbd2c3"
                 maxLength={38}
                 onChange={(event) => setSearchInput(event.target.value)}

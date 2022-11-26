@@ -42,6 +42,10 @@
   margin-left: -28%;
 }
 
+input::placeholder {
+  font-size: 1vw;
+}
+
 .search {
   background-color: #ffffff;
   background-image: url("../images/search.png");
