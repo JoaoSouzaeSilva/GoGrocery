@@ -1,0 +1,138 @@
+.ion-toolbar-lists {
+    --background: #cbd2c3;
+    height: 75px;
+    width: 100%;
+    display: flex;
+  }
+  
+  .img-lists {
+    height: 100%;
+  }
+  
+  .img_text-lists {
+    font-size: small;
+    margin-left: 6px;
+    align-self: flex-end;
+    margin-bottom: 3px;
+    color: #47525e;
+  }
+
+  
+  .ion-content-lists {
+    --background: none;
+    background-image: url("../images/lists_bg.png");
+    
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-position: center;
+    height: 100%;
+    width: 100%; 
+    filter: opacity(100%);
+
+  }
+  
+  .lists-container {
+    background-color: #CBD2C3;
+    padding: 1rem;
+    border-radius: 20px;
+  
+    box-shadow: 0px 0px 24px -10px rgba(0, 0, 0, 0.75);
+    display: flex;
+    flex-direction: column;
+    
+    margin: 0 auto;
+    position: fixed;
+  
+    color: #47525e;
+  }
+  
+  .grocery-lists {
+    background-color: #CBD2C3;
+    border-radius: 20px;
+  }
+  
+  .grocery-lists-title {
+    color: #47525e;
+    font-family: Lato;
+    position: fixed;
+    margin-top: 0.5rem;
+    margin-left: 1.01rem;
+  }
+  
+  .text-lists {
+    color: #47525e;
+    font-family: Lato;
+    font-size: large;
+    margin-left: 0.8rem;
+    margin-top: 2rem;
+  }
+
+  .separator-lists {
+    width: 38%;
+    border-bottom: 1.2px solid #5F6E35;
+    margin-top: 2.5rem;
+    margin-left: 0.5rem;
+    position: fixed;
+  }
+
+  .grocery-lists-text{
+    p:first-child {
+      margin-top: 2.5rem;
+    }
+    margin-left: 1.05rem;
+  }
+
+  .separator-between-lists {
+    width: 45%;
+    border-bottom: 1.2px solid #73804F;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 5%;
+    margin-right: 10%;
+  }
+  
+  @media(min-width: 300px) {
+    .ion-content-lists{
+      background-image: url("../images/greens.png");
+    
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: scroll;
+      background-position: center;
+      height: 100%;
+      width: 100%; 
+      filter: opacity(100%);
+    }
+    
+    .lists-container {
+      width: 100%;
+      height: 65%;
+      margin-top: 3rem;
+      gap: 0.2em;
+    }
+  }
+
+  @media (min-width: 800px) {
+
+    .ion-content-lists {
+      --background: none;
+      background-image: url("../images/lists_bg.png");
+      
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: scroll;
+      background-position: center;
+      height: 100%;
+      width: 100%; 
+      filter: opacity(100%);
+
+    }
+    .lists-container {
+      margin-left: 3rem;
+      width: 42vw;
+      height: 80vh;
+      margin-top: 3rem;
+      
+    }
+  }

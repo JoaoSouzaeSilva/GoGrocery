@@ -1,16 +1,6 @@
 {
   "users": [
-    {
-      "id": "user1@gmail.com",
-      "name": "user1",
-      "email": "user1@gmail.com",
-      "password": "1234"
-    },
-    {
-      "id": "teste@email.com",
-      "name": "João Souza e Silva",
-      "email": "teste@email.com",
-      "password": "password"
-    }
+    
+
   ]
 }
