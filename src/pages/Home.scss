@@ -1,6 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&family=Poiret+One&display=swap');
+
 @import url('https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&family=Monoton&family=Poiret+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&family=Lato:ital,wght@0,300;1,700&family=Monoton&family=Poiret+One&display=swap');
 
 .ion-buttons-home {
   color: #47525e;
@@ -67,9 +67,10 @@
 .homePage_title {
   color: #47525e;
   font-size: 50px;
-  font-weight: bold;
+  font-weight: bolder;
   text-align: center;
   overflow: auto;
+
 }
 
 .separator {
@@ -185,7 +186,7 @@
 
 
   ion-label {
-    font-family: "Roboto", sans-serif;
+    y: "Roboto", sans-serif;
     text-align: center;
 
   }
@@ -382,11 +383,8 @@
 
 
 .faq-text {
-  /* font-family: 'Gloria Hallelujah', cursive; */
-  /* font-family: 'Poiret One', cursive;
-  font-weight: 900; */
   font-family: 'Monoton', cursive;
-}
+} 
 
 .accordion-fix {
   --background-color: #a3af95;

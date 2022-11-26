@@ -64,18 +64,9 @@ const SignUpComponent = () => {
     showPassword ? setPasswordIcon(eye) : setPasswordIcon(eyeOff);
   };
 
-  async function isUser() {
-    const response = await fetch("http://localhost:3000/users/" + email);
-    console.log(response)
-    console.log(response.ok)
-    if (response.ok) {
-      console.log("entrei response ok")
-      return true;
-    }
-    else {
-      console.log("entrei no else")
-      return false;
-    }
+  async function canRegister() {
+    if (localStorage.getItem(email) == null) return true;
+    else return false;
   }
 
   function checkPasswordsEquality() {
@@ -94,36 +85,30 @@ const SignUpComponent = () => {
   }
 
   const checkEmailValidity = () => {
-    const emailMatch = email.match( /^(?=.{1,254}$)(?=.{1,64}@)[a-zA-Z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-zA-Z0-9!#$%&'*+/=?^_`{|}~-]+)*@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/);
+    const emailMatch = email.match(/^(?=.{1,254}$)(?=.{1,64}@)[a-zA-Z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-zA-Z0-9!#$%&'*+/=?^_`{|}~-]+)*@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/);
     if (emailMatch != null) return true;
     else return false;
   }
 
+
   const handleSignUp = () => {
+    let aux = canRegister();
     if (checkIfFilled()) {
       if (checkEmailValidity()) {
-
-      if (!isUser()) {
-        console.log("entrei")
           if (checkPasswordsEquality()) {
             if (checkPasswordSecurity()) {
-              const user = {
-                id: email,
-                name: name,
-                email: email,
-                password: password,
-              };
-              fetch("http://localhost:3000/users", {
-                method: "POST",
-                body: JSON.stringify(user),
-                headers: {
-                  "Content-type": "application/json",
-                },
-              })
-                .then((res) => {
-                  return res.json();
-                })
-                .then((data) => console.log(data));
+              if (await aux) {
+                const user = {
+                  id: email,
+                  name: name,
+                  email: email,
+                  password: password,
+                };
+                localStorage.setItem(email, JSON.stringify(user));
+              }
+              else {
+                setEmailError(true);
+              }
             }
             else {
               setPasswordSecError(true)
@@ -131,11 +116,6 @@ const SignUpComponent = () => {
           }
           else {
             setPasswordError(true)
-          }
-        }
-        else {
-          console.log("entrei no else do handlesignup")
-          setEmailError(true);
         }
       }
       else {
@@ -259,14 +239,14 @@ const SignUpComponent = () => {
         message={fieldsFilledMessage}
         buttons={["OK"]}
       />
-        <IonAlert
+      <IonAlert
         isOpen={passwordSecError}
         onDidDismiss={() => setPasswordSecError(false)}
         header={"Oh no!"}
         message={passwordSecMessage}
         buttons={["OK"]}
       />
-        <IonAlert
+      <IonAlert
         isOpen={invalidEmailError}
         onDidDismiss={() => setInvalidEmailError(false)}
         header={"Oh no!"}
