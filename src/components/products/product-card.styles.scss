@@ -3,9 +3,10 @@
   border-color: #8492a6;
   border-width: 1px;
   border-style: solid;
+  max-height: 35%;
+  min-height: 35%;
 
-  max-height: 40%;
-  width: 12%;
+  width: 13%;
 
   cursor: pointer;
 }
@@ -17,25 +18,28 @@
 
   margin: auto;
   display: block;
+
 }
 
 .img-text-divider {
   width: 100%;
   border-bottom: 1px solid #47525e;
-  margin-top: 10px;
+  margin-top: 10px; 
 }
 
 .text-area {
   background-image: url("../../images/add-to-list.png");
   background-repeat: no-repeat;
-  background-size: 22%;
+  background-size: 21%;
   background-position-x: 95%;
+
 }
 
 .product-name {
   color: #47525e;
   font-family: Lato;
   font-weight: bold;
+  width: 65%;
   margin-left: 8%;
   margin-top: 10%;
 }

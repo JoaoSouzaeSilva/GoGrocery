@@ -21,7 +21,7 @@ const CategoryIcon = ({ categoryName, categoryImage }: any) => {
             src={process.env.PUBLIC_URL + "/img/" + categoryImage}
           ></img>
         </a>
-        <p className="image-name">{categoryName}</p>
+        <p className="image-name">{categoryName.replace(/_/g, ', ')}</p>
       </div>
     </>
   );

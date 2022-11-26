@@ -11,7 +11,7 @@ const ProductList = ({
   return (
     <>
       <div className="text-area-grid">
-        <p className="product-header">{category}</p>
+        <p className="product-header">{category.replace(/_/g, ', ')}</p>
       </div>
       <div id={category} className="product-list">
         {products.map((product: any) => (
