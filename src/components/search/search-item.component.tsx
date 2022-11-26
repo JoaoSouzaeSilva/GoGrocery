@@ -24,9 +24,14 @@ const SearchItem = ({
             src={process.env.PUBLIC_URL + "/img/" + itemImg}
             className="search-item-image"
           />
+          <div className="search-item-divider"></div>
         </div>
       )}
-      {itemName === "none" && <div className="no-items">There are no items with the given name...</div>}
+      {itemName === "none" && (
+        <div className="no-items">
+          There are no items with the given name...
+        </div>
+      )}
     </>
   );
 };
