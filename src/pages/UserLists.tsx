@@ -48,7 +48,20 @@ import {
                 <p className="text-lists">
                   - Weekly groceries
                 </p>
-                <div className="separator-between-lists"/>
+                {/*   <IonList>
+                {lists.map((list) => (
+                  <IonItem
+                    className="text-lists"
+                    detail
+                    button
+                    key={list.id}
+                    routerLink={`/app/myparcel/${list.id}`}
+                  >
+                    <IonLabel>{list.name}</IonLabel>
+                    <div className="separator-between-lists"/>
+                  </IonItem>
+                ))}
+              </IonList> */}
               
           
               </div>

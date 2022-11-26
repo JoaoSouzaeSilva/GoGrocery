@@ -65,7 +65,7 @@
     font-family: Lato;
     font-size: large;
     margin-left: 0.8rem;
-    margin-top: 2rem;
+    margin-top: 4rem;
   }
 
   .separator-lists {
@@ -74,13 +74,6 @@
     margin-top: 2.5rem;
     margin-left: 0.5rem;
     position: fixed;
-  }
-
-  .grocery-lists-text{
-    p:first-child {
-      margin-top: 2.5rem;
-    }
-    margin-left: 1.05rem;
   }
 
   .separator-between-lists {
@@ -111,6 +104,10 @@
       margin-top: 3rem;
       gap: 0.2em;
     }
+
+    .separator-lists {
+      width: 91%;
+    }
   }
 
   @media (min-width: 800px) {
@@ -134,5 +131,9 @@
       height: 80vh;
       margin-top: 3rem;
       
+    }
+
+    .separator-lists {
+      width: 38%;
     }
   }
