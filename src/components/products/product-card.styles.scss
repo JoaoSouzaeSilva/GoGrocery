@@ -4,8 +4,9 @@
   border-width: 1px;
   border-style: solid;
 
-  max-height: 40%;
-  width: 12%;
+  /* max-height: 40%; */
+  height: 35%;
+  width: 13%;
 
   cursor: pointer;
 }
@@ -28,7 +29,7 @@
 .text-area {
   background-image: url("../../images/add-to-list.png");
   background-repeat: no-repeat;
-  background-size: 22%;
+  background-size: 21%;
   background-position-x: 95%;
 }
 
@@ -36,6 +37,7 @@
   color: #47525e;
   font-family: Lato;
   font-weight: bold;
+  width: 65%;
   margin-left: 8%;
   margin-top: 10%;
 }
