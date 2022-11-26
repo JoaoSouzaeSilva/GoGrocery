@@ -1,4 +1,3 @@
-import { SelectedItems } from "../../data/selectedItems.js";
 import SlideMenuItem from "./slide-menu-item.component";
 
 import "./slide-menu.styles.scss";
@@ -25,7 +24,7 @@ const SlideMenu = ({ enabled, selectedItems, onDeleteItem }: any) => {
                 </div>
               ))}
             </div>
-            <button className="finish-in-menu" >Finish</button>
+            <button className="finish-in-menu">Itinerary setup</button>
           </div>
         </div>
       </div>

@@ -1,0 +1,22 @@
+.search-bar {
+    display: grid;
+
+    position: absolute;
+
+    width: 25%;
+    max-height: 40%;
+
+    background-color: #ffffff;
+    border-color: black;
+    border-style: solid;
+    border-radius: 5px;
+
+    margin-left: -17.9vw;
+    margin-top: 2.8%;
+
+    overflow: scroll;
+
+    padding: 5px;
+
+    filter: opacity(95%);
+}

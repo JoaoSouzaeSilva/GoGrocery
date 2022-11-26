@@ -11,6 +11,7 @@ const ProductCard = ({
   return (
     <>
       <div
+        id={productName}
         className="product-element"
         onClick={() => {
           onSelectItem();

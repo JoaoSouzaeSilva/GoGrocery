@@ -14,16 +14,18 @@ import "./CategoriesPage.scss";
 import { useEffect, useState } from "react";
 import SlideMenu from "../components/slide-menu/slide-menu.component";
 import AddToList from "../components/products/add-to-list.component";
-import { SelectedItems } from "../data/selectedItems";
+import SearchBar from "../components/search/search-bar.component";
 
 const CategoriesPage = () => {
-  let noItemsArray: any[] = [];
-  let array: any[] = [];
+  let initialAddedItems: any[] = [];
+  let initialProductInfo: any[] = [];
   const [open, setOpen] = useState(false);
   const [itemSelected, setItemSelected] = useState(false);
-  const [productInfo, setProductInfo] = useState(array);
-  const [addedItems, setAddedItems] = useState(noItemsArray);
+  const [searching, setSearching] = useState(false);
+  const [productInfo, setProductInfo] = useState(initialProductInfo);
+  const [addedItems, setAddedItems] = useState(initialAddedItems);
   const [itemQuantity, setItemQuantity] = useState(1);
+  const [searchInput, setSearchInput] = useState("");
 
   //Define wether the sliding menu is toggled or not
   const toggleSlidingMenu = () => {
@@ -35,31 +37,6 @@ const CategoriesPage = () => {
     setItemSelected(!itemSelected);
   };
 
-  //send data to the db.json file
-  /* const user = {
-    id: "3",
-    name: "user1",
-  };
-
-  fetch("http://localhost:3000/people", {
-    method: "POST",
-    body: JSON.stringify(user),
-    headers: {
-      "Content-type": "application/json",
-    },
-  })
-    .then((res) => {
-      return res.json();
-    })
-    .then((data) => console.log(data)); */
-
-  //fetch data from the db.json file
-  /* fetch("http://localhost:3000/people")
-    .then((res) => {
-      return res.json();
-    })
-    .then((data) => console.log(data));
- */
   //Used to show the info of a certain item when we click it (name,image,price)
   const handleSetProductInfo = (
     productName: any,
@@ -88,12 +65,12 @@ const CategoriesPage = () => {
   //Add the selected item to a list of items that will be listed in the sliding menu
   const handleAddItem = (name: any, img: any) => {
     if (!alreadyInList(name, addedItems)) {
-      if (itemQuantity == 0) setAddedItems((prevItems) => [...prevItems]);
+      if (itemQuantity === 0) setAddedItems((prevItems) => [...prevItems]);
       else
         setAddedItems((prevItems) => [...prevItems, [name, img, itemQuantity]]);
       return addedItems;
     } else {
-      if (itemQuantity == 0) {
+      if (itemQuantity === 0) {
         setAddedItems((prevItems) => {
           const updatedItems = prevItems.filter((item) => item[0] !== name);
           return updatedItems;
@@ -135,6 +112,11 @@ const CategoriesPage = () => {
     });
   };
 
+  const stopSearching = () => {
+    setSearching(false);
+    setSearchInput("")
+  };
+
   let itemCard = itemSelected ? (
     <AddToList
       name={productInfo[0]}
@@ -167,6 +149,7 @@ const CategoriesPage = () => {
         {itemCard}
         <div className={open ? "dimmed" : itemSelected ? "dimmed" : "undimmed"}>
           <IonContent
+            id="ion-content"
             className="ion-content-categories"
             onClick={
               open
@@ -184,11 +167,26 @@ const CategoriesPage = () => {
                 placeholder="What are you looking for?"
                 color="#cbd2c3"
                 maxLength={38}
+                onChange={(event) => setSearchInput(event.target.value)}
+                value={searchInput}
+                onClick={() => setSearching(true)}
               ></input>
+              {searching && searchInput.length !== 0 && (
+                <div id="search-menu">
+                  <SearchBar
+                    query={searchInput}
+                    onSelectItem={handleSelectItem}
+                    onSetProductInfo={handleSetProductInfo}
+                    onProductSelect={stopSearching}
+                  />
+                </div>
+              )}
               <button className="see-list" onClick={toggleSlidingMenu}>
                 See List
               </button>
-              <button className="finish">Finish</button>
+              <button id="it-menu" className="itinerary-setup">
+                Itinerary setup
+              </button>
             </div>
             <div className="divider" />
             <p className="categories-header">Categories</p>

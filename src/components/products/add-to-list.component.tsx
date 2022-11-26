@@ -52,7 +52,7 @@ const AddToList = ({
           className="add-to-list-button"
           onClick={() => {
             onAddItem(name, img);
-            presentToast("top");
+            presentToast("middle");
             onClickAddItem();
           }}
         >
