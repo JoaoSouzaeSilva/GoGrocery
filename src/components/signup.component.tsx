@@ -90,8 +90,7 @@ const SignUpComponent = () => {
     else return false;
   }
 
-
-  const handleSignUp = () => {
+  async function handleSignUp() {
     let aux = canRegister();
     if (checkIfFilled()) {
       if (checkEmailValidity()) {
