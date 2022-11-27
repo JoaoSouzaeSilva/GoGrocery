@@ -2,6 +2,7 @@ import {
   IonButton,
   IonButtons,
   IonContent,
+  IonItem,
   IonPage,
   IonToolbar,
 } from "@ionic/react";
@@ -56,7 +57,16 @@ const Profile = () => {
                 {JSON.parse(
                   localStorage.getItem(location.state.email)!
                 ).lists.map((list: any) => (
-                  <div>{list.listName}</div>
+                  <IonItem
+                    className="list-name"
+                    onClick={() =>
+                      history.push("/lists/" + list.listName, {
+                        id: location.state.email,
+                      })
+                    }
+                  >
+                    {list.listName}
+                  </IonItem>
                 ))}
               </div>
               <a href="/home">

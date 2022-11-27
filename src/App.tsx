@@ -66,7 +66,7 @@ const Routing = () => {
           <Route exact path="/lists">
             <UserLists />
           </Route>
-          <Route exact path="/app/mylist/:id">
+          <Route exact path="/lists/:id">
             <List />
           </Route>
           <Route exact path="/profile">

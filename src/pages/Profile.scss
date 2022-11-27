@@ -177,7 +177,7 @@
     margin-left: 0.5vw; 
     margin-top: 27.5vh;
     width: 13vw;
-    height: 19vh;
+    height: 33vh;
     border-radius: 10px;
     position:absolute;
 
@@ -204,6 +204,10 @@
     margin-top: 58vh;
     margin-left: -3vw;
     position: absolute;
+  }
+
+  .list-name {
+    cursor: pointer;
   }
   
   @media (max-width: 480px) {
