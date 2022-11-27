@@ -4,9 +4,14 @@ import { IonReactRouter } from "@ionic/react-router";
 import Home from "./pages/Home";
 import About from "./pages/About";
 
-import CategoriesPage from "./pages/CategoriesPage"
-import SignIn from "./pages/SignIn"
-import SignUp from "./pages/SignUp"
+import CategoriesPage from "./pages/CategoriesPage";
+import SignIn from "./pages/SignIn";
+import SignUp from "./pages/SignUp";
+import UserLists from "./pages/UserLists";
+import List from "./pages/List";
+import NotFoundPage from "./pages/NotFoundPage";
+import Profile from "./pages/Profile";
+import SaveList from "./pages/SaveList";
 
 /* Core CSS required for Ionic components to work properly */
 import "@ionic/react/css/core.css";
@@ -27,16 +32,6 @@ import "@ionic/react/css/display.css";
 /* Theme variables */
 import "./theme/variables.css";
 
-import CategoryIcon from "./components/categories/category-icon.component";
-import CategoriesList from "./components/categories/categories-list.component";
-import ProductCard from "./components/products/product-card.component";
-import ProductList from "./components/products/product-list.component";
-import SlideMenu from "./components/slide-menu/slide-menu.component";
-import SlideMenuItem from "./components/slide-menu/slide-menu-item.component";
-import UserLists from "./pages/UserLists";
-import List from "./pages/List";
-import NotFoundPage from "./pages/NotFoundPage";
-
 setupIonicReact();
 
 const App: React.FC = () => (
@@ -53,24 +48,30 @@ const Routing = () => {
           <Route exact path="/home">
             <Home />
           </Route>
-          <Redirect exact path="/" to="/home"/> 
+          <Redirect exact path="/" to="/home" />
           <Route exact path="/about">
             <About />
           </Route>
           <Route exact path="/categories">
-            <CategoriesPage/>
+            <CategoriesPage />
           </Route>
           <Route exact path="/signin">
             <SignIn />
           </Route>
           <Route exact path="/signup">
-            <SignUp/>
+            <SignUp />
           </Route>
           <Route exact path="/lists">
-            <UserLists/>
+            <UserLists />
           </Route>
           <Route exact path="/app/mylist/:id">
-          <List/>
+            <List />
+          </Route>
+          <Route exact path="/profile">
+            <Profile />
+          </Route>
+          <Route exact path="/savelist">
+            <SaveList />
           </Route>
           <Route>
             <NotFoundPage />
