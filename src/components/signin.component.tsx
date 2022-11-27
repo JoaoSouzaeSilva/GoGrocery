@@ -116,7 +116,9 @@ return (
         Sign In
       </IonButton>
       <IonButton expand="block" fill="clear" class="ion-text-wrap" className="btn-signup ion-item-email-pwd" routerLink="/signup">
+        <p>
         Don't have an account? Create one <strong>here</strong>.
+        </p>
       </IonButton>
     </div>
     <IonAlert

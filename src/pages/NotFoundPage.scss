@@ -1,0 +1,72 @@
+.ion-content-notFound {
+    --background: none;
+    background-image: url("../images/thankyou.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    filter: opacity(40%);
+}
+
+.ion-notFound-container {
+    background-color: #CBD2C3;
+
+    border-radius: 20px;
+    box-shadow: 0px 0px 24px -10px rgba(0, 0, 0, 0.75);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
+
+}
+
+.icon-notFound{
+    margin-right: 2rem;
+}
+
+
+@media(min-width: 300px) {
+
+    .ion-content-notFound {
+        background-image: url("../images/supermarket.jpg");
+    }
+
+    .ion-notFound-container {
+        width: 75%;
+        height: 30%;
+        margin-top: 12rem;
+        gap: 0.2em;
+
+        .text-notFound {
+            width: 80%;
+            text-align: center;
+            margin-top: -18rem;
+            margin-left: auto;
+            margin-right: auto;
+            font-weight: bold;
+            font-size: larger;
+        }
+        .text-notFound1 {
+            width: 80%;
+            text-align: center;
+            margin-top: -12rem;
+            margin-left: auto;
+            margin-right: auto;
+         
+            font-size: medium;
+        }
+    }
+}
+
+@media (min-width: 800px) {
+
+    .ion-content-notFound {
+        background-image: url("../images/thankyou.png");
+    }
+
+    .ion-notFound-container {
+        width: 60vh;
+        height: 30vh;
+        margin-top: 12rem;
+
+    }
+}
