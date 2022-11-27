@@ -9,7 +9,7 @@ const container = document.getElementById("root");
 const root = createRoot(container!);
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename="/GoGrocery">
       <App />
     </BrowserRouter>
   </React.StrictMode>
