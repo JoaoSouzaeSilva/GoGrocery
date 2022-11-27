@@ -1,24 +1,26 @@
 import {
   IonButton,
-  IonButtons,
   IonContent,
-  IonIcon,
-  IonItem,
   IonPage,
   IonText,
-  IonTitle,
   IonToolbar,
 } from "@ionic/react";
 import "./Choice.css";
 import headerImg from "../images/header.png";
+import { useHistory } from "react-router";
 
 const Choice = () => {
+  let history: any = useHistory();
+  const handleRedirectToProfile = () => {
+    history.push("/profile", { email: history.location.state.email });
+  };
+
   return (
     <IonPage>
       <IonToolbar className="ion-toolbar-choice">
         <img className="img" slot="start" src={headerImg} />
         <div className="img_text-choices">have it your way</div>
-        <div className="profile-icon">
+        <div className="profile-icon" onClick={() => handleRedirectToProfile()}>
           <ProfileIcon />
         </div>
       </IonToolbar>

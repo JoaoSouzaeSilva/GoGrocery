@@ -9,8 +9,10 @@ import {
 } from "@ionic/react";
 import { eye, eyeOff } from "ionicons/icons";
 import { useState } from "react";
+import { useHistory } from "react-router-dom";
 
 const SignInComponent = () => {
+  let history = useHistory();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState(
@@ -50,17 +52,11 @@ const SignInComponent = () => {
     else return true;
   }
 
-  async function handleSignIn() {
-    let aux = checkEmail();
-    if (await aux) {
-      if (checkPassword()) {
-        const user = {
-          id: email,
-          email: email,
-          password: password,
-        };
-        localStorage.setItem(email, JSON.stringify(user));
-      } else setPasswordError(true);
+  async function handleSignIn(this: any) {
+    let aux = await checkEmail();
+    if (aux) {
+      if (checkPassword()) history.push("/choice", { email: email });
+      else setPasswordError(true);
     } else setEmailError(true);
   }
 

@@ -5,13 +5,17 @@ import {
   IonPage,
   IonToolbar,
 } from "@ionic/react";
-import { useHistory } from "react-router-dom";
+import { analytics } from "ionicons/icons";
+import { useHistory, useLocation } from "react-router-dom";
 import headerImg from "../images/header.png";
 
 import "./Profile.scss";
 
 const Profile = () => {
   let history = useHistory();
+  let location : any = useLocation();
+
+  console.log(history)
   return (
     <>
       <IonPage>
@@ -39,11 +43,11 @@ const Profile = () => {
               <div className="profilepic">&nbsp;</div>
               <p className="text-profile-name">Name</p>
               <div className="text-profile-div-name">
-                <p className="text-profile-username">Horace Fieldings</p>
+                <p className="text-profile-username">{JSON.parse(localStorage.getItem(location.state.email)!).name}</p>
               </div>
               <p className="text-profile-email">Email</p>
               <div className="text-profile-div-email">
-                <p className="text-profile-emailname">h.fieldings@mail.net</p>
+                <p className="text-profile-emailname">{location.state.email}</p>
               </div>
               <a href="/lists">
                 <p className="text-profile-saved-lists-title">Saved Lists</p>

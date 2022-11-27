@@ -6,10 +6,14 @@
 }
 
 .profile-icon {
-  width: 4.5vw;
+  display: flex;
+  width: 60px;
+  max-width: 60px;
   position: absolute;
   margin-top: -2%;
-  margin-left: 88.5vw;
+  margin-left: 90vw;
+
+  cursor: pointer;
 }
 
 .img_text-choices {
