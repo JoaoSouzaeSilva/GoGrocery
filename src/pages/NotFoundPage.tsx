@@ -27,7 +27,7 @@ const NotFoundPage = () => {
                 <div className="ion-notFound-container">
                     <div>
                         <IonLabel class="ion-text-wrap" className="text-notFound">
-                            Oops! Looks like either you mistyped the url. Let's agree to blame this on you.
+                            Oops! Looks like you mistyped the url. Let's agree to blame this on you.
                         </IonLabel>
                     </div>
                     <div>
