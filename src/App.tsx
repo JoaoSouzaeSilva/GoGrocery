@@ -36,6 +36,7 @@ import SlideMenuItem from "./components/slide-menu/slide-menu-item.component";
 import UserLists from "./pages/UserLists";
 import List from "./pages/List";
 import NotFoundPage from "./pages/NotFoundPage";
+import Choice from "./pages/Choice";
 
 setupIonicReact();
 
@@ -71,6 +72,9 @@ const Routing = () => {
           </Route>
           <Route exact path="/app/mylist/:id">
           <List/>
+          </Route>
+          <Route exact path="/choice">
+          <Choice/>
           </Route>
           <Route>
             <NotFoundPage />
