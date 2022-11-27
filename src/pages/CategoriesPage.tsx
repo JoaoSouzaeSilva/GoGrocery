@@ -141,7 +141,7 @@ const CategoriesPage = () => {
     addedItems.forEach((item: any) => productList.push(item));
     history.push("/listname", {
       id: JSON.parse(localStorage.getItem(history.location.state.email)!).id,
-      list: productList
+      list: productList,
     });
   };
 
@@ -153,7 +153,9 @@ const CategoriesPage = () => {
           <div className="img_text">have it your way</div>
           <IonButtons slot="end" className="ion-buttons-categories">
             <IonButton shape="round">
-              <p className="button-primary">Back</p>
+              <p className="button-primary" onClick={() => history.goBack()}>
+                Back
+              </p>
             </IonButton>
           </IonButtons>
         </IonToolbar>
