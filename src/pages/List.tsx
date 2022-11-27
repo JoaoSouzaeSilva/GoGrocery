@@ -10,7 +10,7 @@ import {
   
   import "./UserLists.scss";
   
-  const UserLists = () => {
+  const List = () => {
     let history = useHistory();
     return (
       <IonPage>
@@ -29,35 +29,19 @@ import {
             </IonButton>
           </IonButtons>
         </IonToolbar>
-        <IonContent className="ion-content-lists">
-          <div className="lists-container">
-            <div className="grocery-lists">
+        <IonContent className="ion-content-list">
+          <div className="list-container">
+            <div className="grocery-list">
               <div>
-                <h1 className="grocery-lists-title">
+                <h1 className="grocery-list-title">
                   My grocery lists
                 </h1>
               </div>
-              <div className="separator-lists"/>
-              <div className="grocery-lists-text">
-                <p className="text-lists">
-                  - Weekly groceries
+              <div className="separator-list"/>
+              <div className="grocery-list-text">
+                <p className="text-list">
+                  - Ingredients
                 </p>
-                {/*   <IonList>
-                {lists.map((list) => (
-                  <IonItem
-                    className="text-lists"
-                    detail
-                    button
-                    key={list.id}
-                    routerLink={`/app/mylist/${list.id}`}
-                  >
-                    <IonLabel>{list.name}</IonLabel>
-                    <div className="separator-between-lists"/>
-                  </IonItem>
-                ))}
-              </IonList> */}
-              
-          
               </div>
             </div>
           </div>
@@ -66,5 +50,5 @@ import {
     );
   };
   
-  export default UserLists;
+  export default List;
   
