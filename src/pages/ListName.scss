@@ -1,0 +1,116 @@
+.ion-toolbar-namelist {
+    --background: #cbd2c3;
+    height: 75px;
+    width: 100%;
+    display: flex;
+  }
+  
+  .img {
+    height: 100%;
+  }
+  
+  .img_text {
+    font-size: small;
+    margin-left: 6px;
+    align-self: flex-end;
+    margin-bottom: 3px;
+    color: #47525e;
+  }
+  
+  .back-button {
+    background-color: #8e9a84;
+    color: #47525e;
+    border-radius: 8px;
+    padding: 10px;
+  }
+  
+  .back {
+    font-weight: bold;
+  }
+  
+  .ion-content-namelist {
+    --background: none;
+    background-image: url("../images/savelist_bgo.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    filter: opacity(100%);
+  }
+  
+  .grocery-namelist {
+    background-color: #8E9A84;
+    border-radius: 10px;
+    border: 2px solid #343F4B;
+    margin: auto;
+    margin-top: 8%;
+    width: 40%;
+    height: 60%;
+  }
+  
+  .grocery-namelist-header {
+    width: 100%;
+    margin: auto;
+    height: 25%;
+  }
+  
+  .grocery-namelist-title {
+    margin-top: 0;
+    color: #47525e;
+    font-family: Lato;
+    text-align: center;
+    padding: 10%;
+  }
+
+  .grocery-namelist-input{
+        width: 100%;
+        margin: auto;
+        height: 25%;
+        margin-top: 8%;
+  }
+
+  .name-text-input{
+        background-color: #FFFFFF;
+        color: #47525E;
+        font-family: Lato;
+        border: 2px solid #8492A6;
+        border-radius: 10px;
+        width: 60%;
+        height: 60%;
+        margin-left: 20%;
+  }
+
+  .name-save-button {
+    background-color: rgba(185, 188, 180, 0.19);
+    color: #47525E;
+    font-family: Lato;
+    border: 3px solid #B9BCB4;
+    border-radius: 10px;
+    width: 30%;
+    height: 25%;
+    margin-left:35%;
+    font-size: 200%;
+  }
+  
+  .text {
+    color: #47525e;
+    font-family: Lato;
+    font-weight: 600;
+    text-align: left;
+  
+    padding: 1%;
+  }
+  
+  @media (max-width: 480px) {
+  
+    .lists-container {
+      display: grid;
+      grid-template-areas:
+        "grocery-lists";
+  
+      height: 100%;
+    
+      color: #47525e;
+    }
+  
+  }
+  

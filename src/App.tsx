@@ -14,7 +14,6 @@ import Profile from "./pages/Profile";
 import SaveList from "./pages/SaveList";
 import Choice from "./pages/Choice";
 
-
 /* Core CSS required for Ionic components to work properly */
 import "@ionic/react/css/core.css";
 
@@ -33,6 +32,7 @@ import "@ionic/react/css/display.css";
 
 /* Theme variables */
 import "./theme/variables.css";
+import ListName from "./pages/ListName";
 
 setupIonicReact();
 
@@ -76,7 +76,10 @@ const Routing = () => {
             <SaveList />
           </Route>
           <Route exact path="/choice">
-          <Choice/>
+            <Choice />
+          </Route>
+          <Route exact path="/listname">
+            <ListName />
           </Route>
           <Route>
             <NotFoundPage />
