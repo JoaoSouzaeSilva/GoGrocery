@@ -15,8 +15,11 @@ import { useEffect, useState } from "react";
 import SlideMenu from "../components/slide-menu/slide-menu.component";
 import AddToList from "../components/products/add-to-list.component";
 import SearchBar from "../components/search/search-bar.component";
+import { useHistory } from "react-router";
+import { NONAME } from "dns";
 
 const CategoriesPage = () => {
+  let history: any = useHistory();
   let initialAddedItems: any[] = [];
   let initialProductInfo: any[] = [];
   const [open, setOpen] = useState(false);
@@ -114,7 +117,7 @@ const CategoriesPage = () => {
 
   const stopSearching = () => {
     setSearching(false);
-    setSearchInput("")
+    setSearchInput("");
   };
 
   let itemCard = itemSelected ? (
@@ -129,6 +132,19 @@ const CategoriesPage = () => {
     />
   ) : undefined;
 
+  /**
+   * Add the items to a new array, get the user from localStorage, create a new user by concatenating
+   * the old user and the items from the list, set the new user in localStorage
+   */
+  const handleItenerarySetup = () => {
+    let productList: any[] = [];
+    addedItems.forEach((item: any) => productList.push(item));
+    history.push("/listname", {
+      id: JSON.parse(localStorage.getItem(history.location.state.email)!).id,
+      list: productList,
+    });
+  };
+
   return (
     <>
       <IonPage>
@@ -137,7 +153,9 @@ const CategoriesPage = () => {
           <div className="img_text">have it your way</div>
           <IonButtons slot="end" className="ion-buttons-categories">
             <IonButton shape="round">
-              <p className="button-primary">Back</p>
+              <p className="button-primary" onClick={() => history.goBack()}>
+                Back
+              </p>
             </IonButton>
           </IonButtons>
         </IonToolbar>
@@ -184,7 +202,13 @@ const CategoriesPage = () => {
               <button className="see-list" onClick={toggleSlidingMenu}>
                 See List
               </button>
-              <button id="it-menu" className="itinerary-setup">
+              <button
+                id="it-menu"
+                className="itinerary-setup"
+                onClick={() => {
+                  handleItenerarySetup();
+                }}
+              >
                 Itinerary setup
               </button>
             </div>
