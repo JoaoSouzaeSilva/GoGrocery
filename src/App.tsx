@@ -12,6 +12,8 @@ import List from "./pages/List";
 import NotFoundPage from "./pages/NotFoundPage";
 import Profile from "./pages/Profile";
 import SaveList from "./pages/SaveList";
+import Choice from "./pages/Choice";
+
 
 /* Core CSS required for Ionic components to work properly */
 import "@ionic/react/css/core.css";
@@ -31,20 +33,6 @@ import "@ionic/react/css/display.css";
 
 /* Theme variables */
 import "./theme/variables.css";
-
-
-import CategoryIcon from "./components/categories/category-icon.component";
-import CategoriesList from "./components/categories/categories-list.component";
-import ProductCard from "./components/products/product-card.component";
-import ProductList from "./components/products/product-list.component";
-import SlideMenu from "./components/slide-menu/slide-menu.component";
-import SlideMenuItem from "./components/slide-menu/slide-menu-item.component";
-import UserLists from "./pages/UserLists";
-import List from "./pages/List";
-import Profile from "./pages/Profile";
-import SaveList from "./pages/SaveList";
-import NotFoundPage from "./pages/NotFoundPage";
-import Choice from "./pages/Choice";
 
 setupIonicReact();
 
