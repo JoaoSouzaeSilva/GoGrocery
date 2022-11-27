@@ -118,7 +118,9 @@ const SignInComponent = () => {
           className="btn-signup ion-item-email-pwd"
           routerLink="/signup"
         >
-          Don't have an account? Create one <strong>here</strong>.
+          <p>
+            Don't have an account? Create one <strong>here</strong>.
+          </p>
         </IonButton>
       </div>
       <IonAlert
