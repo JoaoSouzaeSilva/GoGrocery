@@ -1,0 +1,220 @@
+.ion-toolbar-profile {
+    --background: #cbd2c3;
+    height: 75px;
+    width: 100%;
+    display: flex;
+  }
+  
+  .img {
+    height: 100%;
+  }
+  
+  .img_text {
+    font-size: small;
+    margin-left: 6px;
+    align-self: flex-end;
+    margin-bottom: 3px;
+    color: #47525e;
+  }
+  
+  .back-button {
+    background-color: #8e9a84;
+    color: #47525e;
+    border-radius: 8px;
+    padding: 10px;
+  }
+  
+  .back {
+    font-weight: bold;
+  }
+  
+  .ion-content-profile {
+    --background: none;
+    background-image: url("../images/profile_bgo.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    filter: opacity(100%);
+  }
+  
+  .profilepic {
+    --background: none;
+    background-image: url("../images/profilepic.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    width: 100px;
+    height: 100px;
+    filter: opacity(100%);
+    margin-top: 7vh;
+    margin-left: 2vw;
+    position: absolute;
+  }
+
+  .profile-container {
+    /* display: grid;
+    grid-template-areas:
+      "grocery-profile blank-space";
+    gap: 3%;
+  
+    padding: 4%;
+    height: 100%; */
+    width: 40vw;
+    margin-left: 30vw;
+    margin-top: 10vh;
+
+    color: #47525e;
+    position: absolute;
+  }
+  
+  .grocery-profile {
+    height: 65vh;
+    width: 40vw;
+    background-color: #8e9a84;
+    border-radius: 20px;
+  
+    text-align: center;
+    position: absolute;
+  }
+  
+  .profile-title-container {
+    background-color: #A3AC9B;
+    height: 8vh;
+    width: 16vw;
+    text-align: center;
+    border-radius: 10px;
+    margin-left: 32vw;
+    margin-top: 6vh;
+    position: absolute;
+    z-index: 9999;
+    /* vertical-align: middle; */
+  }
+
+  .profile-title-text {
+    color: #000000;
+    font-family: Lato;
+    font-size: 22px;
+    margin-left: 36.5%;
+    margin-top: 6%;
+    /* text-align: left; */
+    position:absolute;
+  }
+  
+  .grocery-profile-title {
+    margin-top: 0;
+    font-weight: bolder;
+    color: #47525e;
+    font-family: Lato;
+    text-align: left;
+    position: relative;
+  }
+  
+  .text-profile-name {
+    color: #47525e;
+    font-family: Lato;
+    text-align: left;
+    margin-left: 11vw;
+    margin-top: 9vh;
+    position: absolute;
+  }
+  .text-profile-div-name {
+    background-color: #CAD3C3;
+    margin-left: 15vw; 
+    margin-top: 9vh;
+    width: 16vw;
+    height: 4vh;
+    border-radius: 10px;
+    position:absolute;
+  }
+  .text-profile-username {
+    color: #47525e;
+    font-family: Lato;
+    /* font-weight: 600; */
+    width: 15vw;
+    margin-left: 1vw; 
+    margin-top: 0vh;
+    position: absolute;
+    text-align: left;
+  }
+
+  .text-profile-email {
+    color: #47525e;
+    font-family: Lato;
+    text-align: left;
+    margin-left: 11vw;
+    margin-top: 15vh;
+    position: absolute;
+  }
+  .text-profile-div-email {
+    background-color: #CAD3C3;
+    margin-left: 15vw; 
+    margin-top: 15vh;
+    width: 16vw;
+    height: 4vh;
+    border-radius: 10px;
+    position:absolute;
+  }
+  .text-profile-emailname {
+    color: #47525e;
+    font-family: Lato;
+    width: 15vw;
+    margin-left: 1vw; 
+    margin-top: 0vh;
+    position: absolute;
+    text-align: left;
+  }
+  .text-profile-saved-lists-title {
+    color: #47525e;
+    font-family: Lato;
+    text-align: left;
+    margin-left: 2.2vw;
+    margin-top: 23vh;
+    position: absolute;
+  }
+
+  .text-profile-div-lists {
+    background-color: #CAD3C3;
+    margin-left: 0.5vw; 
+    margin-top: 27.5vh;
+    width: 13vw;
+    height: 19vh;
+    border-radius: 10px;
+    position:absolute;
+  }
+
+  .text-profile-saved-lists {
+    color: #47525e;
+    font-family: Lato;
+    text-align: left;
+    margin-top: 0vh;
+    padding: 4%;
+    position: absolute;
+  }
+
+  .log-out-button {
+    background-color: #ED8A70;
+    color: #47525E;
+    font-family: Lato;
+    /* background-color: #FFFFFF; */
+    border-radius: 10px;
+    width: 12vh;
+    height: 5vh;
+    margin-top: 58vh;
+    margin-left: -3vw;
+    position: absolute;
+  }
+  
+  @media (max-width: 480px) {
+  
+    .profile-container {
+      display: grid;
+      grid-template-areas:
+        "grocery-profile";
+  
+      height: 100%;
+    
+      color: #47525e;
+    }
+  
+  }
+  
