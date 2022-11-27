@@ -5,10 +5,7 @@ import {
   IonInput,
   IonItem,
   IonLabel,
-  IonList,
-  IonLoading,
-  IonText,
-  IonToast,
+  IonList
 } from "@ionic/react";
 import { eye, eyeOff } from "ionicons/icons";
 import { useState } from "react";
@@ -47,7 +44,7 @@ const SignInComponent = () => {
   }
 
   function checkPassword() {
-    if (password != localStorage.getItem(password)) return false;
+    if (password != JSON.parse(localStorage.getItem(email)!).password) return false;
     else return true;
   }
 
