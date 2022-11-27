@@ -131,6 +131,10 @@ const CategoriesPage = () => {
     />
   ) : undefined;
 
+  /**
+   * Add the items to a new array, get the user from localStorage, create a new user by concatenating
+   * the old user and the items from the list, set the new user in localStorage
+   */
   const handleItenerarySetup = () => {
     let productList: any[] = [];
     addedItems.forEach((item: any) => productList.push(item));
