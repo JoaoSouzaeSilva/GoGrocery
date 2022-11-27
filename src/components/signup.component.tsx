@@ -106,6 +106,7 @@ const SignUpComponent = () => {
                 name: name,
                 email: email,
                 password: password,
+                lists: []
               };
               localStorage.setItem(email, JSON.stringify(user));
             } else setEmailError(true);

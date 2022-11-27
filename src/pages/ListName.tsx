@@ -5,13 +5,37 @@ import {
   IonPage,
   IonToolbar,
 } from "@ionic/react";
+import { useState } from "react";
 import { useHistory } from "react-router-dom";
 import headerImg from "../images/header.png";
 
 import "./ListName.scss";
 
 const ListName = () => {
-  let history = useHistory();
+  let history: any = useHistory();
+  const [listName, setListName] = useState("")
+
+  const handleSaveList = () => {
+    let data = JSON.parse(localStorage.getItem(history.location.state.id)!);
+    let currentLists: any[] = JSON.parse(
+      localStorage.getItem(history.location.state.id)!
+    ).lists;
+    let newUser: any = JSON.stringify({
+      id: data.id,
+      email: data.email,
+      name: data.name,
+      password: data.password,
+      lists: [
+        ...currentLists,
+        {
+          listName: listName,
+          items: history.location.state.list,
+        },
+      ],
+    });
+    localStorage.setItem(data.id, newUser);
+  };
+
   return (
     <IonPage>
       <IonToolbar className="ion-toolbar-namelist">
@@ -37,11 +61,13 @@ const ListName = () => {
             </h1>
           </div>
           <div className="grocery-namelist-input">
-            <input type="text" className="name-text-input"></input>
+            <input type="text" className="name-text-input" onChange={(event: any) => setListName(event.target.value)}/>
           </div>
-          <a href="/thankyou">
-            <button className="name-save-button">Save</button>
-          </a>
+          {/* <a href="/thankyou"> */}
+          <button className="name-save-button" onClick={() => {handleSaveList()}}>
+            Save
+          </button>
+          {/* </a> */}
         </div>
       </IonContent>
     </IonPage>

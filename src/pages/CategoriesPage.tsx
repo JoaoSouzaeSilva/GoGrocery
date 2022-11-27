@@ -16,6 +16,7 @@ import SlideMenu from "../components/slide-menu/slide-menu.component";
 import AddToList from "../components/products/add-to-list.component";
 import SearchBar from "../components/search/search-bar.component";
 import { useHistory } from "react-router";
+import { NONAME } from "dns";
 
 const CategoriesPage = () => {
   let history: any = useHistory();
@@ -138,9 +139,10 @@ const CategoriesPage = () => {
   const handleItenerarySetup = () => {
     let productList: any[] = [];
     addedItems.forEach((item: any) => productList.push(item));
-    let user = JSON.parse(localStorage.getItem(history.location.state.email)!);
-    let newUser = JSON.stringify([user, { items: productList }]);
-    localStorage.setItem(user.email, newUser);
+    history.push("/listname", {
+      id: JSON.parse(localStorage.getItem(history.location.state.email)!).id,
+      list: productList
+    });
   };
 
   return (
