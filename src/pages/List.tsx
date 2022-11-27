@@ -61,6 +61,7 @@ const List = () => {
               </div>
             ))}
           </div>
+          <button className="go-to-itinerary">Calculate itinerary</button>
         </div>
       </IonContent>
     </IonPage>
