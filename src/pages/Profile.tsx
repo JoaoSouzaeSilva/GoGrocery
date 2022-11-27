@@ -5,7 +5,6 @@ import {
   IonPage,
   IonToolbar,
 } from "@ionic/react";
-import { analytics } from "ionicons/icons";
 import { useHistory, useLocation } from "react-router-dom";
 import headerImg from "../images/header.png";
 
@@ -13,9 +12,8 @@ import "./Profile.scss";
 
 const Profile = () => {
   let history = useHistory();
-  let location : any = useLocation();
+  let location: any = useLocation();
 
-  console.log(history)
   return (
     <>
       <IonPage>
@@ -43,7 +41,9 @@ const Profile = () => {
               <div className="profilepic">&nbsp;</div>
               <p className="text-profile-name">Name</p>
               <div className="text-profile-div-name">
-                <p className="text-profile-username">{JSON.parse(localStorage.getItem(location.state.email)!).name}</p>
+                <p className="text-profile-username">
+                  {JSON.parse(localStorage.getItem(location.state.email)!).name}
+                </p>
               </div>
               <p className="text-profile-email">Email</p>
               <div className="text-profile-div-email">
@@ -53,10 +53,11 @@ const Profile = () => {
                 <p className="text-profile-saved-lists-title">Saved Lists</p>
               </a>
               <div className="text-profile-div-lists">
-                <p className="text-profile-saved-lists">
-                  -Weekly Groceries -Monthly Groceries -Mexican Night -Margarita
-                  Night -Taco Tuesday
-                </p>
+                {JSON.parse(
+                  localStorage.getItem(location.state.email)!
+                ).lists.map((list: any) => (
+                  <div>{list.listName}</div>
+                ))}
               </div>
               <a href="/home">
                 <button className="log-out-button">Log Out</button>
