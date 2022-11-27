@@ -1,0 +1,69 @@
+.ion-toolbar-home {
+    --background: #cbd2c3;
+    display: flex;
+    height: 75px;
+    width: 100%;
+  }
+
+.profile-icon {
+    height:100%;
+}
+
+.choices{
+    text-align: center;
+    --background: white;
+}
+
+.background-image{
+    --background: url(/src/images/about.jpeg) no-repeat center/cover fixed;
+    /* opacity makes image black, not white! */
+    /* opacity: 0.5; */
+}
+
+.choice-text {
+    color: #47525E;
+    font-size: 1.5rem;
+    background-color: #CBD2C3;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.buttons-div{
+    display: flex;
+    justify-content: space-around;
+}
+
+.choice-text > div {
+    border: 10px solid #47525E;
+}
+
+.buttons-div {
+    height: 100%;
+}
+
+.big-button {
+    height: 75%;
+    width: 33%;
+    color: #47525E;
+    --background: #8E9A84;
+    --border-radius: 30px;    margin:30px;
+    font-size: 20px;
+}
+
+.button-img{
+    height: 15%;
+}
+
+@media(max-width: 1000px) {
+    .big-button {
+        height: 35%;
+        width: 50%;
+        display: inline-block;
+    }
+}
+
+.big-button-text {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-left: 10px;
+}
