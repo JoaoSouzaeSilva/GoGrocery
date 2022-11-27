@@ -15,6 +15,10 @@ const Choice = () => {
     history.push("/profile", { email: history.location.state.email });
   };
 
+  const handleShopNewList = () => {
+    history.push("/categories", { email: history.location.state.email });
+  };
+
   return (
     <IonPage>
       <IonToolbar className="ion-toolbar-choice">
@@ -39,6 +43,7 @@ const Choice = () => {
           <IonButton
             class="round ion-text-wrap"
             className="big-button new-list"
+            onClick={() => handleShopNewList()}
           >
             <img className="button-img" src={headerImg} />
             <IonText className="big-button-text">Shop a new List</IonText>

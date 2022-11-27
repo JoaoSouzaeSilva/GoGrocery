@@ -15,8 +15,10 @@ import { useEffect, useState } from "react";
 import SlideMenu from "../components/slide-menu/slide-menu.component";
 import AddToList from "../components/products/add-to-list.component";
 import SearchBar from "../components/search/search-bar.component";
+import { useHistory } from "react-router";
 
 const CategoriesPage = () => {
+  let history: any = useHistory();
   let initialAddedItems: any[] = [];
   let initialProductInfo: any[] = [];
   const [open, setOpen] = useState(false);
@@ -114,7 +116,7 @@ const CategoriesPage = () => {
 
   const stopSearching = () => {
     setSearching(false);
-    setSearchInput("")
+    setSearchInput("");
   };
 
   let itemCard = itemSelected ? (
@@ -128,6 +130,14 @@ const CategoriesPage = () => {
       onClickAddItem={handleSelectItem}
     />
   ) : undefined;
+
+  const handleItenerarySetup = () => {
+    let productList: any[] = [];
+    addedItems.forEach((item: any) => productList.push(item));
+    let user = JSON.parse(localStorage.getItem(history.location.state.email)!);
+    let newUser = JSON.stringify([user, { items: productList }]);
+    localStorage.setItem(user.email, newUser);
+  };
 
   return (
     <>
@@ -184,7 +194,13 @@ const CategoriesPage = () => {
               <button className="see-list" onClick={toggleSlidingMenu}>
                 See List
               </button>
-              <button id="it-menu" className="itinerary-setup">
+              <button
+                id="it-menu"
+                className="itinerary-setup"
+                onClick={() => {
+                  handleItenerarySetup();
+                }}
+              >
                 Itinerary setup
               </button>
             </div>
