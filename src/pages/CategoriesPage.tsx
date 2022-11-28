@@ -153,7 +153,7 @@ const CategoriesPage = () => {
           <div className="img_text">have it your way</div>
           <IonButtons slot="end" className="ion-buttons-categories">
             <IonButton shape="round">
-              <p className="button-primary" onClick={() => history.goBack()}>
+              <p className="button-primary-categories" onClick={() => history.goBack()}>
                 Back
               </p>
             </IonButton>

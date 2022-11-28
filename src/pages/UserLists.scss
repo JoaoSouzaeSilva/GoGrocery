@@ -62,7 +62,6 @@
 
   .title-header-lists {
     position: fixed;
-    width: 41.99%;
     height: 8.8%;
     background-color: #CBD2C3;
     border-radius: 20px;
@@ -114,6 +113,13 @@
     margin-left: 4%;
     margin-top: 1.2%;
   }
+
+  .no-lists{
+    margin-top: 10vh;
+    position: absolute;
+    margin-left: 5vw;
+    margin-right: auto;
+  }
   
   @media(min-width: 300px) {
     .ion-content-lists{
@@ -139,6 +145,10 @@
     .separator-lists {
       width: 91%;
     }
+
+    title-header-lists {
+      width: 80%;
+    }
   }
 
   @media (min-width: 800px) {
@@ -153,7 +163,6 @@
       background-position: center;
       height: 100%;
       width: 100%; 
-      filter: opacity(100%);
 
     }
     .lists-container {
@@ -166,5 +175,9 @@
 
     .separator-lists {
       width: 38%;
+    }
+
+    title-header-lists {
+      width: 40%;
     }
   }

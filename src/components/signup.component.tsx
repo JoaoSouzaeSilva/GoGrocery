@@ -127,7 +127,7 @@ const SignUpComponent = () => {
             color="primary"
             type="text"
             value={name}
-            placeholder="my name"
+            placeholder="My name"
             onIonChange={(event: any) => setName(event.detail.value)}
           />
         </IonItem>

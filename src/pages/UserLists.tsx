@@ -6,6 +6,7 @@ import {
   IonLabel,
   IonList,
   IonPage,
+  IonText,
   IonToolbar,
 } from "@ionic/react";
 import { useHistory } from "react-router-dom";
@@ -42,7 +43,8 @@ const UserLists = () => {
             <div className="separator-lists" />
             <div className="grocery-lists-text">
               <div>
-                {history.location.state.lists.map((list: any) => (
+                {history.location.state.lists.length === 0 && <IonText className="no-lists" color={"primary"}> You don't have any grocery lists yet!</IonText>}
+                {history.location.state.lists.length !== 0 && history.location.state.lists.map((list: any) => (
                   <div className="lists-list-item">
                     <div className="bullet-lists"></div>
                     <div
