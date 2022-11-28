@@ -1,0 +1,87 @@
+.itinerary-content{
+    background-color: #B1B8A9;
+}
+
+.button-primary{
+    width: 70px;
+}
+
+.map-select-container{
+    width: 70%;
+    height: 100%;
+    margin: 0 auto;
+}
+
+.map-container {
+    width: 70vw;
+    height: 70vh;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.map {
+    max-width: 100%;
+    height: auto;
+    max-height: 100%;
+}
+
+@media only screen and (min-width: 1000px){
+    .route-select-list{
+        width: 500px;
+        margin: 25px auto;
+    }
+}
+
+@media only screen and (max-width: 1000px){
+
+    .map-container{
+        width: 90vw;
+        height: 66vh;
+    }
+
+    .map-select-container {
+        width: 100%;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .route-select-list{
+       /*  width: 100% - 40px; */
+        margin: 25px;
+    }
+}
+
+.route-select-list{
+    
+    --ion-text-color: #47525E;
+    background-color: transparent;
+    /*--backdrop-opacity: var(--ion-backdrop-opacity, 0.32);*/
+}
+
+.route-select-list *{
+    --background: white;
+    border-radius: 5px;
+    font-weight: bold;
+    --border-width: 0;
+}
+
+.route-select-option{
+    --background: #CBD2C3;
+    --ion-text-color: #47525E;
+}
+
+.row-parent {
+    display: flex;
+    flex-direction:row;
+}
+
+.col {
+    flex: 1 1 0px;
+}
+
+.supermarkets-list{
+    border-radius: 20px 0 0 20px;
+}
+
+.supermarket-searchbar {
+    --border-radius: 5px;
+}
