@@ -21,7 +21,7 @@ import "./NotFoundPage.scss";
 const NotFoundPage = () => {
 
 
-    return (
+    return ( 
         <IonPage>
             <IonContent className="ion-content-notFound">
                 <div className="ion-notFound-container">
