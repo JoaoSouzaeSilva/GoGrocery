@@ -14,7 +14,7 @@ import {
 } from "@ionic/react";
 import "./Home.scss";
 import headerImg from "../images/header.png";
-import smartphone from "../images/smartphone1.png";
+import smartphone from "../images/smartphone-final.png";
 import { chevronDownOutline } from "ionicons/icons";
 
 const Home = () => {
@@ -153,8 +153,14 @@ const Home = () => {
                   </IonItem>
                   <IonList slot="content">
                     <IonItem>
-                      <IonLabel color="tertiary" className="ion-text-wrap">
-                      answear
+                      <IonLabel color="tertiary" className="ion-text-wrap"> 
+                      Either you want minimal time shopping or to look through 
+                      all the discounted items, GoGrocery will calculate an itinerary 
+                      made to suit your needs. The app will allow for the 
+                      elaboration of a grocery list with the exact products available 
+                      in store, then when the list is done and all your shopping 
+                      preferences are selected an itinerary will be presented. This itinerary 
+                      will make grocery shopping a more pleasant experience.
                       </IonLabel>
                     </IonItem>
                   </IonList>

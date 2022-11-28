@@ -7,12 +7,15 @@ import {
   IonCol,
   IonContent,
   IonGrid,
+  IonIcon,
   IonPage,
   IonRow,
   IonToolbar,
 } from "@ionic/react";
 import { useHistory } from "react-router-dom";
 import headerImg from "../images/header.png";
+import button from "../images/button-round.png";
+import { chevronDownCircleOutline } from "ionicons/icons";
 
 import "./ThankYou.scss";
 
@@ -43,9 +46,7 @@ const ThankYou = () => {
         </div>
         <h1 className="grocery-thankyou-continue">Continue Planning!</h1>
         <a href="/choice">
-          <button className="thankyou-return-button">
-            Return to Main Page
-          </button>
+            <img src={button} className="thankyou-return-button"/>
         </a>
       </IonContent>
     </IonPage>

@@ -57,6 +57,7 @@
     margin-top: 0;
     color: #47525e;
     font-family: Lato;
+    font-size: 25px;
     text-align: center;
     padding: 5%;
   }
@@ -70,7 +71,7 @@
     width: 42.5%;
     height: 65%;
     margin-left: 5%;
-    font-size: 30px;
+    font-size: 20px;
     line-height: 39px;
   }
 
@@ -83,7 +84,7 @@
     width: 42.5%;
     height: 65%;
     margin-left: 5%;
-    font-size: 30px;
+    font-size: 20px;
     line-height: 39px;
   }
   
@@ -94,19 +95,5 @@
     text-align: left;
   
     padding: 1%;
-  }
-  
-  @media (max-width: 480px) {
-  
-    .lists-container {
-      display: grid;
-      grid-template-areas:
-        "grocery-lists";
-  
-      height: 100%;
-    
-      color: #47525e;
-    }
-  
   }
   

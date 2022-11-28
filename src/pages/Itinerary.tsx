@@ -49,14 +49,14 @@ const Itinerary = () => {
             onClick={() => history.back()}
             className="toolbar-itinerary-button"
           >
-            <p className="button-primary">Back</p>
+            <p className="button-primary-itenerary">Back</p>
           </IonButton>
           <IonButton
             shape="round"
             href="/savelist"
             className="toolbar-itinerary-button"
           >
-            <p className="button-primary">Finish</p>
+            <p className="button-primary-itenerary">Finish</p>
           </IonButton>
         </IonButtons>
       </IonToolbar>
