@@ -96,7 +96,6 @@ const Itinerary = () => {
       <IonToolbar className="ion-toolbar-home">
         <img className="img" slot="start" src={headerImg} />
         <div className="img_text">have it your way</div>
-
         <IonButtons slot="end" className="ion-buttons-home">
           <IonButton
             shape="round"
@@ -114,37 +113,33 @@ const Itinerary = () => {
           </IonButton>
         </IonButtons>
       </IonToolbar>
-      <div className="row-parent">
-        {/* <div className="col">
-                    <ItineraryList selectedItems={[]} />
-                </div> */}
-        <div className="map-select-container col">
-          <IonList className="route-select-list">
-            <IonItem lines="none">
-              <IonLabel>Route</IonLabel>
-              <IonSelect
-                interface="popover"
-                placeholder="Choose the best route"
-                value={selectValue}
-                className="itinerary-select"
-                onIonChange={(e) => changeItinerary(`${e.detail.value}`)}
-              >
-                <IonSelectOption className="route-select-option" value="fast">
-                  Fast Route
-                </IonSelectOption>
-                <IonSelectOption
-                  className="route-select-option"
-                  value="discount"
-                >
-                  Discount Route
-                </IonSelectOption>
-              </IonSelect>
-            </IonItem>
-          </IonList>
-          <div className="map-container">
-            <Image />
-          </div>
-        </div>
+
+      <div className="map-select-container col">
+        <IonList className="route-select-list">
+          <IonItem lines="none">
+            <IonLabel>Route</IonLabel>
+            <IonSelect
+              interface="popover"
+              placeholder="Choose the best route"
+              value={selectValue}
+              className="itinerary-select"
+              onIonChange={(e) => changeItinerary(`${e.detail.value}`)}
+            >
+              <IonSelectOption className="route-select-option" value="fast">
+                Fast Route
+              </IonSelectOption>
+              <IonSelectOption className="route-select-option" value="discount">
+                Discount Route
+              </IonSelectOption>
+            </IonSelect>
+          </IonItem>
+        </IonList>
+
+        <Image />
+
+        <div className="current-list"></div>
+        <div className="forgot-something"></div>
+
         <div className="col">
           <IonList className="supermarkets-list">
             <>
@@ -153,61 +148,33 @@ const Itinerary = () => {
                 color="tertiary"
                 className="supermarket-searchbar"
               ></IonSearchbar>
-
               <IonItem
                 button
                 detail={true}
                 onClick={() => changeSupermarket(1)}
               >
-                <IonThumbnail slot="start">
-                  <img
-                    alt="Silhouette of mountains"
-                    src="https://ionicframework.com/docs/img/demos/thumbnail.svg"
-                  />
-                </IonThumbnail>
                 <IonLabel>Lidl FCT</IonLabel>
               </IonItem>
-
               <IonItem
                 button
                 detail={true}
                 onClick={() => changeSupermarket(2)}
               >
-                <IonThumbnail slot="start">
-                  <img
-                    alt="Silhouette of mountains"
-                    src="https://ionicframework.com/docs/img/demos/thumbnail.svg"
-                  />
-                </IonThumbnail>
                 <IonLabel>Continente Montijo</IonLabel>
               </IonItem>
-
               <IonItem
                 button
                 detail={true}
                 onClick={() => changeSupermarket(1)}
               >
-                <IonThumbnail slot="start">
-                  <img
-                    alt="Silhouette of mountains"
-                    src="https://ionicframework.com/docs/img/demos/thumbnail.svg"
-                  />
-                </IonThumbnail>
                 <IonLabel>Pingo Doce Montijo</IonLabel>
               </IonItem>
-
               <IonItem
                 button
                 lines="none"
                 detail={true}
                 onClick={() => changeSupermarket(2)}
               >
-                <IonThumbnail slot="start">
-                  <img
-                    alt="Silhouette of mountains"
-                    src="https://ionicframework.com/docs/img/demos/thumbnail.svg"
-                  />
-                </IonThumbnail>
                 <IonLabel>Mercadona Montijo</IonLabel>
               </IonItem>
             </>
