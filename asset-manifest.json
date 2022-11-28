@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/GoGrocery/static/css/main.2d444ed1.css",
-    "main.js": "/GoGrocery/static/js/main.7c9c5c15.js",
+    "main.js": "/GoGrocery/static/js/main.0b3ec418.js",
     "static/js/443.64096a75.chunk.js": "/GoGrocery/static/js/443.64096a75.chunk.js",
     "static/js/738.03403f6f.chunk.js": "/GoGrocery/static/js/738.03403f6f.chunk.js",
     "static/js/372.003cf56e.chunk.js": "/GoGrocery/static/js/372.003cf56e.chunk.js",
@@ -30,7 +30,7 @@
     "static/media/add-to-list.png": "/GoGrocery/static/media/add-to-list.566ebcc446c61f7ee69c.png",
     "index.html": "/GoGrocery/index.html",
     "main.2d444ed1.css.map": "/GoGrocery/static/css/main.2d444ed1.css.map",
-    "main.7c9c5c15.js.map": "/GoGrocery/static/js/main.7c9c5c15.js.map",
+    "main.0b3ec418.js.map": "/GoGrocery/static/js/main.0b3ec418.js.map",
     "443.64096a75.chunk.js.map": "/GoGrocery/static/js/443.64096a75.chunk.js.map",
     "738.03403f6f.chunk.js.map": "/GoGrocery/static/js/738.03403f6f.chunk.js.map",
     "372.003cf56e.chunk.js.map": "/GoGrocery/static/js/372.003cf56e.chunk.js.map",
@@ -44,6 +44,6 @@
   },
   "entrypoints": [
     "static/css/main.2d444ed1.css",
-    "static/js/main.7c9c5c15.js"
+    "static/js/main.0b3ec418.js"
   ]
 }
