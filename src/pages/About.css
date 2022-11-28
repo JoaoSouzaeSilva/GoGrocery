@@ -30,11 +30,10 @@
 
 .ion-content-about {
   --background: none;
-  background-image: url("../images/about.jpeg");
+  background-image: url("../images/about.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: scroll;
-  filter: opacity(70%);
 }
 
 .about-container {
@@ -79,7 +78,7 @@
   position: relative;
 }
 
-.product {
+.product-about {
   grid-area: product;
 
   background-color: #eaeeed;

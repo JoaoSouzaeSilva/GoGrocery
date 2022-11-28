@@ -27,7 +27,7 @@ const NotFoundPage = () => {
                 <div className="ion-notFound-container">
                     <div>
                         <IonLabel class="ion-text-wrap" className="text-notFound">
-                            Oops! Looks like either you mistyped the url. Let's agree to blame this on you.
+                            Oops! Looks like either you mistyped the url or we deleted that page. Let's agree to blame this on you.
                         </IonLabel>
                     </div>
                     <div>
@@ -35,14 +35,14 @@ const NotFoundPage = () => {
                             Go back to known waters! Go to the Home page.
                         </IonLabel>
                         <div>
-                        <IonButton fill="clear" size="large">
-                            <IonIcon className="icon-notFound" slot="icon-only" icon={chevronDownCircleOutline}></IonIcon>
-                        </IonButton>
+                            <IonButton routerLink="/home" fill="clear" size="large" className="button-home-notFound">
+                                <IonIcon className="icon-notFound" slot="icon-only" icon={chevronDownCircleOutline}></IonIcon>
+                            </IonButton>
                         </div>
                     </div>
                 </div>
-            </IonContent>
-        </IonPage>
+        </IonContent>
+        </IonPage >
     );
 };
 

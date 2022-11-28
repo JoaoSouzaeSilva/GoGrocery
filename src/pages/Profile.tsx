@@ -69,9 +69,7 @@ const Profile = () => {
                   </IonItem>
                 ))}
               </div>
-              <a href="/home">
-                <button className="log-out-button">Log Out</button>
-              </a>
+              <IonButton fill="clear" routerLink="/home" className="log-out-button">Log Out</IonButton>
             </div>
           </div>
         </IonContent>

@@ -1,6 +1,6 @@
 .ion-content-notFound {
     --background: none;
-    background-image: url("../images/thankyou.png");
+    background-image: url("../images/thankyou-transp.png");
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: scroll;
@@ -16,18 +16,24 @@
     flex-direction: column;
     justify-content: center;
     margin: 0 auto;
+    text-align: center;
 
 }
 
-.icon-notFound{
-    margin-right: 2rem;
+.manage-borders{
+ border: 1px #8F9B84;
+}
+
+.button-home-notFound{
+    margin-right: auto;
+    margin-left: auto;
 }
 
 
 @media(min-width: 300px) {
 
     .ion-content-notFound {
-        background-image: url("../images/supermarket.jpg");
+        background-image: url("../images/supermarket-transp.png");
     }
 
     .ion-notFound-container {
@@ -48,10 +54,6 @@
         .text-notFound1 {
             width: 80%;
             text-align: center;
-            margin-top: -12rem;
-            margin-left: auto;
-            margin-right: auto;
-         
             font-size: medium;
         }
     }
@@ -67,6 +69,19 @@
         width: 60vh;
         height: 30vh;
         margin-top: 12rem;
-
+        .text-notFound {
+            width: 80%;
+            text-align: center;
+            margin-top: -18rem;
+            font-weight: bold;
+            font-size: larger;
+        }
+        .text-notFound1 {
+            width: 80%;
+            text-align: center;
+            font-size: medium;
+        }
     }
 }
+
+
