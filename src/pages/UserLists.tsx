@@ -16,6 +16,8 @@ import "./UserLists.scss";
 
 const UserLists = () => {
   let history: any = useHistory();
+  console.log(history.location.state.user);
+
   return (
     <IonPage>
       <IonToolbar className="ion-toolbar-lists">
@@ -43,23 +45,30 @@ const UserLists = () => {
             <div className="separator-lists" />
             <div className="grocery-lists-text">
               <div>
-                {history.location.state.lists.length === 0 && <IonText className="no-lists" color={"primary"}> You don't have any grocery lists yet!</IonText>}
-                {history.location.state.lists.length !== 0 && history.location.state.lists.map((list: any) => (
-                  <div className="lists-list-item">
-                    <div className="bullet-lists"></div>
-                    <div
-                      className="text-lists"
-                      onClick={() =>
-                        history.push(`/lists/${list.listName}`, {
-                          id: history.location.state.id,
-                        })
-                      }
-                    >
-                      <p>{list.listName}</p>
-                      <div className="separator-between-lists" />
+                {history.location.state.user.lists.length === 0 && (
+                  <IonText className="no-lists" color={"primary"}>
+                    {" "}
+                    You don't have any grocery lists yet!
+                  </IonText>
+                )}
+                {history.location.state.user.lists.length !== 0 &&
+                  history.location.state.user.lists.map((list: any) => (
+                    <div className="lists-list-item">
+                      <div className="bullet-lists"></div>
+                      <div
+                        className="text-lists"
+                        onClick={() =>
+                          history.push(`/lists/${list.listName}`, {
+                            id: history.location.state.user.id,
+                            new: false,
+                          })
+                        }
+                      >
+                        <p>{list.listName}</p>
+                        <div className="separator-between-lists" />
+                      </div>
                     </div>
-                  </div>
-                ))}
+                  ))}
               </div>
             </div>
           </div>

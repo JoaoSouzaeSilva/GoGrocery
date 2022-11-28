@@ -21,15 +21,15 @@ const List = () => {
   let aux = lists.find((list: any) => list.listName === id);
   let listItems = aux.items;
 
-  console.log(listItems)
-
   const getQuantity = (item: any) => {
     let quantityDisplay = item[2] + "x ";
     return quantityDisplay;
   };
 
+  console.log(history.location.state);
+
   const handleCalculateItinerary = () => {
-    history.push("/itinerary", { id: id, list: listItems });
+    history.push("/itinerary", { id: id, list: listItems, new: false });
   };
 
   return (

@@ -149,6 +149,7 @@ const CategoriesPage = () => {
       history.push("/itinerary", {
         id: history.location.state.id,
         list: productList,
+        new: true,
       });
     }
   };

@@ -21,13 +21,13 @@ const Choice = () => {
   };
 
   const handleShopNewList = () => {
-    history.push("/categories", { id: history.location.state.id });
+    history.push("/categories", { id: history.location.state.id, new: true });
   };
 
   const handleShopSavedList = () => {
     let userId = history.location.state.id;
     let user = JSON.parse(localStorage.getItem(userId)!);
-    history.push("/lists", user);
+    history.push("/lists", { user, new: false });
   };
 
   return (
