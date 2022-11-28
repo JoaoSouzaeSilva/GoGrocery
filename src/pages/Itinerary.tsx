@@ -129,7 +129,7 @@ const Itinerary = () => {
                     </div>
                 </div>
                 <div className="col">
-                    <IonList className="supermarkets-list">
+                    <IonList className="supermarkets-list" >
                         <>
                             <IonSearchbar
                                 placeholder="Find your store"

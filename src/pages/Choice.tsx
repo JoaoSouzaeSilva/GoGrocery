@@ -35,7 +35,7 @@ const Choice = () => {
     <IonPage>
       <IonToolbar className="ion-toolbar-choice">
         <img className="img" slot="start" src={headerImg} />
-        <div className="img_text-choices">have it your way</div>
+        <div className="img_text">have it your way</div>
         <IonButton
           color={"primary"}
           slot="end"
