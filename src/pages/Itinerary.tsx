@@ -1,148 +1,187 @@
 import {
-  IonAvatar,
-  IonButton,
-  IonButtons,
-  IonContent,
-  IonItem,
-  IonLabel,
-  IonList,
-  IonPage,
-  IonSearchbar,
-  IonSelect,
-  IonSelectOption,
-  IonThumbnail,
-  IonToolbar,
+    IonAvatar,
+    IonButton,
+    IonButtons,
+    IonContent,
+    IonItem,
+    IonLabel,
+    IonList,
+    IonPage,
+    IonSearchbar,
+    IonSelect,
+    IonSelectOption,
+    IonThumbnail,
+    IonToolbar,
 } from "@ionic/react";
+import { useState } from "react";
 import { useHistory } from "react-router";
+import { Link } from "react-router-dom";
 
 import headerImg from "../images/header.png";
 
 import "./Itinerary.scss";
 
 const Itinerary = () => {
-  let history: any = useHistory();
+    let history: any = useHistory();
 
-  // let currSupermarket = 1;
-  // let currItinerary = 0;
+    let changeSupermarket = (newItinerary: number) => {
+        if (newItinerary == 1){
+            setImage(supermarket1)
+            setSelectValue("")
+        } else if (newItinerary == 2){
+            setImage(supermarket2)
+            setSelectValue("")
+        }
+    }
 
-  // let changeImage = (newItinerary: string) => {
-  //     if (newItinerary == "discount") {
-  //         currItinerary = 1;
-  //     } else if (newItinerary == "fast") {
-  //         currItinerary = 2;
-  //     } else {
-  //         console.log("wtf")
-  //     }
-  //     map = `../images/supermarket${currSupermarket}-${currItinerary}.png`;
+    let changeItinerary = (newItinerary: string) => {
+        if(image.includes("supermarket1")){
+            if (newItinerary == "discount") {
+                setImage(supermarket11)
+                setSelectValue("discount")
+            } else if (newItinerary == "fast") {
+                setImage(supermarket12)
+                setSelectValue("fast")
+            }
+        } else if(image.includes("supermarket2")){
+            if (newItinerary == "discount") {
+                setImage(supermarket21)
+                setSelectValue("discount")
+            } else if (newItinerary == "fast") {
+                setImage(supermarket22)
+                setSelectValue("fast")
+            }
+        } else {
+            console.log(image)
+        }
+    }
 
-  //     console.log(map);
-  // }
+    const supermarket1 = require("../images/supermarket1.png")
+    const supermarket11 = require("../images/supermarket1-1.png")
+    const supermarket12 = require("../images/supermarket1-2.png")
+    const supermarket2 = require("../images/supermarket2.png")
+    const supermarket21 = require("../images/supermarket2-1.png")
+    const supermarket22 = require("../images/supermarket2-2.png")
+    const supermarkets = { supermarket1, supermarket11, supermarket12, supermarket2, supermarket21, supermarket22 }
 
-  return (
-    <IonPage className="itinerary-content">
-      <IonToolbar className="ion-toolbar-home">
-        <img className="img" slot="start" src={headerImg} />
-        <div className="img_text">have it your way</div>
-        <IonButtons slot="end" className="ion-buttons-home">
-          <IonButton
-            shape="round"
-            onClick={() => history.back()}
-            className="toolbar-itinerary-button"
-          >
-            <p className="button-primary-itenerary">Back</p>
-          </IonButton>
-          <IonButton
-            shape="round"
-            href="/savelist"
-            className="toolbar-itinerary-button"
-          >
-            <p className="button-primary-itenerary">Finish</p>
-          </IonButton>
-        </IonButtons>
-      </IonToolbar>
-      <div className="row-parent">
-        {/* <div className="col">
+    const [image, setImage] = useState(supermarkets.supermarket1);
+
+    const Image = () => {
+        return (
+            <img className="map" src={image} />
+        )
+    }
+
+    const [selectValue, setSelectValue] = useState("");
+
+    return (
+        <IonPage className="itinerary-content">
+            <IonToolbar className="ion-toolbar-home">
+                <img className="img" slot="start" src={headerImg} />
+                <div className="img_text">have it your way</div>
+
+
+                <IonButtons slot="end" className="ion-buttons-home">
+                    <IonButton
+                        shape="round"
+                        onClick={() => history.back()}
+                        className="toolbar-itinerary-button"
+                    >
+                        <p className="button-primary-itenerary">Back</p>
+                    </IonButton>
+                    <IonButton
+                        shape="round"
+                        href="/savelist"
+                        className="toolbar-itinerary-button"
+                    >
+                        <p className="button-primary-itenerary">Finish</p>
+                    </IonButton>
+                </IonButtons>
+            </IonToolbar>
+            <div className="row-parent">
+                {/* <div className="col">
                     <ItineraryList selectedItems={[]} />
                 </div> */}
-        <div className="map-select-container col">
-          <IonList className="route-select-list">
-            <IonItem lines="none">
-              <IonLabel>Route</IonLabel>
-              <IonSelect
-                interface="popover"
-                placeholder="Choose the best route"
-                className="itinerary-select" /* onIonChange={(e) => changeImage(`${e.detail.value}`)} */
-              >
-                <IonSelectOption className="route-select-option" value="fast">
-                  Fast Route
-                </IonSelectOption>
-                <IonSelectOption
-                  className="route-select-option"
-                  value="discount"
-                >
-                  Discount Route
-                </IonSelectOption>
-              </IonSelect>
-            </IonItem>
-          </IonList>
-          <div className="map-container">
-            <img className="map" src={require("../images/supermarket1.png")} />
-          </div>
-        </div>
-        <div className="col">
-          <IonList className="supermarkets-list">
-            <>
-              <IonSearchbar
-                placeholder="Find your store"
-                color="tertiary"
-                className="supermarket-searchbar"
-              ></IonSearchbar>
+                <div className="map-select-container col">
+                    <IonList className="route-select-list">
+                        <IonItem lines="none">
+                            <IonLabel>Route</IonLabel>
+                            <IonSelect
+                                interface="popover"
+                                placeholder="Choose the best route"
+                                value={selectValue}
+                                className="itinerary-select" onIonChange={(e) => changeItinerary(`${e.detail.value}`)}
+                            >
+                                <IonSelectOption className="route-select-option" value="fast">
+                                    Fast Route
+                                </IonSelectOption>
+                                <IonSelectOption
+                                    className="route-select-option"
+                                    value="discount"
+                                >
+                                    Discount Route
+                                </IonSelectOption>
+                            </IonSelect>
+                        </IonItem>
+                    </IonList>
+                    <div className="map-container">
+                        <Image />
+                    </div>
+                </div>
+                <div className="col">
+                    <IonList className="supermarkets-list">
+                        <>
+                            <IonSearchbar
+                                placeholder="Find your store"
+                                color="tertiary"
+                                className="supermarket-searchbar"
+                            ></IonSearchbar>
 
-              <IonItem>
-                <IonThumbnail slot="start">
-                  <img
-                    alt="Silhouette of mountains"
-                    src="https://ionicframework.com/docs/img/demos/thumbnail.svg"
-                  />
-                </IonThumbnail>
-                <IonLabel>Lidl FCT</IonLabel>
-              </IonItem>
+                            <IonItem button detail={true} onClick={() => changeSupermarket(1)}>
+                                <IonThumbnail slot="start">
+                                    <img
+                                        alt="Silhouette of mountains"
+                                        src="https://ionicframework.com/docs/img/demos/thumbnail.svg"
+                                    />
+                                </IonThumbnail>
+                                <IonLabel>Lidl FCT</IonLabel>
+                            </IonItem>
 
-              <IonItem>
-                <IonThumbnail slot="start">
-                  <img
-                    alt="Silhouette of mountains"
-                    src="https://ionicframework.com/docs/img/demos/thumbnail.svg"
-                  />
-                </IonThumbnail>
-                <IonLabel>Continente Montijo</IonLabel>
-              </IonItem>
+                            <IonItem button detail={true} onClick={() => changeSupermarket(2)}>
+                                <IonThumbnail slot="start">
+                                    <img
+                                        alt="Silhouette of mountains"
+                                        src="https://ionicframework.com/docs/img/demos/thumbnail.svg"
+                                    />
+                                </IonThumbnail>
+                                <IonLabel>Continente Montijo</IonLabel>
+                            </IonItem>
 
-              <IonItem>
-                <IonThumbnail slot="start">
-                  <img
-                    alt="Silhouette of mountains"
-                    src="https://ionicframework.com/docs/img/demos/thumbnail.svg"
-                  />
-                </IonThumbnail>
-                <IonLabel>Pingo Doce Montijo</IonLabel>
-              </IonItem>
+                            <IonItem button detail={true} onClick={() => changeSupermarket(1)}>
+                                <IonThumbnail slot="start">
+                                    <img
+                                        alt="Silhouette of mountains"
+                                        src="https://ionicframework.com/docs/img/demos/thumbnail.svg"
+                                    />
+                                </IonThumbnail>
+                                <IonLabel>Pingo Doce Montijo</IonLabel>
+                            </IonItem>
 
-              <IonItem lines="none">
-                <IonThumbnail slot="start">
-                  <img
-                    alt="Silhouette of mountains"
-                    src="https://ionicframework.com/docs/img/demos/thumbnail.svg"
-                  />
-                </IonThumbnail>
-                <IonLabel>Mercadona Montijo</IonLabel>
-              </IonItem>
-            </>
-          </IonList>
-        </div>
-      </div>
-    </IonPage>
-  );
+                            <IonItem button lines="none" detail={true} onClick={() => changeSupermarket(2)}>
+                                <IonThumbnail slot="start">
+                                    <img
+                                        alt="Silhouette of mountains"
+                                        src="https://ionicframework.com/docs/img/demos/thumbnail.svg"
+                                    />
+                                </IonThumbnail>
+                                <IonLabel>Mercadona Montijo</IonLabel>
+                            </IonItem>
+                        </>
+                    </IonList>
+                </div>
+            </div>
+        </IonPage>
+    );
 };
 
 export default Itinerary;
