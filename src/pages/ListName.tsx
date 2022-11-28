@@ -34,6 +34,7 @@ const ListName = () => {
       ],
     });
     localStorage.setItem(data.id, newUser);
+    history.push("/thankyou", { id: data.id });
   };
 
   return (

@@ -21,9 +21,15 @@ const List = () => {
   let aux = lists.find((list: any) => list.listName === id);
   let listItems = aux.items;
 
+  console.log(listItems)
+
   const getQuantity = (item: any) => {
     let quantityDisplay = item[2] + "x ";
     return quantityDisplay;
+  };
+
+  const handleCalculateItinerary = () => {
+    history.push("/itinerary", { id: id, list: listItems });
   };
 
   return (
@@ -47,10 +53,6 @@ const List = () => {
         <div className="list-container">
           <h1 className="grocery-list-title">{id}</h1>
           <div className="separator-list" />
-          {/*  <div className="item-header">
-            <div className="item-header-quantity">{"[Quantity]"}</div>
-            <div className="item-header-product">{"[Product]"}</div>
-          </div> */}
           <div className="grocery-list-items">
             {listItems.map((item: any) => (
               <div>
@@ -61,7 +63,12 @@ const List = () => {
               </div>
             ))}
           </div>
-          <button className="go-to-itinerary">Calculate itinerary</button>
+          <button
+            className="go-to-itinerary"
+            onClick={() => handleCalculateItinerary()}
+          >
+            Calculate itinerary
+          </button>
         </div>
       </IonContent>
     </IonPage>

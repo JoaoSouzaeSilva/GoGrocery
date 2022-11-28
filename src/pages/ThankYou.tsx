@@ -20,7 +20,12 @@ import { chevronDownCircleOutline } from "ionicons/icons";
 import "./ThankYou.scss";
 
 const ThankYou = () => {
-  let history = useHistory();
+  let history: any = useHistory();
+
+  const handleReturnToBeggining = () => {
+    history.push("/choice", { id: history.location.state.id });
+  };
+
   return (
     <IonPage>
       <IonToolbar className="ion-toolbar-thankyou">
@@ -46,7 +51,7 @@ const ThankYou = () => {
         </div>
         <h1 className="grocery-thankyou-continue">Continue Planning!</h1>
         <a href="/choice">
-            <img src={button} className="thankyou-return-button"/>
+          <img src={button} className="thankyou-return-button" onClick={() => handleReturnToBeggining()} />
         </a>
       </IonContent>
     </IonPage>

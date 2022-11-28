@@ -1,4 +1,5 @@
 import {
+  IonAlert,
   IonButton,
   IonButtons,
   IonContent,
@@ -29,6 +30,10 @@ const CategoriesPage = () => {
   const [addedItems, setAddedItems] = useState(initialAddedItems);
   const [itemQuantity, setItemQuantity] = useState(1);
   const [searchInput, setSearchInput] = useState("");
+  const [emptyListError, setEmptyListError] = useState(false);
+  const [emptyListMessage, setEmptyListMessage] = useState(
+    "Make sure your list contains at least one item, before proceding to the itinerary setup."
+  );
 
   //Define wether the sliding menu is toggled or not
   const toggleSlidingMenu = () => {
@@ -137,12 +142,15 @@ const CategoriesPage = () => {
    * the old user and the items from the list, set the new user in localStorage
    */
   const handleItenerarySetup = () => {
-    let productList: any[] = [];
-    addedItems.forEach((item: any) => productList.push(item));
-    history.push("/itinerary", {
-      id: JSON.parse(localStorage.getItem(history.location.state.email)!).id,
-      list: productList,
-    });
+    if (addedItems.length === 0) setEmptyListError(true);
+    else {
+      let productList: any[] = [];
+      addedItems.forEach((item: any) => productList.push(item));
+      history.push("/itinerary", {
+        id: history.location.state.id,
+        list: productList,
+      });
+    }
   };
 
   return (
@@ -153,7 +161,10 @@ const CategoriesPage = () => {
           <div className="img_text">have it your way</div>
           <IonButtons slot="end" className="ion-buttons-categories">
             <IonButton shape="round">
-              <p className="button-primary-categories" onClick={() => history.goBack()}>
+              <p
+                className="button-primary-categories"
+                onClick={() => history.goBack()}
+              >
                 Back
               </p>
             </IonButton>
@@ -207,7 +218,6 @@ const CategoriesPage = () => {
                 className="itinerary-setup"
                 onClick={() => {
                   handleItenerarySetup();
-
                 }}
               >
                 Itinerary setup
@@ -231,6 +241,13 @@ const CategoriesPage = () => {
           </IonContent>
         </div>
       </IonPage>
+      <IonAlert
+        isOpen={emptyListError}
+        onDidDismiss={() => setEmptyListError(false)}
+        header={"Oh no!"}
+        message={emptyListMessage}
+        buttons={["OK"]}
+      />
     </>
   );
 };

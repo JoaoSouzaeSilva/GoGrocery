@@ -55,7 +55,7 @@ const SignInComponent = () => {
   async function handleSignIn(this: any) {
     let aux = await checkEmail();
     if (aux) {
-      if (checkPassword()) history.push("/choice", { email: email });
+      if (checkPassword()) history.push("/choice", { id: email });
       else setPasswordError(true);
     } else setEmailError(true);
   }

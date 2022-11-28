@@ -24,6 +24,13 @@ import "./Itinerary.scss";
 const Itinerary = () => {
     let history: any = useHistory();
 
+    const handleFinishItinerary = () => {
+        history.push("/savelist", {
+          id: history.location.state.id,
+          list: history.location.state.list,
+        });
+      };
+
     let changeSupermarket = (newItinerary: number) => {
         if (newItinerary == 1){
             setImage(supermarket1)
@@ -91,7 +98,7 @@ const Itinerary = () => {
                     </IonButton>
                     <IonButton
                         shape="round"
-                        href="/savelist"
+                        onClick={() => handleFinishItinerary()}
                         className="toolbar-itinerary-button"
                     >
                         <p className="button-primary-itenerary">Finish</p>

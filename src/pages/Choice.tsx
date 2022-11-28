@@ -17,17 +17,16 @@ import { person } from "ionicons/icons";
 const Choice = () => {
   let history: any = useHistory();
   const handleRedirectToProfile = () => {
-    history.push("/profile", { email: history.location.state.email });
+    history.push("/profile", { id: history.location.state.id });
   };
 
   const handleShopNewList = () => {
-    history.push("/categories", { email: history.location.state.email });
+    history.push("/categories", { id: history.location.state.id });
   };
 
   const handleShopSavedList = () => {
-    let userEmail = history.location.state.email;
-    let user = JSON.parse(localStorage.getItem(userEmail)!);
-    let userlists = user.lists;
+    let userId = history.location.state.id;
+    let user = JSON.parse(localStorage.getItem(userId)!);
     history.push("/lists", user);
   };
 

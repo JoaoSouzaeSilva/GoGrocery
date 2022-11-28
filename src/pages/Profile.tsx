@@ -12,8 +12,9 @@ import headerImg from "../images/header.png";
 import "./Profile.scss";
 
 const Profile = () => {
-  let history = useHistory();
-  let location: any = useLocation();
+  let history: any = useHistory();
+
+  console.log(history.location.state);
 
   return (
     <>
@@ -43,25 +44,33 @@ const Profile = () => {
               <p className="text-profile-name">Name</p>
               <div className="text-profile-div-name">
                 <p className="text-profile-username">
-                  {JSON.parse(localStorage.getItem(location.state.email)!).name}
+                  {
+                    JSON.parse(localStorage.getItem(history.location.state.id)!)
+                      .name
+                  }
                 </p>
               </div>
               <p className="text-profile-email">Email</p>
               <div className="text-profile-div-email">
-                <p className="text-profile-emailname">{location.state.email}</p>
+                <p className="text-profile-emailname">
+                  {
+                    JSON.parse(localStorage.getItem(history.location.state.id)!)
+                      .email
+                  }
+                </p>
               </div>
               <a href="/lists">
                 <p className="text-profile-saved-lists-title">Saved Lists</p>
               </a>
               <div className="text-profile-div-lists">
                 {JSON.parse(
-                  localStorage.getItem(location.state.email)!
+                  localStorage.getItem(history.location.state.id)!
                 ).lists.map((list: any) => (
                   <IonItem
                     className="list-name"
                     onClick={() =>
                       history.push("/lists/" + list.listName, {
-                        id: location.state.email,
+                        id: history.location.state.email,
                       })
                     }
                   >
@@ -69,7 +78,13 @@ const Profile = () => {
                   </IonItem>
                 ))}
               </div>
-              <IonButton fill="clear" routerLink="/home" className="log-out-button">Log Out</IonButton>
+              <IonButton
+                fill="clear"
+                routerLink="/home"
+                className="log-out-button"
+              >
+                Log Out
+              </IonButton>
             </div>
           </div>
         </IonContent>
