@@ -24,6 +24,13 @@ const Choice = () => {
     history.push("/categories", { email: history.location.state.email });
   };
 
+  const handleShopSavedList = () => {
+    let userEmail = history.location.state.email;
+    let user = JSON.parse(localStorage.getItem(userEmail)!);
+    let userlists = user.lists;
+    history.push("/lists", user);
+  };
+
   return (
     <IonPage>
       <IonToolbar className="ion-toolbar-choice">
@@ -39,15 +46,18 @@ const Choice = () => {
         </IonButton>
       </IonToolbar>
       <IonContent className="ion-content-choices ">
-        <IonText className="choices-container choice-text">Start planning now!</IonText>
+        <IonText className="choices-container choice-text">
+          Start planning now!
+        </IonText>
         <div className="buttons-div">
           <IonButton
             class="round ion-text-wrap"
             className="big-button"
             fill="clear"
+            onClick={() => handleShopSavedList()}
           >
             <IonGrid>
-              <IonRow >
+              <IonRow>
                 <img className="button-img" src={headerImg} />
               </IonRow>
               <IonRow>

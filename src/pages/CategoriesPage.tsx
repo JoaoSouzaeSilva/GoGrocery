@@ -139,7 +139,7 @@ const CategoriesPage = () => {
   const handleItenerarySetup = () => {
     let productList: any[] = [];
     addedItems.forEach((item: any) => productList.push(item));
-    history.push("/listname", {
+    history.push("/itinerary", {
       id: JSON.parse(localStorage.getItem(history.location.state.email)!).id,
       list: productList,
     });
@@ -207,6 +207,7 @@ const CategoriesPage = () => {
                 className="itinerary-setup"
                 onClick={() => {
                   handleItenerarySetup();
+
                 }}
               >
                 Itinerary setup
