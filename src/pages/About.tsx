@@ -75,7 +75,7 @@ const About = () => {
             </div>
           </div>
           <div className="product-about">
-            <div className="product-header">
+            <div className="product-header-about">
               <h1 className="product-title">The product</h1>
             </div>
             <div className="product-text">

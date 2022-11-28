@@ -87,7 +87,7 @@
   text-align: center;
 }
 
-.product-header {
+.product-header-about {
   background-color: #cbd2c3;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
@@ -110,7 +110,7 @@
 
   background-color: #b6c4a2;
   border-radius: 10px;
-
+  
   text-align: center;
 }
 

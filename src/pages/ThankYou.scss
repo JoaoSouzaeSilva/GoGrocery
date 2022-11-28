@@ -30,11 +30,10 @@
 
 .ion-content-thankyou {
   --background: none;
-  background-image: url("../images/thankyou_bg3.png");
+  background-image: url("../images/thankyou-supertransp.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: scroll;
-  filter: opacity(100%);
 }
 
 .grocery-thankyou {
@@ -42,8 +41,6 @@
   border-radius: 20px;
   margin: auto;
   margin-top: 5%;
-  width: 50%;
-  height: 35%;
 }
 
 .grocery-thankyou-title {
@@ -51,7 +48,7 @@
   color: #8E9A84;
   font-family: Lato;
   text-align: center;
-  padding: 12.5%;
+  font-weight: 900;
 }
 
 .grocery-thankyou-continue {
@@ -60,41 +57,51 @@
   font-family: Lato;
   text-align: center;
   margin-top: 2.5%;
+  font-weight: 900;
 }
 
-.thankyou-return-button {
-  background-color: #CAD3C3;
-  color: #47525E;
-  font-family: Lato;
-  border: 2px solid #343F4B;
-  border-radius: 10px;
-  width: 20%;
-  height: 15%;
-  margin-left: 40%;
-  font-size: 95%;
-  line-height: 39px;
-  margin-top: 2.5%;
+.thankyou-return-button{
+  width: 280px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 1rem;
+
 }
 
-.text {
-  color: #47525e;
-  font-family: Lato;
-  font-weight: 600;
-  text-align: left;
+@media(min-width: 300px) {
 
-  padding: 1%;
-}
+  .ion-content-thankyou {
+      background-image: url("../images/supermarket-supertransp.png");
+  }
 
-@media (max-width: 480px) {
+  .grocery-thankyou{
+    width: 70%;
+    height: 35%;
+  }
 
-  .lists-container {
-    display: grid;
-    grid-template-areas:
-      "grocery-lists";
-
-    height: 100%;
+  .grocery-thankyou-title {
+    padding: 4rem;
+  }
   
-    color: #47525e;
+}
+
+@media (min-width: 800px) {
+
+  .ion-content-thankyou {
+      background-image: url("../images/thankyou-supertransp.png");
+  }
+
+  .grocery-thankyou{
+    width: 55%;
+    height: 35%;
+  }
+
+  .grocery-thankyou-title {
+    padding: 5rem;
   }
 
 }
+
