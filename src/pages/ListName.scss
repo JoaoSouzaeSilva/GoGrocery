@@ -43,8 +43,6 @@
   border: 2px solid #343f4b;
   margin: auto;
   margin-top: 8%;
-  width: 40%;
-  height: 60%;
 }
 
 .grocery-namelist-header {
@@ -57,6 +55,7 @@
   margin-top: 0;
   color: #47525e;
   font-family: Lato;
+  font-size: 25px;
   text-align: center;
   padding: 10%;
 }
@@ -92,7 +91,7 @@
   height: 15%;
   margin-top: 3%;
   margin-left: 32%;
-  font-size: 150%;
+  font-size: 20px;
 }
 
 .text {
@@ -103,13 +102,20 @@
   padding: 1%;
 }
 
-@media (max-width: 480px) {
-  .lists-container {
-    display: grid;
-    grid-template-areas: "grocery-lists";
+@media (min-width: 300px) {
+  .grocery-namelist {
+    margin: auto;
+    margin-top: 8%;
+    width: 65%;
+    height: 60%;
+  }
+}
 
-    height: 100%;
-
-    color: #47525e;
+@media (min-width: 800px) {
+  .grocery-namelist {
+    margin: auto;
+    margin-top: 8%;
+    width: 40%;
+    height: 60%;
   }
 }
