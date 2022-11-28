@@ -1,6 +1,6 @@
 {
-  "homepage": "http://JoaoSouzaeSilva.github.io/GoGrocery",
-  "name": "gogrocery",
+  "homepage": "http://joaosouzaesilva.github.io/GoGrocery",
+  "name": "GoGrocery",
   "version": "0.0.1",
   "private": true,
   "dependencies": {
