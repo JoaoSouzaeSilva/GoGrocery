@@ -1,6 +1,6 @@
 {
-  "homepage": "http://JoaoSouzaeSilva.github.io/GoGrocery",
-  "name": "gogrocery",
+  "homepage": "https://go-grocery-two.vercel.app/",
+  "name": "GoGrocery",
   "version": "0.0.1",
   "private": true,
   "dependencies": {
@@ -45,11 +45,11 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "build": "react-scripts build",
     "test": "react-scripts test --transformIgnorePatterns 'node_modules/(?!(@ionic/react|@ionic/react-router|@ionic/core|@stencil/core|ionicons)/)'",
     "eject": "react-scripts eject",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
     "server": "json-server --watch db.json"
   },
   "eslintConfig": {

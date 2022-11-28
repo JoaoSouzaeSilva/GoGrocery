@@ -1,0 +1,100 @@
+.ion-toolbar-thankyou {
+  --background: #cbd2c3;
+  height: 75px;
+  width: 100%;
+  display: flex;
+}
+
+.img {
+  height: 100%;
+}
+
+.img_text {
+  font-size: small;
+  margin-left: 6px;
+  align-self: flex-end;
+  margin-bottom: 3px;
+  color: #47525e;
+}
+
+.back-button {
+  background-color: #8e9a84;
+  color: #47525e;
+  border-radius: 8px;
+  padding: 10px;
+}
+
+.back {
+  font-weight: bold;
+}
+
+.ion-content-thankyou {
+  --background: none;
+  background-image: url("../images/thankyou_bg3.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  filter: opacity(100%);
+}
+
+.grocery-thankyou {
+  background-color: #CBD2C3;
+  border-radius: 20px;
+  margin: auto;
+  margin-top: 5%;
+  width: 50%;
+  height: 35%;
+}
+
+.grocery-thankyou-title {
+  margin:auto;
+  color: #8E9A84;
+  font-family: Lato;
+  text-align: center;
+  padding: 12.5%;
+}
+
+.grocery-thankyou-continue {
+  margin:auto;
+  color: #8E9A84;
+  font-family: Lato;
+  text-align: center;
+  margin-top: 2.5%;
+}
+
+.thankyou-return-button {
+  background-color: #CAD3C3;
+  color: #47525E;
+  font-family: Lato;
+  border: 2px solid #343F4B;
+  border-radius: 10px;
+  width: 20%;
+  height: 15%;
+  margin-left: 40%;
+  font-size: 95%;
+  line-height: 39px;
+  margin-top: 2.5%;
+}
+
+.text {
+  color: #47525e;
+  font-family: Lato;
+  font-weight: 600;
+  text-align: left;
+
+  padding: 1%;
+}
+
+@media (max-width: 480px) {
+
+  .lists-container {
+    display: grid;
+    grid-template-areas:
+      "grocery-lists";
+
+    height: 100%;
+  
+    color: #47525e;
+  }
+
+}

@@ -13,7 +13,7 @@ import "./ListName.scss";
 
 const ListName = () => {
   let history: any = useHistory();
-  const [listName, setListName] = useState("")
+  const [listName, setListName] = useState("");
 
   const handleSaveList = () => {
     let data = JSON.parse(localStorage.getItem(history.location.state.id)!);
@@ -61,13 +61,22 @@ const ListName = () => {
             </h1>
           </div>
           <div className="grocery-namelist-input">
-            <input type="text" className="name-text-input" onChange={(event: any) => setListName(event.target.value)}/>
+            <input
+              type="text"
+              className="name-text-input"
+              onChange={(event: any) => setListName(event.target.value)}
+            />
           </div>
-          {/* <a href="/thankyou"> */}
-          <button className="name-save-button" onClick={() => {handleSaveList()}}>
-            Save
-          </button>
-          {/* </a> */}
+          <a href="/thankyou">
+            <button
+              className="name-save-button"
+              onClick={() => {
+                handleSaveList();
+              }}
+            >
+              Save
+            </button>
+          </a>
         </div>
       </IonContent>
     </IonPage>
