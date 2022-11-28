@@ -47,180 +47,298 @@
     height: 100px;
     filter: opacity(100%);
     margin-top: 7vh;
-    margin-left: 2vw;
     position: absolute;
   }
 
   .profile-container {
-    /* display: grid;
-    grid-template-areas:
-      "grocery-profile blank-space";
-    gap: 3%;
-  
-    padding: 4%;
-    height: 100%; */
-    width: 40vw;
-    margin-left: 30vw;
-    margin-top: 10vh;
-
     color: #47525e;
     position: absolute;
   }
   
   .grocery-profile {
     height: 65vh;
-    width: 40vw;
     background-color: #8e9a84;
     border-radius: 20px;
-  
-    text-align: center;
     position: absolute;
-  }
-  
-  .profile-title-container {
-    background-color: #A3AC9B;
-    height: 8vh;
-    width: 16vw;
-    text-align: center;
-    border-radius: 10px;
-    margin-left: 32vw;
-    margin-top: 6vh;
-    position: absolute;
-    z-index: 9999;
-    /* vertical-align: middle; */
-  }
-
-  .profile-title-text {
-    color: #000000;
-    font-family: Lato;
-    font-size: 22px;
-    margin-left: 36.5%;
-    margin-top: 6%;
-    /* text-align: left; */
-    position:absolute;
+    padding: 1rem;
+    box-shadow: 0px 0px 24px -10px rgba(0, 0, 0, 0.75);
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
   }
   
-  .grocery-profile-title {
-    margin-top: 0;
-    font-weight: bolder;
-    color: #47525e;
-    font-family: Lato;
-    text-align: left;
-    position: relative;
-  }
-  
-  .text-profile-name {
-    color: #47525e;
-    font-family: Lato;
-    text-align: left;
-    margin-left: 11vw;
-    margin-top: 9vh;
-    position: absolute;
-  }
-  .text-profile-div-name {
-    background-color: #CAD3C3;
-    margin-left: 15vw; 
-    margin-top: 9vh;
-    width: 16vw;
-    height: 4vh;
-    border-radius: 10px;
-    position:absolute;
-  }
-  .text-profile-username {
-    color: #47525e;
-    font-family: Lato;
-    /* font-weight: 600; */
-    width: 15vw;
-    margin-left: 1vw; 
-    margin-top: 0vh;
-    position: absolute;
-    text-align: left;
-  }
-
-  .text-profile-email {
-    color: #47525e;
-    font-family: Lato;
-    text-align: left;
-    margin-left: 11vw;
-    margin-top: 15vh;
-    position: absolute;
-  }
-  .text-profile-div-email {
-    background-color: #CAD3C3;
-    margin-left: 15vw; 
-    margin-top: 15vh;
-    width: 16vw;
-    height: 4vh;
-    border-radius: 10px;
-    position:absolute;
-  }
-  .text-profile-emailname {
-    color: #47525e;
-    font-family: Lato;
-    width: 15vw;
-    margin-left: 1vw; 
-    margin-top: 0vh;
-    position: absolute;
-    text-align: left;
-  }
-  .text-profile-saved-lists-title {
-    color: #47525e;
-    font-family: Lato;
-    text-align: left;
-    margin-left: 2.2vw;
-    margin-top: 23vh;
-    position: absolute;
-  }
-
-  .text-profile-div-lists {
-    background-color: #CAD3C3;
-    margin-left: 0.5vw; 
-    margin-top: 27.5vh;
-    width: 13vw;
-    height: 33vh;
-    border-radius: 10px;
-    position:absolute;
-
-    overflow-y: scroll;
-  }
-
-  .text-profile-saved-lists {
-    color: #47525e;
-    font-family: Lato;
-    text-align: left;
-    margin-top: 0vh;
-    padding: 4%;
-    position: absolute;
-  }
-
   .log-out-button {
     background-color: #ED8A70;
     color: #47525E;
     font-family: Lato;
-    /* background-color: #FFFFFF; */
-    border-radius: 10px;
-    width: 12vh;
-    height: 5vh;
+    margin-left: auto;
+    margin-right: auto;
     margin-top: 58vh;
-    margin-left: -3vw;
-    position: absolute;
+    border-radius: 10px;
   }
 
   .list-name {
     cursor: pointer;
   }
   
-  @media (max-width: 480px) {
-  
-    .profile-container {
-      display: grid;
-      grid-template-areas:
-        "grocery-profile";
-  
-      height: 100%;
-    
-      color: #47525e;
+  @media(min-width: 300px) {
+    .profilepic {
+      margin-left: 3vw;
     }
+
+    .profile-container{
+      width: 100%;
+      height: auto;
+      margin-top: 5rem;
+      gap: 0.2em;
+    }
+    .grocery-profile {
+      width: 100% ;
+    }
+
+    .profile-title-container {
+      background-color: #A3AC9B;
+      height: 8vh;
+      width: 25vw;
+      text-align: center;
+      border-radius: 10px;
+      margin-left: 10vw;
+      margin-top: 6vh;
+      position: absolute;
+      z-index: 9999;
+      /* vertical-align: middle; */
+    }
+  
+    .profile-title-text {
+      color: #47525e;
+      font-family: Lato;
+      font-size: 22px;
+      margin-left: 7.5vw;
+      margin-top: 1rem;
+      text-align: center;
+      position:absolute;
+    }
+    
+    .grocery-profile-title {
+      margin-top: 0;
+      font-weight: bolder;
+      color: #47525e;
+      font-family: Lato;
+      text-align: left;
+      position: relative;
+    }
+    
+    .text-profile-name {
+      color: #47525e;
+      font-family: Lato;
+      text-align: left;
+      margin-left: 38vw;
+      margin-top: 9vh;
+      position: absolute;
+    }
+    .text-profile-div-name {
+      background-color: #CAD3C3;
+      margin-left: 49vw; 
+      margin-top: 8vh;
+      width: 40vw;
+      height: 4vh;
+      border-radius: 10px;
+      position:absolute;
+    }
+    .text-profile-username {
+      color: #47525e;
+      font-family: Lato;
+      width: 40vw;
+      margin-left: 1vw; 
+      margin-top: 0.8vh;
+      position: absolute;
+      text-align: left;
+    }
+  
+    .text-profile-email {
+      color: #47525e;
+      font-family: Lato;
+      text-align: left;
+      margin-left: 38vw;
+      margin-top: 15vh;
+      position: absolute;
+    }
+    .text-profile-div-email {
+      background-color: #CAD3C3;
+      margin-left: 49vw; 
+      margin-top: 14vh;
+      width: 40vw;
+      height: 4vh;
+      border-radius: 10px;
+      position:absolute;
+    }
+    .text-profile-emailname {
+      color: #47525e;
+      font-family: Lato;
+      width: 40vw;
+      margin-left: 1vw; 
+      margin-top: 0.8vh;
+      position: absolute;
+      text-align: left;
+    }
+    .text-profile-saved-lists-title {
+      color: #47525e;
+      font-family: Lato;
+      text-align: left;
+      margin-left: 8vw;
+      margin-top: 24vh;
+      position: absolute;
+    }
+  
+    .text-profile-div-lists {
+      background-color: #CAD3C3;
+      margin-left: 0.5vw; 
+      margin-top: 27.5vh;
+      width: 30vw;
+      height: 33vh;
+      border-radius: 10px;
+      position:absolute;
+  
+      overflow-y: scroll;
+    }
+  
+    .text-profile-saved-lists {
+      color: #47525e;
+      font-family: Lato;
+      text-align: left;
+      margin-top: 0vh;
+      padding: 4%;
+      position: absolute;
+    }
+   
   
   }
   
+  @media (min-width: 800px) {
+    .profilepic {
+      margin-left: 2vw;
+    }
+    .profile-container{
+      margin-top: 0.2rem;
+    }
+    .grocery-profile {
+      width: 55vw;
+      margin-left: 24vw;
+      margin-top: 10vh;
+    }
+
+    .profile-title-container {
+      background-color: #A3AC9B;
+      height: 8vh;
+      width:20vw;
+      text-align: center;
+      border-radius: 10px;
+      margin-left: 32vw;
+      margin-top: 6vh;
+      position: absolute;
+      z-index: 9999;
+      /* vertical-align: middle; */
+    }
+  
+    .profile-title-text {
+      color: #47525e;
+      font-family: Lato;
+      font-size: 22px;
+      margin-left: 6.5vw;
+      margin-top: 2vh;
+      position:fixed;
+    }
+    
+    .grocery-profile-title {
+      margin-top: 0;
+      font-weight: bolder;
+      color: #47525e;
+      font-family: Lato;
+      text-align: left;
+      position: relative;
+    }
+    
+    .text-profile-name {
+      color: #47525e;
+      font-family: Lato;
+      text-align: left;
+      margin-left: 15vw;
+      margin-top: 9vh;
+      position: absolute;
+    }
+    .text-profile-div-name {
+      background-color: #CAD3C3;
+      margin-left: 21vw; 
+      margin-top: 8vh;
+      width: 25vw;
+      height: 4vh;
+      border-radius: 10px;
+      position:absolute;
+    }
+    .text-profile-username {
+      color: #47525e;
+      font-family: Lato;
+      width: 25vw;
+      margin-left: 1vw; 
+      margin-top: 0.8vh;
+      position: absolute;
+      text-align: left;
+    }
+  
+    .text-profile-email {
+      color: #47525e;
+      font-family: Lato;
+      text-align: left;
+      margin-left: 15vw;
+      margin-top: 15vh;
+      position: absolute;
+    }
+    .text-profile-div-email {
+      background-color: #CAD3C3;
+      margin-left: 21vw; 
+      margin-top: 14vh;
+      width: 25vw;
+      height: 4vh;
+      border-radius: 10px;
+      position:absolute;
+    }
+    .text-profile-emailname {
+      color: #47525e;
+      font-family: Lato;
+      width: 25vw;
+      margin-left: 1vw; 
+      margin-top: 0.8vh;
+      position: absolute;
+      text-align: left;
+    }
+    .text-profile-saved-lists-title {
+      color: #47525e;
+      font-family: Lato;
+      text-align: left;
+      margin-left: 4.8vw;
+      margin-top: 24vh;
+      position: absolute;
+    }
+  
+    .text-profile-div-lists {
+      background-color: #CAD3C3;
+      margin-left: 0.5vw; 
+      margin-top: 27.5vh;
+      width: 17vw;
+      height: 33vh;
+      border-radius: 10px;
+      position:absolute;
+  
+      overflow-y: scroll;
+    }
+  
+    .text-profile-saved-lists {
+      color: #47525e;
+      font-family: Lato;
+      text-align: left;
+      margin-top: 0vh;
+      padding: 4%;
+      position: absolute;
+    }
+
+  }
