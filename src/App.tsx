@@ -33,6 +33,7 @@ import "@ionic/react/css/display.css";
 /* Theme variables */
 import "./theme/variables.css";
 import ListName from "./pages/ListName";
+import ThankYou from "./pages/ThankYou";
 
 setupIonicReact();
 
@@ -80,6 +81,9 @@ const Routing = () => {
           </Route>
           <Route exact path="/listname">
             <ListName />
+          </Route>
+          <Route exact path="/thankyou">
+            <ThankYou />
           </Route>
           <Route>
             <NotFoundPage />
