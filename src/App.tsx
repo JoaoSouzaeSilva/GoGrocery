@@ -47,10 +47,10 @@ const Routing = () => {
     <>
       <IonReactRouter>
         <Switch>
-          <Route exact path="/GoGrocery/home">
+          <Route exact path="/home">
             <Home />
           </Route>
-          <Redirect exact path="/" to="/GoGrocery/home" />
+          <Redirect exact path="/" to="/home" />
           <Route exact path="/about">
             <About />
           </Route>
