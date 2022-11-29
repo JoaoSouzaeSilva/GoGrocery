@@ -26,6 +26,8 @@ const ThankYou = () => {
     history.push("/choice", { id: history.location.state.id });
   };
 
+  console.log(history)
+
   return (
     <IonPage>
       <IonToolbar className="ion-toolbar-thankyou">

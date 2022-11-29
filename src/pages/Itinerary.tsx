@@ -24,6 +24,8 @@ import "./Itinerary.scss";
 const Itinerary = () => {
   let history: any = useHistory();
 
+  console.log(history)
+
   const handleFinishItinerary = () => {
     if (history.location.state.new === true) {
       history.push("/savelist", {

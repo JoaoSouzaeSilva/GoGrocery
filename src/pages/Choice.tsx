@@ -30,6 +30,8 @@ const Choice = () => {
     history.push("/lists", { user, new: false });
   };
 
+  console.log(history)
+
   return (
     <IonPage>
       <IonToolbar className="ion-toolbar-choice">

@@ -1,8 +1,28 @@
 import SlideMenuItem from "./slide-menu-item.component";
+import { useHistory } from "react-router";
 
 import "./slide-menu.styles.scss";
 
-const SlideMenu = ({ enabled, selectedItems, onDeleteItem }: any) => {
+const SlideMenu = ({
+  enabled,
+  selectedItems,
+  onDeleteItem,
+  addedItems,
+}: any) => {
+  let history: any = useHistory();
+
+  const handleItenerarySetup = () => {
+    /* if (addedItems.length === 0) setEmptyListError(true); */
+    /* else { */
+    let productList: any[] = [];
+    addedItems.forEach((item: any) => productList.push(item));
+    history.push("/itinerary", {
+      id: history.location.state.id,
+      list: productList,
+      new: true,
+    });
+    /* } */
+  };
 
   return (
     <>
@@ -24,7 +44,12 @@ const SlideMenu = ({ enabled, selectedItems, onDeleteItem }: any) => {
                 </div>
               ))}
             </div>
-            <button className="finish-in-menu">Itinerary setup</button>
+            <button
+              className="finish-in-menu"
+              onClick={() => handleItenerarySetup()}
+            >
+              Itinerary setup
+            </button>
           </div>
         </div>
       </div>

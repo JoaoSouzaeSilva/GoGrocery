@@ -17,7 +17,6 @@ import SlideMenu from "../components/slide-menu/slide-menu.component";
 import AddToList from "../components/products/add-to-list.component";
 import SearchBar from "../components/search/search-bar.component";
 import { useHistory } from "react-router";
-import { NONAME } from "dns";
 
 const CategoriesPage = () => {
   let history: any = useHistory();
@@ -175,6 +174,7 @@ const CategoriesPage = () => {
           enabled={open}
           selectedItems={addedItems}
           onDeleteItem={handleDeleteItem}
+          addedItems={addedItems}
         />
         {itemCard}
         <div className={open ? "dimmed" : itemSelected ? "dimmed" : "undimmed"}>

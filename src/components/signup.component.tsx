@@ -13,7 +13,7 @@ import { useState } from "react";
 import { useHistory } from "react-router";
 
 const SignUpComponent = () => {
-  let history = useHistory();
+  let history: any = useHistory();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -106,9 +106,10 @@ const SignUpComponent = () => {
                 name: name,
                 email: email,
                 password: password,
-                lists: []
+                lists: [],
               };
               localStorage.setItem(email, JSON.stringify(user));
+              history.push("/signin");
             } else setEmailError(true);
           } else setPasswordSecError(true);
         } else setPasswordError(true);
@@ -155,8 +156,6 @@ const SignUpComponent = () => {
             onIonChange={(event: any) => {
               setPassword(event.detail.value);
             }}
-            /* onIonInput={(event) => checkPasswordSecurity(event)}
-          onIonBlur={() => markTouched()} */
           />
           {!checkPasswordSecurity() && (
             <IonNote slot="helper">
