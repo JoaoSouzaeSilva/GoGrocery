@@ -15,55 +15,14 @@ import {
 } from "@ionic/react";
 import { useState } from "react";
 import { useHistory } from "react-router";
-import SearchBar from "../components/search/search-bar.component";
 
 import headerImg from "../images/header.png";
 
 import "./Itinerary.scss";
 import { Items } from "../data/items";
-import SearchItem from "../components/search/search-item.component";
 
 const Itinerary = () => {
   let history: any = useHistory();
-
-  let initialProductInfo: any[] = [];
-
-  const [searching, setSearching] = useState(false);
-  const [searchInput, setSearchInput] = useState("");
-  const [itemSelected, setItemSelected] = useState(false);
-  const [productInfo, setProductInfo] = useState(initialProductInfo);
-
-  let filteredProds = Items.filter((item) => {
-    if (searchInput === "") return item;
-    else if (item.name.toLowerCase().includes(searchInput.toLowerCase()))
-      return item;
-  });
-
-  //Define wether the product card is toggled or not
-  const handleSelectItem = () => {
-    setItemSelected(!itemSelected);
-  };
-
-  //Used to show the info of a certain item when we click it (name,image,price)
-  const handleSetProductInfo = (
-    productName: any,
-    productImage: any,
-    productPriceKG: any
-    /* productQuantity: any */
-  ) => {
-    setProductInfo([
-      productName,
-      productImage,
-      productPriceKG,
-      /*  productQuantity, */
-    ]);
-    return productInfo;
-  };
-
-  const stopSearching = () => {
-    setSearching(false);
-    setSearchInput("");
-  };
 
   const handleFinishItinerary = () => {
     if (history.location.state.new === true) {
@@ -141,14 +100,14 @@ const Itinerary = () => {
           <IonButton
             shape="round"
             onClick={() => history.goBack()}
-            className="toolbar-itinerary-button"
+            className="toolbar-itinerary-button button-primary"
           >
             <p className="button-primary-itenerary">Back</p>
           </IonButton>
           <IonButton
             shape="round"
             onClick={() => handleFinishItinerary()}
-            className="toolbar-itinerary-button"
+            className="toolbar-itinerary-button button-primary"
           >
             <p className="button-primary-itenerary">Finish</p>
           </IonButton>
@@ -188,9 +147,7 @@ const Itinerary = () => {
           className="search-forgot"
           color="#cbd2c3"
           maxLength={38}
-          onChange={(event) => setSearchInput(event.target.value)}
-          value={searchInput}
-          onClick={() => setSearching(true)}
+          placeholder="Forgot something? Add here!"
         ></input>
 
         <div className="current-list">

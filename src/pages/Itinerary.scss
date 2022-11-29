@@ -144,7 +144,11 @@
 
   position: fixed;
 
-  pointer-events:none;
+  pointer-events: none;
+}
+
+.supermarket-searchbar {
+  pointer-events: none;
 }
 
 @media only screen and (min-width: 1000px) {

@@ -14,7 +14,7 @@ import {
 } from "@ionic/react";
 import "./Home.scss";
 import headerImg from "../images/header.png";
-import smartphone from "../images/smartphone-final.png";
+import smartphone from "../images/smartphone-main.png";
 import { chevronDownOutline } from "ionicons/icons";
 
 const Home = () => {
@@ -137,7 +137,7 @@ const Home = () => {
                     <IonItem>
                       <IonLabel color="tertiary" className="ion-text-wrap">
                         You can create an account at any time without needing to use it, ever!
-                        Althouh we do recommend it ;) 
+                        Although we do recommend it ;) 
                         <br/>
                         You can delete your account anytime and anywhere.
                       </IonLabel>

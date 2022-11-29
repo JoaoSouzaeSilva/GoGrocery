@@ -32,7 +32,6 @@ const AddToList = ({
           ></img>
         </div>
         <p className="price-kg-text">{price_kg}</p>
-        <p className="price-unit-text">Unit Price</p>
         <div className="quantity-selector">
           <button
             className="quantity-down-button"
@@ -52,7 +51,7 @@ const AddToList = ({
           className="add-to-list-button"
           onClick={() => {
             onAddItem(name, img);
-            presentToast("middle");
+            presentToast("top");
             onClickAddItem();
           }}
         >
