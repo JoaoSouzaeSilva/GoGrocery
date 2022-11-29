@@ -26,10 +26,13 @@ const List = () => {
     return quantityDisplay;
   };
 
-  console.log(history.location.state);
-
   const handleCalculateItinerary = () => {
-    history.push("/itinerary", { id: user.id, list: listItems, new: false });
+    history.push("/itinerary", {
+      id: user.id,
+      list: listItems,
+      listName: id,
+      new: false,
+    });
   };
 
   return (

@@ -29,12 +29,22 @@
 }
 
 .route-select-list {
-  width: 30vw;
   position: absolute;
   border-radius: 10px;
-  margin-left: 40vw;
   background-color: white;
   padding: 3px;
+
+  margin-top: 10%;
+}
+
+.route-label {
+  --background: white;
+}
+
+.choose-route {
+  margin-left: 20vw;
+  margin-top: -1.4vh;
+  position: absolute;
 }
 
 .current-list {
@@ -64,7 +74,6 @@
   --ion-text-color: #47525e;
 }
 
-
 .col {
   flex: 1 1 0px;
 }
@@ -80,6 +89,40 @@
 .supermarket-searchbar {
   --border-radius: 10px;
   margin-top: -2%;
+}
+
+.current-list-name {
+  font-weight: 500;
+  font-family: Lato;
+  font-size: 1.2vw;
+  color: #47525e;
+
+  margin-top: 0.5vh;
+  margin-left: 0.5vw;
+}
+
+.current-list-item {
+  font-family: Lato;
+  color: #47525e;
+
+  margin-top: 3%;
+  margin-left: 1.5%;
+}
+
+.current-list-bullet {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  position: absolute;
+  background-color: #5f6e35;
+  border-radius: 100%;
+
+  margin-left: -3%;
+  margin-top: 1.9%;
+}
+
+.current-list-item-row {
+  margin-left: 6%;
 }
 
 @media only screen and (min-width: 1000px) {

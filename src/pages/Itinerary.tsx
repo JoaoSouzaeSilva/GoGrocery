@@ -15,7 +15,6 @@ import {
 } from "@ionic/react";
 import { useState } from "react";
 import { useHistory } from "react-router";
-import { Link } from "react-router-dom";
 
 import headerImg from "../images/header.png";
 
@@ -24,7 +23,7 @@ import "./Itinerary.scss";
 const Itinerary = () => {
   let history: any = useHistory();
 
-  console.log(history)
+  console.log(history);
 
   const handleFinishItinerary = () => {
     if (history.location.state.new === true) {
@@ -117,29 +116,52 @@ const Itinerary = () => {
       </IonToolbar>
 
       <div className="map-select-container col">
-        <IonList className="route-select-list">
-          <IonItem lines="none">
-            <IonLabel>Route</IonLabel>
-            <IonSelect
-              interface="popover"
-              placeholder="Choose the best route"
-              value={selectValue}
-              className="itinerary-select"
-              onIonChange={(e) => changeItinerary(`${e.detail.value}`)}
-            >
-              <IonSelectOption className="route-select-option" value="fast">
-                Fast Route
-              </IonSelectOption>
-              <IonSelectOption className="route-select-option" value="discount">
-                Discount Route
-              </IonSelectOption>
-            </IonSelect>
-          </IonItem>
-        </IonList>
+        <div className="choose-route">
+          <IonList className="route-select-list">
+            <IonItem lines="none" className="route-label">
+              <IonLabel>Route</IonLabel>
+              <IonSelect
+                interface="popover"
+                placeholder="Choose the best route"
+                value={selectValue}
+                className="itinerary-select"
+                onIonChange={(e) => changeItinerary(`${e.detail.value}`)}
+              >
+                <IonSelectOption className="route-select-option" value="fast">
+                  Fast Route
+                </IonSelectOption>
+                <IonSelectOption
+                  className="route-select-option"
+                  value="discount"
+                >
+                  Discount Route
+                </IonSelectOption>
+              </IonSelect>
+            </IonItem>
+          </IonList>
+        </div>
 
         <Image />
 
-        <div className="current-list"></div>
+        <div className="current-list">
+          {history.location.state.listName === "UNDEFINED" ? (
+            <div className="current-list-name">Your new list</div>
+          ) : (
+            <div className="current-list-name">
+              {history.location.state.listName}
+            </div>
+          )}
+          <div className="current-list-items">
+            {history.location.state.list.map((item: any) => (
+              <div className="current-list-item-row">
+                <div className="current-list-bullet"></div>
+                <div className="current-list-item">
+                  {item[2] + "x " + item[0]}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
         <div className="forgot-something"></div>
 
         <div className="col">
