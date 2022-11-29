@@ -20,6 +20,8 @@ import SearchBar from "../components/search/search-bar.component";
 import headerImg from "../images/header.png";
 
 import "./Itinerary.scss";
+import { Items } from "../data/items";
+import SearchItem from "../components/search/search-item.component";
 
 const Itinerary = () => {
   let history: any = useHistory();
@@ -31,6 +33,12 @@ const Itinerary = () => {
   const [itemSelected, setItemSelected] = useState(false);
   const [productInfo, setProductInfo] = useState(initialProductInfo);
 
+  let filteredProds = Items.filter((item) => {
+    if (searchInput === "") return item;
+    else if (item.name.toLowerCase().includes(searchInput.toLowerCase()))
+      return item;
+  });
+
   //Define wether the product card is toggled or not
   const handleSelectItem = () => {
     setItemSelected(!itemSelected);
@@ -40,14 +48,14 @@ const Itinerary = () => {
   const handleSetProductInfo = (
     productName: any,
     productImage: any,
-    productPriceKG: any,
-    productQuantity: any
+    productPriceKG: any
+    /* productQuantity: any */
   ) => {
     setProductInfo([
       productName,
       productImage,
       productPriceKG,
-      productQuantity,
+      /*  productQuantity, */
     ]);
     return productInfo;
   };
@@ -175,6 +183,16 @@ const Itinerary = () => {
 
         <Image />
 
+        <input
+          type="text"
+          className="search-forgot"
+          color="#cbd2c3"
+          maxLength={38}
+          onChange={(event) => setSearchInput(event.target.value)}
+          value={searchInput}
+          onClick={() => setSearching(true)}
+        ></input>
+
         <div className="current-list">
           {history.location.state.listName === "UNDEFINED" ? (
             <div className="current-list-name">Your new list</div>
@@ -194,32 +212,6 @@ const Itinerary = () => {
               </div>
             ))}
           </div>
-        </div>
-        <div className="forgot-something">
-          <div className="forgot-something-title">
-            Wanna add something more to your list?
-          </div>
-          <div className="forgot-something-separator" />
-
-          <input
-            type="text"
-            className="search"
-            color="#cbd2c3"
-            maxLength={38}
-            onChange={(event) => setSearchInput(event.target.value)}
-            value={searchInput}
-            onClick={() => setSearching(true)}
-          ></input>
-          {searching && searchInput.length !== 0 && (
-            <div id="search-menu">
-              <SearchBar
-                query={searchInput}
-                onSelectItem={handleSelectItem}
-                onSetProductInfo={handleSetProductInfo}
-                onProductSelect={stopSearching}
-              />
-            </div>
-          )}
         </div>
         <div className="col">
           <IonList className="supermarkets-list">

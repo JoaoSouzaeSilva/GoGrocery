@@ -60,17 +60,6 @@
   border-radius: 10px;
 }
 
-.forgot-something {
-  position: absolute;
-  height: 42vh;
-  width: 21vw;
-  background-color: #cbd2c3;
-  margin-top: 46.3vh;
-  margin-left: -14vw;
-
-  border-radius: 10px;
-}
-
 .route-select-option {
   --background: #cbd2c3;
   --ion-text-color: #47525e;
@@ -133,26 +122,29 @@
   margin-left: 0.5rem;
 }
 
-.forgot-something-title {
-  color: #47525e;
+.search-forgot {
+  background-color: #ffffff;
+  background-image: url("../images/search.png");
+  background-size: 7%;
+  background-repeat: no-repeat;
+  background-position: 98%;
+
+  border-radius: 10px;
+  border-color: #343f4b;
+  border-width: 1.5px;
+  border-style: solid;
+
+  height: 5vh;
+  width: 21vw;
+  margin-top: 50vh;
+  margin-left: -14vw;
+
+  color: #343f4b;
   font-family: Lato;
-  font-weight: bold;
-  font-size: 1vw;
 
-  margin-top: 0.6vh;
-  margin-left: 1.45vw;
-}
+  position: fixed;
 
-.forgot-something-separator {
-  width: 96%;
-  border-bottom: 1.2px solid #5f6e35;
-  margin-left: 0.5rem;
-  margin-top: 0.1vh;
-}
-
-.search {
-  height: 4vh;
-  width: 18vw;
+  pointer-events:none;
 }
 
 @media only screen and (min-width: 1000px) {
