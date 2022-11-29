@@ -52,7 +52,9 @@ const SignInComponent = () => {
     else return true;
   }
 
-  async function handleSignIn(this: any) {
+  console.log(email)
+
+  async function handleSignIn() {
     let aux = await checkEmail();
     if (aux) {
       if (checkPassword()) history.push("/choice", { id: email });

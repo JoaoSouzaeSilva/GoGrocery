@@ -11,9 +11,6 @@ import {
   import SignInComponent from "../components/signin.component"
   
   const SignIn = () => {
-
-    
-
     return (
       <IonPage>
         <IonToolbar className="ion-toolbar-home">

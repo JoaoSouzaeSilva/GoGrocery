@@ -14,8 +14,6 @@ import "./Profile.scss";
 const Profile = () => {
   let history: any = useHistory();
 
-  console.log(history.location.state);
-
   return (
     <>
       <IonPage>
@@ -59,9 +57,7 @@ const Profile = () => {
                   }
                 </p>
               </div>
-              <a href="/lists">
-                <p className="text-profile-saved-lists-title">Saved Lists</p>
-              </a>
+              <p className="text-profile-saved-lists-title">Saved Lists</p>
               <div className="text-profile-div-lists">
                 {JSON.parse(
                   localStorage.getItem(history.location.state.id)!
@@ -70,7 +66,7 @@ const Profile = () => {
                     className="list-name"
                     onClick={() =>
                       history.push("/lists/" + list.listName, {
-                        id: history.location.state.email,
+                        id: history.location.state.id,
                       })
                     }
                   >

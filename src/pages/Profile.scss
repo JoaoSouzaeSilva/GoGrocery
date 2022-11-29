@@ -1,344 +1,341 @@
 .ion-toolbar-profile {
-    --background: #cbd2c3;
-    height: 75px;
-    width: 100%;
-    display: flex;
-  }
-  
-  .img {
-    height: 100%;
-  }
-  
-  .img_text {
-    font-size: small;
-    margin-left: 6px;
-    align-self: flex-end;
-    margin-bottom: 3px;
-    color: #47525e;
-  }
-  
-  .back-button {
-    background-color: #8e9a84;
-    color: #47525e;
-    border-radius: 8px;
-    padding: 10px;
-  }
-  
-  .back {
-    font-weight: bold;
-  }
-  
-  .ion-content-profile {
-    --background: none;
-    background-image: url("../images/profile_bgo.png");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: scroll;
-    filter: opacity(100%);
-  }
-  
+  --background: #cbd2c3;
+  height: 75px;
+  width: 100%;
+  display: flex;
+}
+
+.img {
+  height: 100%;
+}
+
+.img_text {
+  font-size: small;
+  margin-left: 6px;
+  align-self: flex-end;
+  margin-bottom: 3px;
+  color: #47525e;
+}
+
+.back-button {
+  background-color: #8e9a84;
+  color: #47525e;
+  border-radius: 8px;
+  padding: 10px;
+}
+
+.back {
+  font-weight: bold;
+}
+
+.ion-content-profile {
+  --background: none;
+  background-image: url("../images/profile_bgo.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  filter: opacity(100%);
+}
+
+.profilepic {
+  --background: none;
+  background-image: url("../images/profilepic.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  width: 100px;
+  height: 100px;
+  filter: opacity(100%);
+  margin-top: 7vh;
+  position: absolute;
+}
+
+.profile-container {
+  color: #47525e;
+  position: absolute;
+}
+
+.grocery-profile {
+  height: 65vh;
+  background-color: #8e9a84;
+  border-radius: 20px;
+  position: absolute;
+  padding: 1rem;
+  box-shadow: 0px 0px 24px -10px rgba(0, 0, 0, 0.75);
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+}
+
+.log-out-button {
+  background-color: #ed8a70;
+  color: #47525e;
+  font-family: Lato;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 58vh;
+  border-radius: 10px;
+}
+
+.list-name {
+  cursor: pointer;
+}
+
+@media (min-width: 300px) {
   .profilepic {
-    --background: none;
-    background-image: url("../images/profilepic.png");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: scroll;
-    width: 100px;
-    height: 100px;
-    filter: opacity(100%);
-    margin-top: 7vh;
-    position: absolute;
+    margin-left: 3vw;
   }
 
   .profile-container {
-    color: #47525e;
-    position: absolute;
+    width: 100%;
+    height: auto;
+    margin-top: 5rem;
+    gap: 0.2em;
   }
-  
   .grocery-profile {
-    height: 65vh;
-    background-color: #8e9a84;
-    border-radius: 20px;
-    position: absolute;
-    padding: 1rem;
-    box-shadow: 0px 0px 24px -10px rgba(0, 0, 0, 0.75);
-    display: flex;
-    flex-direction: column;
-    margin: 0 auto;
+    width: 100%;
   }
-  
-  .log-out-button {
-    background-color: #ED8A70;
-    color: #47525E;
-    font-family: Lato;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 58vh;
+
+  .profile-title-container {
+    background-color: #a3ac9b;
+    height: 8vh;
+    width: 25vw;
+    text-align: center;
     border-radius: 10px;
+    margin-left: 10vw;
+    margin-top: 6vh;
+    position: absolute;
+    z-index: 9999;
+    /* vertical-align: middle; */
   }
 
-  .list-name {
-    cursor: pointer;
+  .profile-title-text {
+    color: #47525e;
+    font-family: Lato;
+    font-size: 22px;
+    margin-left: 7.5vw;
+    margin-top: 1rem;
+    text-align: center;
+    position: absolute;
   }
-  
-  @media(min-width: 300px) {
-    .profilepic {
-      margin-left: 3vw;
-    }
 
-    .profile-container{
-      width: 100%;
-      height: auto;
-      margin-top: 5rem;
-      gap: 0.2em;
-    }
-    .grocery-profile {
-      width: 100% ;
-    }
-
-    .profile-title-container {
-      background-color: #A3AC9B;
-      height: 8vh;
-      width: 25vw;
-      text-align: center;
-      border-radius: 10px;
-      margin-left: 10vw;
-      margin-top: 6vh;
-      position: absolute;
-      z-index: 9999;
-      /* vertical-align: middle; */
-    }
-  
-    .profile-title-text {
-      color: #47525e;
-      font-family: Lato;
-      font-size: 22px;
-      margin-left: 7.5vw;
-      margin-top: 1rem;
-      text-align: center;
-      position:absolute;
-    }
-    
-    .grocery-profile-title {
-      margin-top: 0;
-      font-weight: bolder;
-      color: #47525e;
-      font-family: Lato;
-      text-align: left;
-      position: relative;
-    }
-    
-    .text-profile-name {
-      color: #47525e;
-      font-family: Lato;
-      text-align: left;
-      margin-left: 38vw;
-      margin-top: 9vh;
-      position: absolute;
-    }
-    .text-profile-div-name {
-      background-color: #CAD3C3;
-      margin-left: 49vw; 
-      margin-top: 8vh;
-      width: 40vw;
-      height: 4vh;
-      border-radius: 10px;
-      position:absolute;
-    }
-    .text-profile-username {
-      color: #47525e;
-      font-family: Lato;
-      width: 40vw;
-      margin-left: 1vw; 
-      margin-top: 0.8vh;
-      position: absolute;
-      text-align: left;
-    }
-  
-    .text-profile-email {
-      color: #47525e;
-      font-family: Lato;
-      text-align: left;
-      margin-left: 38vw;
-      margin-top: 15vh;
-      position: absolute;
-    }
-    .text-profile-div-email {
-      background-color: #CAD3C3;
-      margin-left: 49vw; 
-      margin-top: 14vh;
-      width: 40vw;
-      height: 4vh;
-      border-radius: 10px;
-      position:absolute;
-    }
-    .text-profile-emailname {
-      color: #47525e;
-      font-family: Lato;
-      width: 40vw;
-      margin-left: 1vw; 
-      margin-top: 0.8vh;
-      position: absolute;
-      text-align: left;
-    }
-    .text-profile-saved-lists-title {
-      color: #47525e;
-      font-family: Lato;
-      text-align: left;
-      margin-left: 8vw;
-      margin-top: 24vh;
-      position: absolute;
-    }
-  
-    .text-profile-div-lists {
-      background-color: #CAD3C3;
-      margin-left: 0.5vw; 
-      margin-top: 27.5vh;
-      width: 30vw;
-      height: 33vh;
-      border-radius: 10px;
-      position:absolute;
-  
-      overflow-y: scroll;
-    }
-  
-    .text-profile-saved-lists {
-      color: #47525e;
-      font-family: Lato;
-      text-align: left;
-      margin-top: 0vh;
-      padding: 4%;
-      position: absolute;
-    }
-   
-  
+  .grocery-profile-title {
+    margin-top: 0;
+    font-weight: bolder;
+    color: #47525e;
+    font-family: Lato;
+    text-align: left;
+    position: relative;
   }
-  
-  @media (min-width: 800px) {
-    .profilepic {
-      margin-left: 2vw;
-    }
-    .profile-container{
-      margin-top: 0.2rem;
-    }
-    .grocery-profile {
-      width: 55vw;
-      margin-left: 24vw;
-      margin-top: 10vh;
-    }
 
-    .profile-title-container {
-      background-color: #A3AC9B;
-      height: 8vh;
-      width:20vw;
-      text-align: center;
-      border-radius: 10px;
-      margin-left: 32vw;
-      margin-top: 6vh;
-      position: absolute;
-      z-index: 9999;
-      /* vertical-align: middle; */
-    }
-  
-    .profile-title-text {
-      color: #47525e;
-      font-family: Lato;
-      font-size: 22px;
-      margin-left: 6.5vw;
-      margin-top: 2vh;
-      position:fixed;
-    }
-    
-    .grocery-profile-title {
-      margin-top: 0;
-      font-weight: bolder;
-      color: #47525e;
-      font-family: Lato;
-      text-align: left;
-      position: relative;
-    }
-    
-    .text-profile-name {
-      color: #47525e;
-      font-family: Lato;
-      text-align: left;
-      margin-left: 15vw;
-      margin-top: 9vh;
-      position: absolute;
-    }
-    .text-profile-div-name {
-      background-color: #CAD3C3;
-      margin-left: 21vw; 
-      margin-top: 8vh;
-      width: 25vw;
-      height: 4vh;
-      border-radius: 10px;
-      position:absolute;
-    }
-    .text-profile-username {
-      color: #47525e;
-      font-family: Lato;
-      width: 25vw;
-      margin-left: 1vw; 
-      margin-top: 0.8vh;
-      position: absolute;
-      text-align: left;
-    }
-  
-    .text-profile-email {
-      color: #47525e;
-      font-family: Lato;
-      text-align: left;
-      margin-left: 15vw;
-      margin-top: 15vh;
-      position: absolute;
-    }
-    .text-profile-div-email {
-      background-color: #CAD3C3;
-      margin-left: 21vw; 
-      margin-top: 14vh;
-      width: 25vw;
-      height: 4vh;
-      border-radius: 10px;
-      position:absolute;
-    }
-    .text-profile-emailname {
-      color: #47525e;
-      font-family: Lato;
-      width: 25vw;
-      margin-left: 1vw; 
-      margin-top: 0.8vh;
-      position: absolute;
-      text-align: left;
-    }
-    .text-profile-saved-lists-title {
-      color: #47525e;
-      font-family: Lato;
-      text-align: left;
-      margin-left: 4.8vw;
-      margin-top: 24vh;
-      position: absolute;
-    }
-  
-    .text-profile-div-lists {
-      background-color: #CAD3C3;
-      margin-left: 0.5vw; 
-      margin-top: 27.5vh;
-      width: 17vw;
-      height: 33vh;
-      border-radius: 10px;
-      position:absolute;
-  
-      overflow-y: scroll;
-    }
-  
-    .text-profile-saved-lists {
-      color: #47525e;
-      font-family: Lato;
-      text-align: left;
-      margin-top: 0vh;
-      padding: 4%;
-      position: absolute;
-    }
-
+  .text-profile-name {
+    color: #47525e;
+    font-family: Lato;
+    text-align: left;
+    margin-left: 38vw;
+    margin-top: 9vh;
+    position: absolute;
   }
+  .text-profile-div-name {
+    background-color: #cad3c3;
+    margin-left: 49vw;
+    margin-top: 8vh;
+    width: 40vw;
+    height: 4vh;
+    border-radius: 10px;
+    position: absolute;
+  }
+  .text-profile-username {
+    color: #47525e;
+    font-family: Lato;
+    width: 40vw;
+    margin-left: 1vw;
+    margin-top: 0.8vh;
+    position: absolute;
+    text-align: left;
+  }
+
+  .text-profile-email {
+    color: #47525e;
+    font-family: Lato;
+    text-align: left;
+    margin-left: 38vw;
+    margin-top: 15vh;
+    position: absolute;
+  }
+  .text-profile-div-email {
+    background-color: #cad3c3;
+    margin-left: 49vw;
+    margin-top: 14vh;
+    width: 40vw;
+    height: 4vh;
+    border-radius: 10px;
+    position: absolute;
+  }
+  .text-profile-emailname {
+    color: #47525e;
+    font-family: Lato;
+    width: 40vw;
+    margin-left: 1vw;
+    margin-top: 0.8vh;
+    position: absolute;
+    text-align: left;
+  }
+  .text-profile-saved-lists-title {
+    color: #47525e;
+    font-family: Lato;
+    text-align: left;
+    margin-left: 8vw;
+    margin-top: 24vh;
+    position: absolute;
+  }
+
+  .text-profile-div-lists {
+    background-color: #cad3c3;
+    margin-left: 0.5vw;
+    margin-top: 27.5vh;
+    width: 30vw;
+    height: 33vh;
+    border-radius: 10px;
+    position: absolute;
+
+    overflow-y: scroll;
+  }
+
+  .text-profile-saved-lists {
+    color: #47525e;
+    font-family: Lato;
+    text-align: left;
+    margin-top: 0vh;
+    padding: 4%;
+    position: absolute;
+  }
+}
+
+@media (min-width: 800px) {
+  .profilepic {
+    margin-left: 2vw;
+  }
+  .profile-container {
+    margin-top: 0.2rem;
+  }
+  .grocery-profile {
+    width: 55vw;
+    margin-left: 24vw;
+    margin-top: 10vh;
+  }
+
+  .profile-title-container {
+    background-color: #a3ac9b;
+    height: 8vh;
+    width: 20vw;
+    text-align: center;
+    border-radius: 10px;
+    margin-left: 32vw;
+    margin-top: 6vh;
+    position: absolute;
+    z-index: 9999;
+    /* vertical-align: middle; */
+  }
+
+  .profile-title-text {
+    color: #47525e;
+    font-family: Lato;
+    font-size: 22px;
+    margin-left: 6.5vw;
+    margin-top: 2vh;
+    position: fixed;
+  }
+
+  .grocery-profile-title {
+    margin-top: 0;
+    font-weight: bolder;
+    color: #47525e;
+    font-family: Lato;
+    text-align: left;
+    position: relative;
+  }
+
+  .text-profile-name {
+    color: #47525e;
+    font-family: Lato;
+    text-align: left;
+    margin-left: 15vw;
+    margin-top: 9vh;
+    position: absolute;
+  }
+  .text-profile-div-name {
+    background-color: #cad3c3;
+    margin-left: 21vw;
+    margin-top: 8vh;
+    width: 25vw;
+    height: 4vh;
+    border-radius: 10px;
+    position: absolute;
+  }
+  .text-profile-username {
+    color: #47525e;
+    font-family: Lato;
+    width: 25vw;
+    margin-left: 1vw;
+    margin-top: 0.8vh;
+    position: absolute;
+    text-align: left;
+  }
+
+  .text-profile-email {
+    color: #47525e;
+    font-family: Lato;
+    text-align: left;
+    margin-left: 15vw;
+    margin-top: 15vh;
+    position: absolute;
+  }
+  .text-profile-div-email {
+    background-color: #cad3c3;
+    margin-left: 21vw;
+    margin-top: 14vh;
+    width: 25vw;
+    height: 4vh;
+    border-radius: 10px;
+    position: absolute;
+  }
+  .text-profile-emailname {
+    color: #47525e;
+    font-family: Lato;
+    width: 25vw;
+    margin-left: 1vw;
+    margin-top: 0.8vh;
+    position: absolute;
+    text-align: left;
+  }
+  .text-profile-saved-lists-title {
+    color: #47525e;
+    font-family: Lato;
+    text-align: left;
+    margin-left: 4.8vw;
+    margin-top: 24vh;
+    position: absolute;
+  }
+
+  .text-profile-div-lists {
+    background-color: #cad3c3;
+    margin-left: 0.5vw;
+    margin-top: 27.5vh;
+    width: 17vw;
+    height: 33vh;
+    border-radius: 10px;
+    position: absolute;
+
+    overflow-y: scroll;
+  }
+
+  .text-profile-saved-lists {
+    color: #47525e;
+    font-family: Lato;
+    text-align: left;
+    margin-top: 0vh;
+    padding: 4%;
+    position: absolute;
+  }
+}
