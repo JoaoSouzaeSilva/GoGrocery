@@ -15,6 +15,7 @@ import {
 } from "@ionic/react";
 import { useState } from "react";
 import { useHistory } from "react-router";
+import SearchBar from "../components/search/search-bar.component";
 
 import headerImg from "../images/header.png";
 
@@ -23,7 +24,38 @@ import "./Itinerary.scss";
 const Itinerary = () => {
   let history: any = useHistory();
 
-  console.log(history);
+  let initialProductInfo: any[] = [];
+
+  const [searching, setSearching] = useState(false);
+  const [searchInput, setSearchInput] = useState("");
+  const [itemSelected, setItemSelected] = useState(false);
+  const [productInfo, setProductInfo] = useState(initialProductInfo);
+
+  //Define wether the product card is toggled or not
+  const handleSelectItem = () => {
+    setItemSelected(!itemSelected);
+  };
+
+  //Used to show the info of a certain item when we click it (name,image,price)
+  const handleSetProductInfo = (
+    productName: any,
+    productImage: any,
+    productPriceKG: any,
+    productQuantity: any
+  ) => {
+    setProductInfo([
+      productName,
+      productImage,
+      productPriceKG,
+      productQuantity,
+    ]);
+    return productInfo;
+  };
+
+  const stopSearching = () => {
+    setSearching(false);
+    setSearchInput("");
+  };
 
   const handleFinishItinerary = () => {
     if (history.location.state.new === true) {
@@ -151,10 +183,11 @@ const Itinerary = () => {
               {history.location.state.listName}
             </div>
           )}
+          <div className="current-list-separator" />
           <div className="current-list-items">
             {history.location.state.list.map((item: any) => (
               <div className="current-list-item-row">
-                <div className="current-list-bullet"></div>
+                <div className="current-list-bullet" />
                 <div className="current-list-item">
                   {item[2] + "x " + item[0]}
                 </div>
@@ -162,8 +195,32 @@ const Itinerary = () => {
             ))}
           </div>
         </div>
-        <div className="forgot-something"></div>
+        <div className="forgot-something">
+          <div className="forgot-something-title">
+            Wanna add something more to your list?
+          </div>
+          <div className="forgot-something-separator" />
 
+          <input
+            type="text"
+            className="search"
+            color="#cbd2c3"
+            maxLength={38}
+            onChange={(event) => setSearchInput(event.target.value)}
+            value={searchInput}
+            onClick={() => setSearching(true)}
+          ></input>
+          {searching && searchInput.length !== 0 && (
+            <div id="search-menu">
+              <SearchBar
+                query={searchInput}
+                onSelectItem={handleSelectItem}
+                onSetProductInfo={handleSetProductInfo}
+                onProductSelect={stopSearching}
+              />
+            </div>
+          )}
+        </div>
         <div className="col">
           <IonList className="supermarkets-list">
             <>

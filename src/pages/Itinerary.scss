@@ -20,8 +20,9 @@
 }
 
 .map {
-  height: 80vh;
+  /* height: 80vh; */
   width: 51.5vw;
+  height: auto;
 
   margin-left: 10.3vw;
   margin-top: 8.5vh;
@@ -93,7 +94,7 @@
 }
 
 .current-list-name {
-  font-weight: 500;
+  font-weight: bold;
   font-family: Lato;
   font-size: 1.2vw;
   color: #47525e;
@@ -124,6 +125,34 @@
 
 .current-list-item-row {
   margin-left: 6%;
+}
+
+.current-list-separator {
+  width: 96%;
+  border-bottom: 1.2px solid #5f6e35;
+  margin-left: 0.5rem;
+}
+
+.forgot-something-title {
+  color: #47525e;
+  font-family: Lato;
+  font-weight: bold;
+  font-size: 1vw;
+
+  margin-top: 0.6vh;
+  margin-left: 1.45vw;
+}
+
+.forgot-something-separator {
+  width: 96%;
+  border-bottom: 1.2px solid #5f6e35;
+  margin-left: 0.5rem;
+  margin-top: 0.1vh;
+}
+
+.search {
+  height: 4vh;
+  width: 18vw;
 }
 
 @media only screen and (min-width: 1000px) {

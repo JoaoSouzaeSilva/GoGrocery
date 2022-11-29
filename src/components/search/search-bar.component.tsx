@@ -12,9 +12,7 @@ const SearchBar = ({
     if (query === "") return item;
     else if (item.name.toLowerCase().includes(query.toLowerCase())) return item;
   });
-
-  console.log(filteredProds.length);
-
+  
   return (
     <>
       <div id="search-bar-comp" className="search-bar">

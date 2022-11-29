@@ -39,38 +39,23 @@ const About = () => {
             </div>
             <div className="why-u-need-text">
               <p className="text">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Phasellus imperdiet diam non eros condimentum, eu convallis
-                mauris iaculis. Maecenas pretium libero in bibendum lacinia.
-                Aenean facilisis, erat in sodales imperdiet, lorem nisi tempus
-                turpis, ac suscipit tellus nulla non massa. Fusce eu interdum
-                purus. Integer ac ante elit. Duis et erat id nunc accumsan
-                dapibus dapibus vitae velit. Fusce laoreet felis a vehicula
-                sollicitudin. In cursus, libero ac semper mollis, metus diam
-                viverra sapien, a vestibulum nisl leo at ligula. Etiam vel nibh
-                sit amet sem lobortis interdum eget scelerisque tortor. Praesent
-                euismod dictum elit vitae sodales. Aliquam dapibus, nibh nec
-                pulvinar rhoncus, diam arcu mollis purus, sed vulputate felis mi
-                quis tellus. Curabitur dignissim dui eget viverra imperdiet.
-                Nulla maximus augue vitae urna convallis, ac tristique felis
-                imperdiet. Aenean et mi odio. Nunc ac interdum neque, ac
-                ultricies magna. Curabitur vel ipsum mi. Etiam facilisis libero
-                id mauris varius mattis. Donec at placerat velit. Curabitur
-                malesuada imperdiet semper. Nullam efficitur ullamcorper augue
-                sed egestas. Curabitur volutpat eros ut dictum viverra. Nulla
-                lobortis nisi sed enim porta ultrices. Mauris a mi cursus,
-                rhoncus est ut, ultrices arcu. Mauris at congue ante. Nam in
-                nisi quis mauris sagittis ornare sit amet ut justo. Aliquam eget
-                magna blandit, rhoncus enim lobortis, bibendum ligula. Fusce
-                varius, quam vitae suscipit volutpat, risus diam pellentesque
-                ante, vel accumsan lacus tortor eu ex. Maecenas accumsan diam
-                lectus. Proin eleifend imperdiet augue. Sed elit eros, varius in
-                lorem nec, elementum tempus erat. Sed sit amet pellentesque
-                elit. Aliquam lacinia, velit eu auctor varius, arcu arcu rhoncus
-                eros, ac semper libero diam non mauris. In id magna convallis,
-                ultricies nisi eu, rhoncus nibh. Maecenas quis enim et sem
-                congue facilisis. Pellentesque luctus pellentesque est aliquet
-                egestas. Maecenas dignissim pellentesque tortor ut cursus.
+                Nowadays, consumers are manipulated by the overall shopping
+                experience. By using happy music, bright colors, large letters,
+                and having only one entrance, supermarkets plan to rob you of
+                your time and money. They make you want to stay there longer and
+                spend more money on things you probably do not need. Not knowing
+                where things are placed or not having a grocery list prepared
+                before going shopping can make the experience unpleasant and
+                overwhelming, making the consumer waste more time and possibly
+                more money. Our main vision is to help people “Have it their
+                way”. Either they want minimal time shopping or to look through
+                all the discounted items, the app will calculate an itinerary
+                made to suit the user's needs. The app will allow for the
+                elaboration of a grocery list with the exact products available
+                in store, then when the list is done and all the shopping
+                preferences are selected (like time wise, order wise, etc) an
+                itinerary will be presented. This itinerary will make grocery
+                shopping a more pleasant experience.
               </p>
             </div>
           </div>
@@ -80,16 +65,16 @@ const About = () => {
             </div>
             <div className="product-text">
               <p className="text">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Phasellus imperdiet diam non eros condimentum, eu convallis
-                mauris iaculis. Maecenas pretium libero in bibendum lacinia.
-                Aenean facilisis, erat in sodales imperdiet, lorem nisi tempus
-                turpis, ac suscipit tellus nulla non massa. Fusce eu interdum
-                purus. Integer ac ante elit. Duis et erat id nunc accumsan
-                dapibus dapibus vitae velit. Fusce laoreet felis a vehicula
-                sollicitudin. In cursus, libero ac semper mollis, metus diam
-                viverra sapien, a vestibulum nisl leo at ligula. Etiam vel nibh
-                sit amet sem lobortis interdum eget scelerisque tortor.
+                GoGrocery empowers you to take more control over your grocery
+                shop trips, by using GoGrocery you can easily dodge unintended
+                advertising, save more time for yourself, and avoid getting lost
+                in new supermarkets. Our app is simple, intuitive, and
+                welcoming. With GoGrocery customers will feel at home in any
+                supermarket they go to. The team at GoGrocery has a challenge
+                for you! Register in our app, try it for a month, if after one
+                month you don't love it, we will give you your money back! In a
+                completely unrelated note, GoGrocery is completely free for
+                anyone and everyone.
               </p>
             </div>
           </div>
@@ -99,13 +84,12 @@ const About = () => {
             </div>
             <div className="team-text">
               <p className="text">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Phasellus imperdiet diam non eros condimentum, eu convallis
-                mauris iaculis. Maecenas pretium libero in bibendum lacinia.
-                Aenean facilisis, erat in sodales imperdiet, lorem nisi tempus
-                turpis, ac suscipit tellus nulla non massa. Fusce eu interdum
-                purus. Integer ac ante elit. Duis et erat id nunc accumsan
-                dapibus dapibus vitae velit. Maecenas accumsan diam lectus.
+                This project was made by four NOVA students in the context of
+                the Human-Machine Interaction course in the Computer Science and
+                Engineering Master's Degree. Each had a very specific role in
+                the GoGrocery affairs, and are as follows: Bakery Associate:
+                Débora Dias Butcher: João Souza e Silva Cashier: Duarte Pereira
+                Fruit Specialist: Rafael Costa
               </p>
             </div>
           </div>
