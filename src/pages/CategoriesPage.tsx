@@ -213,7 +213,7 @@ const CategoriesPage = () => {
                 </div>
               )}
               <button className="see-list" onClick={toggleSlidingMenu}>
-                See List
+                {"See List (" + addedItems.length + ")"}
               </button>
               <button
                 id="it-menu"
