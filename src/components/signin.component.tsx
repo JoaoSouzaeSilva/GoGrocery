@@ -15,10 +15,7 @@ const SignInComponent = () => {
   let history = useHistory();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [message, setMessage] = useState(
-    "Something went wrong. Please try again later."
-  );
-  const [showToast, setShowToast] = useState(false);
+
   const [showPassword, setShowPassword] = useState(false);
   const [passwordIcon, setPasswordIcon] = useState(eye);
   const [passwordError, setPasswordError] = useState(false);
@@ -51,8 +48,6 @@ const SignInComponent = () => {
       return false;
     else return true;
   }
-
-  console.log(email)
 
   async function handleSignIn() {
     let aux = await checkEmail();

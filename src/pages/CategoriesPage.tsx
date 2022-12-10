@@ -29,9 +29,13 @@ const CategoriesPage = () => {
   const [addedItems, setAddedItems] = useState(initialAddedItems);
   const [itemQuantity, setItemQuantity] = useState(1);
   const [searchInput, setSearchInput] = useState("");
-  const [emptyListError, setEmptyListError] = useState(false);
-  const [emptyListMessage, setEmptyListMessage] = useState(
+  const [emptyListItineraryError, setEmptyListItineraryError] = useState(false);
+  const [emptyListSaveError, setEmptyListSaveError] = useState(false);
+  const [emptyListItineraryMessage, setEmptyListIteneraryMessage] = useState(
     "Make sure your list contains at least one item, before proceding to the itinerary setup."
+  );
+  const [emptyListSaveMessage, setEmptyListSaveMessage] = useState(
+    "Make sure your list contains at least one item, before saving it."
   );
 
   //Define wether the sliding menu is toggled or not
@@ -141,7 +145,7 @@ const CategoriesPage = () => {
    * the old user and the items from the list, set the new user in localStorage
    */
   const handleItenerarySetup = () => {
-    if (addedItems.length === 0) setEmptyListError(true);
+    if (addedItems.length === 0) setEmptyListItineraryError(true);
     else {
       let productList: any[] = [];
       addedItems.forEach((item: any) => productList.push(item));
@@ -154,11 +158,27 @@ const CategoriesPage = () => {
     }
   };
 
+  const handleSaveList = () => {
+    if (addedItems.length === 0) setEmptyListSaveError(true);
+    else {
+      let productList: any[] = [];
+      addedItems.forEach((item: any) => productList.push(item));  
+      history.push("/listname", {
+        id: history.location.state.id,
+        list: productList,
+      });
+    }
+  };
+
+  const handleTakeToMenu = () => {
+    history.push("/choice", { id: history.location.state.id });
+  };
+
   return (
     <>
       <IonPage>
         <IonToolbar className="ion-toolbar-categories">
-          <img className="img" slot="start" src={headerImg} />
+          <img className="img" slot="start" src={headerImg} onClick={() => handleTakeToMenu()}/>
           <div className="img_text">have it your way</div>
           <IonButtons slot="end" className="ion-buttons-categories">
             <IonButton shape="round" className="button-primary">
@@ -168,6 +188,13 @@ const CategoriesPage = () => {
               >
                 Back
               </p>
+            </IonButton>
+            <IonButton
+              shape="round"
+              className="button-primary"
+              onClick={toggleSlidingMenu}
+            >
+              {"See List (" + addedItems.length + ")"}
             </IonButton>
           </IonButtons>
         </IonToolbar>
@@ -190,6 +217,7 @@ const CategoriesPage = () => {
                 : undefined
             }
           >
+            <div className="scroll-container" />
             <div className="first-grid">
               <h1 className="app-name">GoGrocery</h1>
               <input
@@ -212,11 +240,10 @@ const CategoriesPage = () => {
                   />
                 </div>
               )}
-              <button className="see-list" onClick={toggleSlidingMenu}>
-                {"See List (" + addedItems.length + ")"}
+              <button className="save-list" onClick={handleSaveList}>
+                Save List
               </button>
               <button
-                id="it-menu"
                 className="itinerary-setup"
                 onClick={() => {
                   handleItenerarySetup();
@@ -244,10 +271,17 @@ const CategoriesPage = () => {
         </div>
       </IonPage>
       <IonAlert
-        isOpen={emptyListError}
-        onDidDismiss={() => setEmptyListError(false)}
+        isOpen={emptyListItineraryError}
+        onDidDismiss={() => setEmptyListItineraryError(false)}
         header={"Oh no!"}
-        message={emptyListMessage}
+        message={emptyListItineraryMessage}
+        buttons={["OK"]}
+      />
+      <IonAlert
+        isOpen={emptyListSaveError}
+        onDidDismiss={() => setEmptyListSaveError(false)}
+        header={"Oh no!"}
+        message={emptyListSaveMessage}
         buttons={["OK"]}
       />
     </>

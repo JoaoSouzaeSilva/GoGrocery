@@ -20,7 +20,6 @@
 }
 
 .map {
-  /* height: 80vh; */
   width: 51.5vw;
   height: auto;
 
@@ -44,9 +43,71 @@
 }
 
 .choose-route {
-  margin-left: 22.6vw;
-  margin-top: -1.4vh;
+  margin-left: 19.5vw;
+  margin-top: -2.9vh;
   position: absolute;
+}
+
+.route-help {
+  height: 20px;
+  width: 20px;
+
+  border-radius: 100px;
+
+  position: absolute;
+
+  margin-left: 17.5vw;
+  margin-top: 3vh;
+
+  background-color: #343f4b;
+
+  background-image: url("../images/route-help.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  cursor: pointer;
+}
+
+.route-help-container {
+  width: 35vw;
+  height: 15vh;
+
+  margin-left: 19.5vw;
+  margin-top: 9vh;
+
+  border-radius: 10px;
+
+  position: absolute;
+
+  background-color: #ffffff;
+
+  z-index: 9999;
+
+  opacity: 90%;
+}
+
+.supermarket-name {
+  color: #343f4b;
+  font-family: Lato;
+  font-size: larger;
+  font-weight: 900;
+
+  position: absolute;
+  /* margin-left: 45vw; */
+  margin-left: 41vw;
+  margin-top: 4vh;
+
+  z-index: 9999;
+}
+
+.route-help-text {
+  color: #343f4b;
+
+  font-family: Lato;
+  font-size: small;
+  font-weight: 500;
+
+  margin-left: 10px;
 }
 
 .current-list {
@@ -88,7 +149,7 @@
   font-size: 1.2vw;
   color: #47525e;
 
-  margin-top: 0.5vh;
+  margin-top: 1vh;
   margin-left: 0.5vw;
 }
 

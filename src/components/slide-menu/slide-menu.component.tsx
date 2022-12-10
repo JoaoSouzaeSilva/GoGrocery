@@ -12,8 +12,6 @@ const SlideMenu = ({
   let history: any = useHistory();
 
   const handleItenerarySetup = () => {
-    /* if (addedItems.length === 0) setEmptyListError(true); */
-    /* else { */
     let productList: any[] = [];
     addedItems.forEach((item: any) => productList.push(item));
     history.push("/itinerary", {
@@ -21,7 +19,15 @@ const SlideMenu = ({
       list: productList,
       new: true,
     });
-    /* } */
+  };
+
+  const handleSaveList = () => {
+    let productList: any[] = [];
+    addedItems.forEach((item: any) => productList.push(item));
+    history.push("/listname", {
+      id: history.location.state.id,
+      list: productList,
+    });
   };
 
   return (
@@ -44,12 +50,19 @@ const SlideMenu = ({
                 </div>
               ))}
             </div>
-            <button
-              className="finish-in-menu"
-              onClick={() => handleItenerarySetup()}
-            >
-              Itinerary setup
-            </button>
+            {selectedItems.length > 0 && (
+              <button
+                className="finish-in-menu"
+                onClick={() => handleItenerarySetup()}
+              >
+                Itinerary setup
+              </button>
+            )}
+            {selectedItems.length > 0 && (
+              <button className="save-in-menu" onClick={() => handleSaveList()}>
+                Save list
+              </button>
+            )}
           </div>
         </div>
       </div>

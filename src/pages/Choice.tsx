@@ -19,7 +19,6 @@ const Choice = () => {
   const handleRedirectToProfile = () => {
     history.push("/profile", { id: history.location.state.id });
   };
-
   const handleShopNewList = () => {
     history.push("/categories", { id: history.location.state.id, new: true });
   };

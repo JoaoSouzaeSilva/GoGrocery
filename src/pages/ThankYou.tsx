@@ -15,7 +15,6 @@ import {
 import { useHistory } from "react-router-dom";
 import headerImg from "../images/header.png";
 import button from "../images/button-round.png";
-import { chevronDownCircleOutline } from "ionicons/icons";
 
 import "./ThankYou.scss";
 
@@ -26,12 +25,14 @@ const ThankYou = () => {
     history.push("/choice", { id: history.location.state.id });
   };
 
-  console.log(history)
+  const handleTakeToMenu = () => {
+    history.push("/choice", { id: history.location.state.id });
+  };
 
   return (
     <IonPage>
       <IonToolbar className="ion-toolbar-thankyou">
-        <img slot="start" className="img" src={headerImg} />
+        <img slot="start" className="img" src={headerImg} onClick={() => handleTakeToMenu()} />
         <div className="img_text" slot="start">
           have it your way
         </div>

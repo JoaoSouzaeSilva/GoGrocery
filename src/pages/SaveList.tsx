@@ -23,10 +23,15 @@ const SaveList = () => {
     history.push("/thankyou", { id: state.id });
   };
 
+  const handleTakeToMenu = () => {
+    let state = history.location.state;
+    history.push("/choice", { id: state.id });
+  };
+
   return (
     <IonPage>
       <IonToolbar className="ion-toolbar-savelist">
-        <img slot="start" className="img" src={headerImg} />
+        <img slot="start" className="img" src={headerImg} onClick={() => handleTakeToMenu()} />
         <div className="img_text" slot="start">
           have it your way
         </div>

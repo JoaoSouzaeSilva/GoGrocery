@@ -14,11 +14,15 @@ import "./Profile.scss";
 const Profile = () => {
   let history: any = useHistory();
 
+  const handleTakeToMenu = () => {
+    history.push("/choice", { id: history.location.state.id });
+  };
+
   return (
     <>
       <IonPage>
         <IonToolbar className="ion-toolbar-profile">
-          <img slot="start" className="img" src={headerImg} />
+          <img slot="start" className="img" src={headerImg} onClick={() => handleTakeToMenu()} />
           <div className="img_text" slot="start">
             have it your way
           </div>

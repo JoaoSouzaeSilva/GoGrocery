@@ -2,9 +2,6 @@ import {
   IonButton,
   IonButtons,
   IonContent,
-  IonItem,
-  IonLabel,
-  IonList,
   IonPage,
   IonText,
   IonToolbar,
@@ -16,12 +13,15 @@ import "./UserLists.scss";
 
 const UserLists = () => {
   let history: any = useHistory();
-  console.log(history.location.state.user);
+  
+  const handleTakeToMenu = () => {
+    history.push("/choice", { id: history.location.state.id });
+  };
 
   return (
     <IonPage>
       <IonToolbar className="ion-toolbar-lists">
-        <img slot="start" className="img" src={headerImg} />
+        <img slot="start" className="img" src={headerImg} onClick={() => handleTakeToMenu()} />
         <div className="img_text" slot="start">
           have it your way
         </div>
