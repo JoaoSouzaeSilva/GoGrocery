@@ -162,7 +162,7 @@ const CategoriesPage = () => {
     if (addedItems.length === 0) setEmptyListSaveError(true);
     else {
       let productList: any[] = [];
-      addedItems.forEach((item: any) => productList.push(item));  
+      addedItems.forEach((item: any) => productList.push(item));
       history.push("/listname", {
         id: history.location.state.id,
         list: productList,
@@ -178,7 +178,12 @@ const CategoriesPage = () => {
     <>
       <IonPage>
         <IonToolbar className="ion-toolbar-categories">
-          <img className="img" slot="start" src={headerImg} onClick={() => handleTakeToMenu()}/>
+          <img
+            className="img"
+            slot="start"
+            src={headerImg}
+            onClick={() => handleTakeToMenu()}
+          />
           <div className="img_text">have it your way</div>
           <IonButtons slot="end" className="ion-buttons-categories">
             <IonButton shape="round" className="button-primary">
@@ -194,7 +199,9 @@ const CategoriesPage = () => {
               className="button-primary"
               onClick={toggleSlidingMenu}
             >
-              {"See List (" + addedItems.length + ")"}
+              <p className="button-primary-categories">
+                {"See List (" + addedItems.length + ")"}
+              </p>
             </IonButton>
           </IonButtons>
         </IonToolbar>
